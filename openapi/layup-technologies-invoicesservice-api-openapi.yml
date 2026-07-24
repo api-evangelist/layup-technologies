@@ -1,0 +1,457 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService InvoicesService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: InvoicesService
+paths:
+  /v1/invoice/{id}:
+    put:
+      operationId: InvoicesService_updatePdf
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelInvoiceResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelInvoiceUpdatePdfRequest'
+      tags:
+      - InvoicesService
+  /v1/invoices:
+    get:
+      operationId: InvoicesService_getMany
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelInvoiceGetManyResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: from
+        in: query
+        required: false
+        type: string
+      - name: to
+        in: query
+        required: false
+        type: string
+      - name: reference
+        in: query
+        required: false
+        type: string
+      - name: status
+        in: query
+        required: false
+        type: string
+      tags:
+      - InvoicesService
+    post:
+      operationId: InvoicesService_create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelInvoicesResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelDateTimeRange'
+      tags:
+      - InvoicesService
+    put:
+      operationId: InvoicesService_update
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelInvoiceResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelInvoiceUpdateRequest'
+      tags:
+      - InvoicesService
+  /v1/invoices/:id/pdf:
+    get:
+      operationId: InvoicesService_getPdf
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelInvoicePdfResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: query
+        required: false
+        type: string
+      tags:
+      - InvoicesService
+  /v1/invoices/fees:
+    post:
+      operationId: InvoicesService_createByFees
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelInvoicesResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelInvoiceFeesCreateRequest'
+      tags:
+      - InvoicesService
+  /v1/invoices/{id}:
+    get:
+      operationId: InvoicesService_getInvoiceById
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelInvoiceReport'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      tags:
+      - InvoicesService
+  /v1/invoices/{id}/report:
+    get:
+      operationId: InvoicesService_getInvoiceReportById
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelGenerateReportResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      tags:
+      - InvoicesService
+definitions:
+  modelInvoicePdfResponse:
+    type: object
+    properties:
+      redirectUrl:
+        type: string
+  modelInvoice:
+    type: object
+    properties:
+      _id:
+        type: string
+      merchantId:
+        type: string
+      exVatAmount:
+        type: integer
+        format: int32
+      vatAmount:
+        type: integer
+        format: int32
+      totalAmount:
+        type: integer
+        format: int32
+      settled:
+        type: boolean
+      reconciled:
+        type: boolean
+      bankTransactionId:
+        type: string
+      reference:
+        type: string
+      accountingInvoiceId:
+        type: string
+      accountingInvoiceNumber:
+        type: string
+      status:
+        type: string
+      createdAt:
+        type: string
+      billingMethod:
+        type: string
+  modelInvoiceResponse:
+    type: object
+  modelInvoiceUpdateRequest:
+    type: object
+    properties:
+      invoiceId:
+        type: string
+      accountingInvoiceId:
+        type: string
+      accountingInvoiceNumber:
+        type: string
+  modelInvoicesResponse:
+    type: object
+    properties:
+      invoiceIds:
+        type: array
+        items:
+          type: string
+  modelInvoiceReport:
+    type: object
+    properties:
+      id:
+        type: string
+      merchantId:
+        type: string
+      exVatAmount:
+        type: integer
+        format: int32
+      vatAmount:
+        type: integer
+        format: int32
+      totalAmount:
+        type: integer
+        format: int32
+      settled:
+        type: boolean
+      reconciled:
+        type: boolean
+      bankTransactionId:
+        type: string
+      reference:
+        type: string
+      accountingInvoiceId:
+        type: string
+      accountingInvoiceNumber:
+        type: string
+      status:
+        type: string
+      createdAt:
+        type: string
+      feesPerProduct:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelFeesPerProduct'
+      report:
+        $ref: '#/definitions/modelReport'
+      billingMethod:
+        type: string
+  modelGenerateReportResponse:
+    type: object
+    properties:
+      report:
+        $ref: '#/definitions/modelInvoiceReport'
+  modelFeesPerProduct:
+    type: object
+    properties:
+      quantity:
+        type: integer
+        format: int32
+      amountTotal:
+        type: number
+        format: double
+      amountExcludingVAT:
+        type: number
+        format: double
+      amountVAT:
+        type: number
+        format: double
+      product:
+        $ref: '#/definitions/modelProduct'
+  modelReport:
+    type: object
+    properties:
+      totalFeesAmount:
+        type: integer
+        format: int32
+      totalFeesExtAmount:
+        type: integer
+        format: int32
+      totalAmountVAT:
+        type: integer
+        format: int32
+      feesPerProductExcludingVATTotal:
+        type: integer
+        format: int32
+      feesPerProductVATTotal:
+        type: integer
+        format: int32
+      feesPerProductTotal:
+        type: integer
+        format: int32
+      fees:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelJournalFees'
+  modelProduct:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      displayName:
+        type: string
+      feeType:
+        type: string
+      method:
+        type: string
+      billingType:
+        type: string
+  modelDateTimeRange:
+    type: object
+    properties:
+      fromDateTime:
+        type: string
+      toDateTime:
+        type: string
+  modelJournalFees:
+    type: object
+    properties:
+      id:
+        type: string
+      productName:
+        type: string
+      amountExcludingVAT:
+        type: number
+        format: double
+      amountVAT:
+        type: number
+        format: double
+      amountTotal:
+        type: number
+        format: double
+      merchantId:
+        type: string
+      createdAt:
+        type: string
+      updatedAt:
+        type: string
+      settlementId:
+        type: string
+      paymentId:
+        type: string
+  modelInvoiceGetManyResponse:
+    type: object
+    properties:
+      invoices:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelInvoice'
+  modelInvoiceFeesCreateRequest:
+    type: object
+    properties:
+      feeIds:
+        type: array
+        items:
+          type: string
+  modelInvoiceUpdatePdfRequest:
+    type: object
+    properties:
+      accountingPdfLocation:
+        type: string
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

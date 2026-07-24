@@ -1,0 +1,411 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService DebiCheckService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: DebiCheckService
+paths:
+  /v1/debicheck:
+    post:
+      operationId: DebiCheckService_CreateLegacy
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelDebiCheckMandateResponseLegacy'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelDebiCheckRequestLegacy'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      tags:
+      - DebiCheckService
+  /v1/debicheck/collection:
+    get:
+      operationId: DebiCheckService_GetManyCollection
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelDebiCheckCollectionResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: due
+        in: query
+        required: false
+        type: string
+      tags:
+      - DebiCheckService
+    post:
+      operationId: DebiCheckService_CreateCollection
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelDebiCheckCollection'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelDebiCheckCollectionRequest'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      tags:
+      - DebiCheckService
+  /v1/debicheck/list/{_id}:
+    get:
+      operationId: DebiCheckService_GetMandateList
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelDebiCheckMandateListResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - DebiCheckService
+  /v1/debicheck/{_id}:
+    get:
+      operationId: DebiCheckService_GetMandate
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelDebiCheckMandateResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - DebiCheckService
+  /v2/debi-check:
+    post:
+      operationId: DebiCheckService_Create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelDebiCheckMandateResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelDebiCheckRequest'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      tags:
+      - DebiCheckService
+definitions:
+  modelDebiCheckRequestLegacy:
+    type: object
+    properties:
+      name:
+        type: string
+        title: Name and Surname
+      accountType:
+        type: string
+      accountNumber:
+        type: string
+      branchCode:
+        type: string
+        title: 6-digit branch code
+      contact:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelDebiCheckContactLegacy'
+      identificationType:
+        type: string
+      identification:
+        type: string
+      paymentPlanId:
+        type: string
+      simulation:
+        type: boolean
+  modelDebiCheckCollectionRequest:
+    type: object
+    properties:
+      due:
+        type: string
+  modelDebiCheckCollectionResponse:
+    type: object
+    properties:
+      collections:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelDebiCheckCollection'
+  modelDebiCheckContact:
+    type: object
+    properties:
+      medium:
+        $ref: '#/definitions/modelDebiCheckMediumEnum'
+      value:
+        type: string
+  modelDebiCheckContactLegacy:
+    type: object
+    properties:
+      medium:
+        type: string
+      value:
+        type: string
+  modelDebiCheckMediumEnum:
+    type: integer
+    format: int32
+    example: PhoneNumber
+    enum:
+    - 0
+    - 1
+    default: 0
+    x-enum-descriptions:
+    - Phone Number (in international format, e.g., +1 415 555 2671)
+    - Email address
+    x-enum-varnames:
+    - PhoneNumber
+    - EmailAddress
+  modelDebiCheckMandateCustomerLegacy:
+    type: object
+    properties:
+      name:
+        type: string
+      identification:
+        type: string
+      identificationType:
+        type: string
+      accountType:
+        type: string
+      accountNumber:
+        type: string
+      branchCode:
+        type: string
+      contact:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelDebiCheckMandateContactLegacy'
+      simulated:
+        type: boolean
+  modelDebiCheckIdentificationTypeEnum:
+    type: integer
+    format: int32
+    example: IdentityDocument
+    enum:
+    - 0
+    - 1
+    - 2
+    default: 0
+    x-enum-varnames:
+    - IdentityDocument
+    - Passport
+    - TemporaryResidence
+  modelDebiCheckMandateCustomer:
+    type: object
+    properties:
+      name:
+        type: string
+      identification:
+        type: string
+      identificationType:
+        type: string
+      accountType:
+        type: string
+      accountNumber:
+        type: string
+      branchCode:
+        type: string
+      contact:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelDebiCheckMandateContact'
+      simulated:
+        type: boolean
+  modelDebiCheckCollection:
+    type: object
+    properties:
+      raw:
+        type: string
+  modelDebiCheckMandateContactLegacy:
+    type: object
+    properties:
+      medium:
+        type: integer
+        format: int32
+      value:
+        type: string
+  modelDebiCheckMandateResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+      customer:
+        $ref: '#/definitions/modelDebiCheckMandateCustomer'
+      createdAt:
+        type: string
+      simulation:
+        type: boolean
+  modelDebiCheckMandateContact:
+    type: object
+    properties:
+      medium:
+        $ref: '#/definitions/modelDebiCheckMediumEnum'
+      value:
+        type: string
+  modelDebiCheckMandateListResponse:
+    type: object
+    properties:
+      status:
+        type: string
+      debicheckFailedReasons:
+        type: array
+        items:
+          type: string
+  modelDebiCheckMandateResponseLegacy:
+    type: object
+    properties:
+      _id:
+        type: string
+      customer:
+        $ref: '#/definitions/modelDebiCheckMandateCustomerLegacy'
+      createdAt:
+        type: string
+      simulation:
+        type: boolean
+  modelDebiCheckRequest:
+    type: object
+    properties:
+      name:
+        type: string
+        title: Name and Surname
+      accountType:
+        $ref: '#/definitions/modelDebiCheckAccountTypeEnum'
+      accountNumber:
+        type: string
+      branchCode:
+        type: string
+        title: 6-digit branch code
+      contact:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelDebiCheckContact'
+      identificationType:
+        $ref: '#/definitions/modelDebiCheckIdentificationTypeEnum'
+      identification:
+        type: string
+      paymentPlanId:
+        type: string
+      simulation:
+        type: boolean
+  modelDebiCheckAccountTypeEnum:
+    type: integer
+    format: int32
+    example: Current
+    enum:
+    - 0
+    - 1
+    - 2
+    default: 0
+    x-enum-varnames:
+    - Current
+    - Savings
+    - Transmission
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

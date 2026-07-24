@@ -1,0 +1,201 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService BankTransactionService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: BankTransactionService
+paths:
+  /v1/bank-transactions:
+    post:
+      operationId: BankTransactionService_create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelBankTransactionResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelBankTransactionCreateRequest'
+      tags:
+      - BankTransactionService
+  /v1/bank-transactions/link-batch:
+    put:
+      operationId: BankTransactionService_linkBatch
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelBankTransactionResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: ids
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: bankTransactionBatchId
+        in: query
+        required: true
+        type: string
+      tags:
+      - BankTransactionService
+  /v1/bank-transactions/{id}/payment:
+    post:
+      operationId: BankTransactionService_createPayment
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelBankTransactionResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelBankTransactionPaymentRequest'
+      tags:
+      - BankTransactionService
+  /v1/release-suspense:
+    put:
+      operationId: BankTransactionService_update
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelBankTransactionResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelBankTransactionUpdate'
+      tags:
+      - BankTransactionService
+definitions:
+  modelBankTransactionResponse:
+    type: object
+  modelBankTransactionCreateRequest:
+    type: object
+    properties:
+      bankTransactions:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelBankTransactionCreate'
+  modelBankTransactionCreate:
+    type: object
+    properties:
+      date:
+        type: string
+      description:
+        type: string
+      reference:
+        type: string
+      amountInCents:
+        type: integer
+        format: int32
+      balanceInCents:
+        type: integer
+        format: int32
+      bank:
+        type: string
+      fileStorageReference:
+        type: string
+  modelBankTransactionPaymentRequest:
+    type: object
+    properties:
+      destinationId:
+        type: string
+      destinationType:
+        type: string
+      amount:
+        type: integer
+        format: int32
+  modelBankTransactionUpdate:
+    type: object
+    properties:
+      bankTransactionIds:
+        type: array
+        items:
+          type: string
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

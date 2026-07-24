@@ -1,0 +1,391 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService PaymentServiceV2 API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: PaymentServiceV2
+paths:
+  /v2/payments:
+    post:
+      operationId: PaymentServiceV2_Create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentRedirectResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPaymentRequestV2'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentServiceV2
+  /v2/payments-report:
+    get:
+      operationId: PaymentServiceV2_GetReport
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentReportResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: merchantId
+        in: query
+        required: false
+        type: string
+      - name: skip
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: paid
+        in: query
+        required: false
+        type: boolean
+      - name: orderId
+        in: query
+        required: false
+        type: string
+      - name: paymentPlanId
+        in: query
+        required: false
+        type: string
+      - name: userId
+        in: query
+        required: false
+        type: string
+      - name: fromDate
+        in: query
+        required: false
+        type: string
+      - name: toDate
+        in: query
+        required: false
+        type: string
+      - name: method
+        in: query
+        required: false
+        type: string
+      - name: type
+        in: query
+        required: false
+        type: string
+      - name: search
+        in: query
+        required: false
+        type: string
+      - name: fromDatePayments
+        in: query
+        required: false
+        type: string
+      - name: toDatePayments
+        in: query
+        required: false
+        type: string
+      - name: settled
+        in: query
+        required: false
+        type: string
+      - name: sort
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: failed
+        in: query
+        required: false
+        type: boolean
+      - name: provider
+        in: query
+        required: false
+        type: string
+      - name: destinationId
+        in: query
+        required: false
+        type: string
+      - name: destinationType
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentServiceV2
+definitions:
+  modelReportExport:
+    type: object
+    properties:
+      client:
+        type: string
+      amount:
+        type: number
+        format: double
+      createdAt:
+        type: string
+      verifiedAt:
+        type: string
+      due:
+        type: string
+      fee:
+        type: number
+        format: double
+      orderName:
+        type: string
+      orderReference:
+        type: string
+      paymentStatus:
+        type: string
+      paymentType:
+        type: string
+      settlementBatch:
+        type: string
+      state:
+        type: string
+      updatedAt:
+        type: string
+      datePaid:
+        type: string
+      dateSettled:
+        type: string
+  modelFee:
+    type: object
+    properties:
+      id:
+        type: string
+      productName:
+        type: string
+      amountExcludingVAT:
+        type: number
+        format: double
+      amountVAT:
+        type: number
+        format: double
+      amountTotal:
+        type: number
+        format: double
+      merchantId:
+        type: string
+      createdAt:
+        type: string
+      updatedAt:
+        type: string
+      settlementId:
+        type: string
+      paymentId:
+        type: string
+  modelReportPayment:
+    type: object
+    properties:
+      id:
+        type: string
+      amount:
+        type: number
+        format: double
+      client:
+        type: string
+      createdAt:
+        type: string
+      datePaid:
+        type: string
+      due:
+        type: string
+      fee:
+        type: number
+        format: double
+      fees:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelFee'
+      feesPerProduct:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelFeePerProduct'
+      locked:
+        type: boolean
+      orderName:
+        type: string
+      orderReference:
+        type: string
+      paymentMethod:
+        type: string
+      paymentStatus:
+        type: string
+      paymentType:
+        type: string
+      settlementBatch:
+        type: string
+      state:
+        type: string
+      updatedAt:
+        type: string
+      verifiedAt:
+        type: string
+      dateSettled:
+        type: string
+  modelPaymentReportResponse:
+    type: object
+    properties:
+      payments:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelReportPayment'
+      export:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelReportExport'
+  modelFeePerProduct:
+    type: object
+    properties:
+      quantity:
+        type: number
+        format: double
+      amountTotal:
+        type: number
+        format: double
+      amountExcludingVAT:
+        type: number
+        format: double
+      amountVAT:
+        type: number
+        format: double
+      product:
+        $ref: '#/definitions/modelProduct'
+  modelProduct:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      displayName:
+        type: string
+      feeType:
+        type: string
+      method:
+        type: string
+      billingType:
+        type: string
+  modelPaymentRequestV2:
+    type: object
+    properties:
+      destinationId:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      redirectUrl:
+        type: string
+      paymentMethod:
+        type: string
+      paymentProvider:
+        type: string
+      destinationType:
+        type: string
+        title: paymentPlan | invoice
+      connectorData:
+        $ref: '#/definitions/modelConnectorDataV2'
+      save:
+        type: boolean
+  modelConnectorDataV2:
+    type: object
+    properties:
+      bankTransactionId:
+        type: string
+  modelNameAndValue:
+    type: object
+    properties:
+      name:
+        type: string
+      value:
+        type: string
+  modelPaymentRedirectResponse:
+    type: object
+    properties:
+      url:
+        type: string
+      parameters:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelNameAndValue'
+      method:
+        type: string
+      _id:
+        type: string
+      checkoutId:
+        type: string
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

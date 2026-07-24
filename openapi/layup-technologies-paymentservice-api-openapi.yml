@@ -1,0 +1,688 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService PaymentService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: PaymentService
+paths:
+  /v1/generate-refund:
+    get:
+      operationId: PaymentService_refund
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body.amount
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: body.refundReference
+        in: query
+        required: false
+        type: string
+      - name: body.paymentId
+        in: query
+        required: false
+        type: string
+      - name: body.excludeFees
+        in: query
+        required: false
+        type: boolean
+      - name: body.refundMethod
+        in: query
+        required: false
+        type: string
+      - name: body.autoRefund
+        in: query
+        required: false
+        type: boolean
+      tags:
+      - PaymentService
+  /v1/manual-refund:
+    get:
+      operationId: PaymentService_manualRefund
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body.amount
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: body.refundReference
+        in: query
+        required: false
+        type: string
+      - name: body.paymentId
+        in: query
+        required: false
+        type: string
+      - name: body.excludeFees
+        in: query
+        required: false
+        type: boolean
+      - name: body.refundMethod
+        in: query
+        required: false
+        type: string
+      - name: body.autoRefund
+        in: query
+        required: false
+        type: boolean
+      tags:
+      - PaymentService
+  /v1/offline-payments:
+    post:
+      operationId: PaymentService_CreateOffline
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelOfflinePaymentRequest'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentService
+  /v1/offline-payments/{_id}:
+    delete:
+      operationId: PaymentService_DeleteOffline
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - PaymentService
+  /v1/payments:
+    get:
+      operationId: PaymentService_GetMany
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponseMany'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: skip
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: paid
+        in: query
+        required: false
+        type: boolean
+      - name: orderId
+        in: query
+        required: false
+        type: string
+      - name: paymentPlanId
+        in: query
+        required: false
+        type: string
+      - name: userId
+        in: query
+        required: false
+        type: string
+      - name: fromDate
+        in: query
+        required: false
+        type: string
+        format: date
+        default: '2000-03-20'
+      - name: toDate
+        in: query
+        required: false
+        type: string
+        format: date
+        default: '2030-03-20'
+      - name: method
+        in: query
+        required: false
+        type: string
+      - name: type
+        in: query
+        required: false
+        type: string
+      - name: search
+        in: query
+        required: false
+        type: string
+      - name: fromDatePayments
+        in: query
+        required: false
+        type: string
+      - name: toDatePayments
+        in: query
+        required: false
+        type: string
+      - name: settled
+        in: query
+        required: false
+        type: string
+      - name: sort
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: failed
+        in: query
+        required: false
+        type: boolean
+      - name: provider
+        in: query
+        required: false
+        type: string
+      - name: destinationId
+        in: query
+        required: false
+        type: string
+      - name: destinationType
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentService
+    delete:
+      operationId: PaymentService_Delete
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentService
+    post:
+      operationId: PaymentService_Create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentRedirectResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPaymentRequest'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      - name: secret
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentService
+  /v1/payments/{_id}:
+    get:
+      operationId: PaymentService_Get
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      - name: verify
+        in: query
+        required: false
+        type: string
+      - name: force
+        in: query
+        required: false
+        type: string
+      - name: msisdn
+        in: query
+        required: false
+        type: string
+      - name: token
+        in: query
+        required: false
+        type: string
+      - name: isEmbeddedCheckout
+        in: query
+        required: false
+        type: boolean
+      - name: registrationId
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentService
+    put:
+      operationId: PaymentService_UpdateById
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPaymentRequest'
+      - name: secret
+        in: query
+        required: false
+        type: string
+      tags:
+      - PaymentService
+  /v1/realtime-refund:
+    get:
+      operationId: PaymentService_realtimeRefund
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body.amount
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: body.refundReference
+        in: query
+        required: false
+        type: string
+      - name: body.paymentId
+        in: query
+        required: false
+        type: string
+      - name: body.excludeFees
+        in: query
+        required: false
+        type: boolean
+      - name: body.refundMethod
+        in: query
+        required: false
+        type: string
+      - name: body.autoRefund
+        in: query
+        required: false
+        type: boolean
+      tags:
+      - PaymentService
+  /v1/refund-payments/{_id}:
+    get:
+      operationId: PaymentService_RefundPaymentMailer
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - PaymentService
+  /v1/transfer-payments:
+    post:
+      operationId: PaymentService_TransferPayment
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelTransferPaymentRequest'
+      tags:
+      - PaymentService
+  /v1/undo-transfer-payments:
+    post:
+      operationId: PaymentService_UndoTransfer
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelTransferPaymentRequest'
+      tags:
+      - PaymentService
+definitions:
+  modelPaymentResponseMany:
+    type: object
+    properties:
+      payments:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelPaymentResponse'
+  modelPaymentRedirectResponse:
+    type: object
+    properties:
+      url:
+        type: string
+      parameters:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelNameAndValue'
+      method:
+        type: string
+      _id:
+        type: string
+      checkoutId:
+        type: string
+  modelPaymentResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+      paymentPlanId:
+        type: string
+      due:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      paid:
+        type: boolean
+      userId:
+        type: string
+      locked:
+        type: boolean
+      pending:
+        type: boolean
+      timestamp:
+        type: number
+        format: double
+      paymentMethod:
+        type: string
+      paymentType:
+        type: string
+      note:
+        type: string
+      reference:
+        type: string
+      orderStatus:
+        type: string
+      amountExcludingFee:
+        type: integer
+        format: int32
+      fee:
+        type: integer
+        format: int32
+      failed:
+        type: boolean
+      verifyError:
+        type: string
+      refundedAmount:
+        type: integer
+        format: int32
+      refundPaymentId:
+        type: string
+      connectorData:
+        $ref: '#/definitions/modelConnectorData'
+      destinationId:
+        type: string
+      destinationType:
+        type: string
+  modelConnectorData:
+    type: object
+    properties:
+      paymentProvider:
+        type: string
+      paymentMethod:
+        type: string
+    description: Connector data bypasses protobuf conversion to allow any fields.
+  modelOfflinePaymentRequest:
+    type: object
+    example:
+      amount: 13333
+      note: Processed by employeeX
+      paymentPlanId: 123f7f1496bd78001d6852f3
+      reference: Cash in hand
+      verifiedAt: '2022-01-27T14:00:00.000Z'
+    properties:
+      amount:
+        type: integer
+        format: int32
+      paymentPlanId:
+        type: string
+      reference:
+        type: string
+      note:
+        type: string
+      verifiedAt:
+        type: string
+      paymentType:
+        type: string
+      excludeFees:
+        type: boolean
+      settled:
+        type: boolean
+  modelNameAndValue:
+    type: object
+    properties:
+      name:
+        type: string
+      value:
+        type: string
+  modelPaymentRequest:
+    type: object
+    properties:
+      paymentPlanId:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      notifyUrl:
+        type: string
+      useSavedCard:
+        type: boolean
+      eft:
+        type: boolean
+      checkout:
+        type: boolean
+      save:
+        type: boolean
+        title: save card used in checkout
+      suspenseId:
+        type: string
+      connectorData:
+        $ref: '#/definitions/modelConnectorData'
+      paid:
+        type: boolean
+      failed:
+        type: boolean
+      payAt:
+        type: boolean
+      paymentMethod:
+        type: string
+      paymentProviderSettlementId:
+        type: string
+      destinationType:
+        type: string
+      destinationId:
+        type: string
+      isEmbeddedCheckout:
+        type: boolean
+  modelTransferPaymentRequest:
+    type: object
+    properties:
+      _id:
+        type: string
+      _destinationPaymentPlanId:
+        type: string
+      amount:
+        type: integer
+        format: int32
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

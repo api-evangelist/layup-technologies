@@ -1,0 +1,402 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService PayAtService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: PayAtService
+paths:
+  /v1/payAt/adviseTransaction:
+    post:
+      operationId: PayAtService_adviseTransaction
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPayAtTransactionAdviceResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPayAtTransactionAdviceRequest'
+      tags:
+      - PayAtService
+  /v1/payAt/authorize:
+    post:
+      operationId: PayAtService_authorize
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPayAtAuthorizationResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPayAtAuthorizationRequest'
+      tags:
+      - PayAtService
+  /v1/payAt/echoTest:
+    post:
+      operationId: PayAtService_echoTest
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPayAtEchoTestResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPayAtEchoTestRequest'
+      tags:
+      - PayAtService
+  /v1/payAt/enquire:
+    post:
+      operationId: PayAtService_enquiry
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPayAtEnquiryResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPayAtEnquiryRequest'
+      tags:
+      - PayAtService
+  /v1/payAt/reverseAuthorization:
+    post:
+      operationId: PayAtService_reverseAuthorization
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelPayAtReverseAuthorizationResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelPayAtReverseAuthorizationRequest'
+      tags:
+      - PayAtService
+definitions:
+  modelPayAtAuthorizationRequest:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      networkTransactionID:
+        type: string
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+  modelPayAtLoginData:
+    type: object
+    properties:
+      loginID:
+        type: string
+      password:
+        type: string
+  modelPayAtCustomerData:
+    type: object
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+  modelPayAtReverseAuthorizationResponse:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+      networkTransactionID:
+        type: string
+      responseCode:
+        type: string
+      responseText:
+        type: string
+      issuerTransactionID:
+        type: string
+      repeatIndicator:
+        type: boolean
+      customerData:
+        $ref: '#/definitions/modelPayAtCustomerData'
+  modelPayAtEnquiryResponse:
+    type: object
+    properties:
+      amount:
+        type: integer
+        format: int32
+      dueDate:
+        type: string
+      exactAmount:
+        type: boolean
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+      customerData:
+        $ref: '#/definitions/modelPayAtCustomerData'
+      responseText:
+        type: string
+      responseCode:
+        type: string
+  modelPayAtReverseAuthorizationRequest:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      networkTransactionID:
+        type: string
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+      issuerTransactionID:
+        type: string
+      repeatIndicator:
+        type: boolean
+  modelPayAtTransactionAdviceResponse:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      tenderType:
+        type: string
+      repeatIndicator:
+        type: boolean
+      amount:
+        type: integer
+        format: int32
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+      networkTransactionID:
+        type: string
+      issuerTransactionID:
+        type: string
+      responseCode:
+        type: string
+      responseText:
+        type: string
+  modelPayAtSecurityData:
+    type: object
+    properties:
+      login:
+        $ref: '#/definitions/modelPayAtLoginData'
+  modelPayAtEchoTestResponse:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      echoData:
+        type: string
+      responseCode:
+        type: string
+      responseText:
+        type: string
+  modelPayAtNetworkData:
+    type: object
+    properties:
+      networkId:
+        type: integer
+        format: int32
+      networkName:
+        type: string
+  modelPayAtEchoTestRequest:
+    type: object
+    properties:
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      echoData:
+        type: string
+  modelPayAtTransactionAdviceRequest:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      tenderType:
+        type: string
+      repeatIndicator:
+        type: boolean
+      networkTransactionID:
+        type: string
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+      issuerTransactionID:
+        type: string
+  modelPayAtEnquiryRequest:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+  modelPayAtAuthorizationResponse:
+    type: object
+    properties:
+      messageID:
+        type: string
+      transmissionDateTime:
+        type: string
+      securityData:
+        $ref: '#/definitions/modelPayAtSecurityData'
+      accountNumber:
+        type: string
+      networkData:
+        $ref: '#/definitions/modelPayAtNetworkData'
+      networkTransactionID:
+        type: string
+      responseCode:
+        type: string
+      responseText:
+        type: string
+      issuerTransactionID:
+        type: string
+      customerData:
+        $ref: '#/definitions/modelPayAtCustomerData'
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

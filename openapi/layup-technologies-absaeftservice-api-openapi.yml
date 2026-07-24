@@ -1,0 +1,143 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService AbsaEftService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: AbsaEftService
+paths:
+  /v1/absa/eft/output:
+    post:
+      operationId: AbsaEftService_output
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelAbsaEftResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelAbsaEftOutputRequest'
+      tags:
+      - AbsaEftService
+  /v1/absa/eft/reply:
+    post:
+      operationId: AbsaEftService_reply
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelAbsaEftResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelAbsaEftReplyRequest'
+      tags:
+      - AbsaEftService
+definitions:
+  modelAbsaEftReplyRequest:
+    type: object
+    properties:
+      ldCode:
+        type: string
+      transmissionNumber:
+        type: integer
+        format: int32
+      transmissionStatus:
+        type: string
+      fileStoragePath:
+        type: string
+  modelAbsaEftOutputRequest:
+    type: object
+    properties:
+      transmissionNumber:
+        type: integer
+        format: int32
+      fileStoragePath:
+        type: string
+      rejectedTransactions:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelRejectedTransaction'
+  modelAbsaEftResponse:
+    type: object
+  modelRejectedTransaction:
+    type: object
+    properties:
+      transmissionDate:
+        type: string
+      originalSequenceNumber:
+        type: integer
+        format: int32
+      amount:
+        type: integer
+        format: int32
+      userReference:
+        type: string
+      rejectionReason:
+        type: string
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

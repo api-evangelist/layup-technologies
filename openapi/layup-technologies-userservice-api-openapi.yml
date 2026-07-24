@@ -1,0 +1,408 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService UserService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: UserService
+paths:
+  /v1/users:
+    get:
+      operationId: UserService_GetMany
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelUserResponseMany'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: orderId
+        in: query
+        required: false
+        type: string
+      tags:
+      - UserService
+    post:
+      summary: Description
+      operationId: UserService_Create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelUserResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelUserRequest'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      - name: avs
+        in: query
+        required: false
+        type: string
+      - name: isRealtimeVerification
+        in: query
+        required: false
+        type: boolean
+      tags:
+      - UserService
+  /v1/users/{_id}:
+    get:
+      operationId: UserService_Get
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelUserResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - UserService
+    delete:
+      summary: Description
+      operationId: UserService_Del
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelUserResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - UserService
+    put:
+      operationId: UserService_Update
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelUserResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelUserRequest'
+      - name: avs
+        in: query
+        required: false
+        type: string
+      - name: isRealtimeVerification
+        in: query
+        required: false
+        type: boolean
+      tags:
+      - UserService
+definitions:
+  modelBillingAddress:
+    type: object
+    properties:
+      country:
+        type: string
+      province:
+        type: string
+      streetAddress:
+        type: string
+      city:
+        type: string
+      postalCode:
+        type: string
+  modelUserResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+        format: email
+      idNumber:
+        type: string
+      address:
+        type: string
+      postalCode:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      country:
+        type: string
+      role:
+        type: string
+        enum:
+        - CLIENT
+        - MERCHANT
+        - ADMIN
+        default: CLIENT
+      active:
+        type: boolean
+      merchantId:
+        type: string
+      cellNumber:
+        type: string
+      dateOfBirth:
+        type: string
+      name:
+        type: string
+      verified:
+        type: boolean
+      timestamp:
+        type: number
+        format: double
+      hasPassword:
+        type: boolean
+      verifiedEmail:
+        type: boolean
+      verifiedMobile:
+        type: boolean
+      merchantRole:
+        type: string
+      bankDetails:
+        $ref: '#/definitions/modelBankInfo'
+      merchantOnboarding:
+        $ref: '#/definitions/modelMerchantOnboarding'
+      bankValidationPendingReference:
+        type: string
+      oneTimePass:
+        type: string
+      passportState:
+        type: string
+      passportNumber:
+        type: string
+      profileImage:
+        type: string
+      merchantIds:
+        type: array
+        items:
+          type: string
+      merchants:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelMerchants'
+      isMerchantOwner:
+        type: boolean
+      twoFactorAuthenticationRequired:
+        type: boolean
+  modelBankValidation:
+    type: object
+    properties:
+      verified:
+        type: boolean
+      value:
+        type: string
+  modelUserRequest:
+    type: object
+    properties:
+      username:
+        type: string
+      email:
+        type: string
+        format: email
+      idNumber:
+        type: string
+      address:
+        type: string
+      postalCode:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      country:
+        type: string
+      role:
+        type: string
+        enum:
+        - CLIENT
+        - MERCHANT
+        - ADMIN
+        default: CLIENT
+      password:
+        type: string
+      active:
+        type: boolean
+      name:
+        type: string
+      dateOfBirth:
+        type: string
+      cellNumber:
+        type: string
+        pattern: ^\+27\d{9}$
+      redirectTo:
+        type: string
+      apikey:
+        type: string
+      shouldWelcome:
+        type: boolean
+      merchantCreatePlan:
+        type: boolean
+      merchantId:
+        type: string
+      merchantRole:
+        type: string
+      bankDetails:
+        $ref: '#/definitions/modelBankInfo'
+      merchantOnboarding:
+        $ref: '#/definitions/modelMerchantOnboarding'
+      bankValidationPendingReference:
+        type: string
+      passportState:
+        type: string
+      passportNumber:
+        type: string
+      profileImage:
+        type: string
+      merchantIds:
+        type: array
+        items:
+          type: string
+      isMerchantOwner:
+        type: boolean
+  modelUserResponseMany:
+    type: object
+    properties:
+      users:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelUserResponse'
+  modelBankInfo:
+    type: object
+    properties:
+      bankName:
+        $ref: '#/definitions/modelBankValidation'
+      account:
+        $ref: '#/definitions/modelBankValidation'
+      accountType:
+        $ref: '#/definitions/modelBankValidation'
+      branchCode:
+        $ref: '#/definitions/modelBankValidation'
+      idNumber:
+        $ref: '#/definitions/modelBankValidation'
+      verified:
+        type: boolean
+      clientName:
+        $ref: '#/definitions/modelBankValidation'
+      cellNumber:
+        $ref: '#/definitions/modelBankValidation'
+      initials:
+        $ref: '#/definitions/modelBankValidation'
+      email:
+        $ref: '#/definitions/modelBankValidation'
+      validationResponseErrors:
+        type: array
+        items:
+          type: string
+  modelMerchants:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+  modelMerchantOnboarding:
+    type: object
+    properties:
+      name:
+        type: string
+      physicalAddress:
+        $ref: '#/definitions/modelBillingAddress'
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

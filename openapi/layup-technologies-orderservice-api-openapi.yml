@@ -1,0 +1,1150 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService OrderService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: OrderService
+paths:
+  /v1/orders:
+    get:
+      operationId: OrderService_GetMany
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderResponseMany'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: populate
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      - name: limit
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: skip
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: userId
+        in: query
+        required: false
+        type: string
+      - name: state
+        in: query
+        required: false
+        type: string
+        schema:
+          type: string
+          enum:
+          - PARTIAL
+          - EXPIRED
+          - PLACED
+          - COMPLETED
+          - SUSPENDED
+          - CANCELLING
+          - CANCELLED
+        description: See the Enumerated Values below
+      - name: from
+        in: query
+        required: false
+        type: string
+        format: date
+        default: '2000-03-20'
+      - name: to
+        in: query
+        required: false
+        type: string
+        format: date
+        default: '2030-03-20'
+      - name: select
+        in: query
+        required: false
+        type: string
+      - name: populateObject.path
+        in: query
+        required: false
+        type: string
+      - name: populateObject.select
+        in: query
+        required: false
+        type: string
+      - name: populateObject.populate.path
+        in: query
+        required: false
+        type: string
+      - name: populateObject.populate.select
+        in: query
+        required: false
+        type: string
+      - name: search
+        in: query
+        required: false
+        type: string
+      - name: reference
+        in: query
+        required: false
+        type: string
+      - name: sort
+        in: query
+        required: false
+        type: string
+      - name: stateUpdatedAt
+        in: query
+        required: false
+        type: string
+      - name: cloneOriginalId
+        in: query
+        required: false
+        type: string
+      - name: groupPaymentPlan
+        in: query
+        required: false
+        type: string
+      tags:
+      - OrderService
+    post:
+      operationId: OrderService_Create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelOrderRequest'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      - name: clone
+        in: query
+        required: false
+        type: string
+      tags:
+      - OrderService
+  /v1/orders-send-request:
+    post:
+      operationId: OrderService_SendOrderRequest
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderSendRequestResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelOrderSendRequest'
+      tags:
+      - OrderService
+  /v1/orders/attach/{_id}:
+    get:
+      operationId: OrderService_Attach
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - OrderService
+  /v1/orders/reference/{reference}/cellNumber/{cellNumber}:
+    get:
+      operationId: OrderService_GetByReferenceAndCellNumber
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderResponseMany'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: reference
+        in: path
+        required: true
+        type: string
+      - name: cellNumber
+        in: path
+        required: true
+        type: string
+      tags:
+      - OrderService
+  /v1/orders/{_id}:
+    get:
+      operationId: OrderService_Get
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      - name: populate
+        in: query
+        required: false
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      tags:
+      - OrderService
+    delete:
+      operationId: OrderService_Del
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - OrderService
+    put:
+      operationId: OrderService_Update
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelOrderUpdateRequest'
+      - name: collectMissed
+        description: now, next or ISO 8601 Date
+        in: query
+        required: false
+        type: string
+        default: '2040-11-28'
+      tags:
+      - OrderService
+  /v1/orders/{_id}/cancellation-terms:
+    get:
+      operationId: OrderService_GetCancellationTerms
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelOrderCancellationTermsResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - OrderService
+  /v1/statement:
+    post:
+      operationId: OrderService_StatementRequest
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelStatementRequestResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelStatementRequest'
+      tags:
+      - OrderService
+definitions:
+  modelProductCreateRequest:
+    type: object
+    properties:
+      _id:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      link:
+        type: string
+        format: uri
+      sku:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      depositType:
+        type: string
+  modelImageUrl:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: string
+  modelLogo:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: string
+  modelPaymentMethod:
+    type: object
+    properties:
+      creditOrDebitCard:
+        type: boolean
+      eft:
+        type: boolean
+      debiCheck:
+        type: boolean
+      payAt:
+        type: boolean
+      capitecPay:
+        type: boolean
+      dashpay:
+        type: boolean
+      terminalCard:
+        type: boolean
+      offline:
+        type: boolean
+      embeddedCheckout:
+        type: boolean
+  modelCancellationTermRequest:
+    type: object
+    properties:
+      active:
+        type: boolean
+      definition:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelCancellationDefinition'
+  modelValueEnabledPair:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: integer
+        format: int32
+  modelStatementRequestResponse:
+    type: object
+    properties:
+      success:
+        type: boolean
+  modelOrderSendRequestResponse:
+    type: object
+    example:
+      success: true
+      orderUrl: https://sandbox.layup.co.za/order/123f7f1496bd78001d6852f3?paymentMethod=CARD&amount=10000
+    properties:
+      success:
+        type: boolean
+      orderUrl:
+        type: string
+  modelPaymentPlanBenefactor:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+  modelOrderSendRequest:
+    type: object
+    example:
+      amount: 10000
+      paymentMethod: CARD
+      type: sms
+      orderId: 123f7f1496bd78001d6852f3
+      customerId: 123f7f1496bd78001d6852f3
+      message: string
+    properties:
+      type:
+        type: string
+        enum:
+        - sms
+        - email
+        - none
+      orderId:
+        type: string
+      orderUrl:
+        type: string
+      contact:
+        type: string
+        pattern: ^\+27\d{9}$
+      message:
+        type: string
+      customerId:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      paymentMethod:
+        type: string
+        enum:
+        - CARD
+        - EFT
+        - DEBICHECK
+  modelCancellationPolicyDefinition:
+    type: object
+    properties:
+      deposit:
+        type: boolean
+      percentage:
+        type: integer
+        format: int32
+      flatFee:
+        type: integer
+        format: int32
+      percentageShouldUseTotalPaid:
+        type: boolean
+  modelSupplier:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      merchantId:
+        type: string
+  modelPaymentPlanResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+      orderId:
+        type: string
+      benefactorId:
+        type: string
+      completed:
+        type: boolean
+      quantity:
+        type: integer
+        format: int32
+      depositDue:
+        type: integer
+        format: int32
+      amountDue:
+        type: integer
+        format: int32
+      automaticBilling:
+        type: boolean
+      timestamp:
+        type: number
+        format: double
+      payments:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelPlanPayment'
+      benefactor:
+        $ref: '#/definitions/modelPaymentPlanBenefactor'
+      frequency:
+        type: string
+        enum:
+        - WEEKLY
+        - MONTHLY
+      offset:
+        type: integer
+        format: int32
+      depositDueExcludingFee:
+        type: integer
+        format: int32
+      amountDueExcludingFee:
+        type: integer
+        format: int32
+      order:
+        $ref: '#/definitions/modelOrderResponse'
+      debicheckStatus:
+        type: string
+      debicheckLastFailedReasons:
+        type: array
+        items:
+          type: string
+      debicheckMandateActiveId:
+        type: string
+      debicheckMandateIds:
+        type: array
+        items:
+          type: string
+      payAtReferenceNumber:
+        type: string
+      agreedToTerms:
+        type: boolean
+  modelCancellationTypeDefinition:
+    type: object
+    properties:
+      missed:
+        type: integer
+        format: int32
+      percentage:
+        type: integer
+        format: int32
+  modelPaymentProviderResponses:
+    type: object
+  modelOrderRequest:
+    type: object
+    example:
+      products: ProductCreateRequest
+      endDateMax: '2019-08-24T14:15:22Z'
+      depositPerc: 5
+      reference: string
+      name: string
+      depositType: INSTALMENT
+    properties:
+      depositAmount:
+        type: integer
+        format: int32
+      products:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelProductCreateRequest'
+      endDateMax:
+        type: string
+        format: date-time
+      endDateMin:
+        type: string
+        format: date-time
+      depositPerc:
+        type: number
+        format: double
+      reference:
+        type: string
+      name:
+        type: string
+      imageUrl:
+        type: string
+      absorbsFee:
+        type: boolean
+      enablesSplit:
+        type: boolean
+      depositType:
+        type: string
+        enum:
+        - INSTALMENT
+        - FLAT
+        - PERCENTAGE
+        required:
+        - 'true'
+      expire:
+        type: integer
+        format: int32
+      cancellationTerms:
+        $ref: '#/definitions/modelCancellationTermRequest'
+      weeklyPayments:
+        type: boolean
+      paymentMethods:
+        $ref: '#/definitions/modelPaymentMethod'
+      cancellationPolicy:
+        $ref: '#/definitions/modelCancellationPolicy'
+      groupPaymentPlan:
+        $ref: '#/definitions/modelGroupPayment'
+      cloneExpiry:
+        type: integer
+        format: int32
+      orderCancellationRequest:
+        type: string
+      notifications:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelNote'
+      acceptedProposedCancellationTerms:
+        type: boolean
+      customFeatures:
+        $ref: '#/definitions/modelCustomize'
+      amortiseOnMissed:
+        type: boolean
+      amortiseOnAmend:
+        type: boolean
+      suspendOnCancel:
+        type: boolean
+      orderRefundRequest:
+        type: string
+      completedOrderRefundRequest:
+        type: boolean
+      orderRefundAmount:
+        type: integer
+        format: int32
+      orderRefundFee:
+        type: integer
+        format: int32
+      monthlyPayments:
+        type: boolean
+      type:
+        type: string
+      description:
+        type: string
+      voucherSettings:
+        $ref: '#/definitions/modelVoucherSettings'
+      merchantId:
+        type: string
+  modelPlanPaymentConnectorData:
+    type: object
+    properties:
+      _id:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      paymentProviderPaymentId:
+        type: string
+      paymentReference:
+        type: string
+      paymentMethod:
+        type: string
+      paymentProvider:
+        type: string
+      paymentProviderResponses:
+        $ref: '#/definitions/modelPaymentProviderResponses'
+  modelGroupPayment:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      cloneLimit:
+        type: integer
+        format: int32
+      expiry:
+        type: integer
+        format: int32
+  modelCancellationDefinition:
+    type: object
+    properties:
+      type:
+        $ref: '#/definitions/modelCancellationType'
+      policy:
+        $ref: '#/definitions/modelCancellationPolicy'
+      start:
+        type: integer
+        format: int32
+      end:
+        type: integer
+        format: int32
+      gracePeriod:
+        type: integer
+        format: int32
+  modelOrderResponseMany:
+    type: object
+    properties:
+      orders:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelOrderResponse'
+  modelCancellationType:
+    type: object
+    properties:
+      name:
+        type: string
+      definition:
+        $ref: '#/definitions/modelCancellationTypeDefinition'
+      finalPaymentMissed:
+        type: boolean
+  modelOrderUpdateRequest:
+    type: object
+    example:
+      state: PLACED
+    properties:
+      depositAmount:
+        type: integer
+        format: int32
+      products:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelProductCreateRequest'
+      endDateMax:
+        type: string
+      endDateMin:
+        type: string
+      state:
+        type: string
+      depositPerc:
+        type: number
+        format: double
+      reference:
+        type: string
+      name:
+        type: string
+      imageUrl:
+        type: string
+      absorbsFee:
+        type: boolean
+      enablesSplit:
+        type: boolean
+      depositType:
+        type: string
+      expire:
+        type: integer
+        format: int32
+      cancellationTerms:
+        $ref: '#/definitions/modelCancellationTermRequest'
+      weeklyPayments:
+        type: boolean
+      paymentMethods:
+        $ref: '#/definitions/modelPaymentMethod'
+      cancellationPolicy:
+        $ref: '#/definitions/modelCancellationPolicy'
+      groupPaymentPlan:
+        $ref: '#/definitions/modelGroupPayment'
+      cloneExpiry:
+        type: integer
+        format: int32
+      orderCancellationRequest:
+        type: string
+      notifications:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelNote'
+      acceptedProposedCancellationTerms:
+        type: boolean
+      customFeatures:
+        $ref: '#/definitions/modelCustomize'
+      amortiseOnMissed:
+        type: boolean
+      amortiseOnAmend:
+        type: boolean
+      suspendOnCancel:
+        type: boolean
+      orderRefundRequest:
+        type: string
+      completedOrderRefundRequest:
+        type: boolean
+      orderRefundAmount:
+        type: integer
+        format: int32
+      orderRefundFee:
+        type: integer
+        format: int32
+      monthlyPayments:
+        type: boolean
+      type:
+        type: string
+      description:
+        type: string
+  modelNote:
+    type: object
+    properties:
+      change:
+        type: string
+      date:
+        type: string
+      name:
+        type: string
+      reason:
+        type: string
+      details:
+        type: string
+      read:
+        type: boolean
+      userId:
+        type: string
+      type:
+        type: string
+      hide:
+        type: boolean
+      unread:
+        type: boolean
+  modelProductResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      link:
+        type: string
+        format: uri
+      sku:
+        type: string
+      name:
+        type: string
+      depositType:
+        type: string
+  modelOrderResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+      endDateMax:
+        type: string
+        format: date-time
+        required:
+        - 'true'
+      endDateMin:
+        type: string
+        format: date-time
+      initiatorId:
+        type: string
+      products:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelProductResponse'
+      state:
+        enum:
+        - PARTIAL
+        - PLACED
+        - COMPLETED
+        - CANCELLED
+        - CANCELLING
+        - EXPIRED
+        - SUSPENDED
+        default: PARTIAL
+      supplierId:
+        type: string
+      cancelledBy:
+        type: string
+      amountDue:
+        type: integer
+        format: int32
+      flatFee:
+        type: integer
+        format: int32
+      percFee:
+        type: number
+        format: double
+      depositPerc:
+        type: number
+        format: double
+      absorbsFee:
+        type: boolean
+      reference:
+        type: string
+      name:
+        type: string
+      imageUrl:
+        type: string
+      plans:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelPaymentPlanResponse'
+      createdAt:
+        type: string
+      timestamp:
+        type: number
+        format: double
+      enablesSplit:
+        type: boolean
+      depositAmount:
+        type: integer
+        format: int32
+      depositType:
+        type: string
+        enum:
+        - INSTALMENT
+        - FLAT
+        - PERCENTAGE
+        required:
+        - 'true'
+      expire:
+        type: string
+      cancellationTerms:
+        $ref: '#/definitions/modelCancellationTermRequest'
+      weeklyPayments:
+        type: boolean
+      paymentMethods:
+        $ref: '#/definitions/modelPaymentMethod'
+      stateUpdatedAt:
+        type: string
+      updatedAt:
+        type: string
+      groupPaymentPlan:
+        $ref: '#/definitions/modelGroupPayment'
+      cloneExpiry:
+        type: integer
+        format: int32
+      cloneCount:
+        type: integer
+        format: int32
+      orderCancellationRequest:
+        type: string
+      notifications:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelNote'
+      acceptedProposedCancellationTerms:
+        type: boolean
+      customFeatures:
+        $ref: '#/definitions/modelCustomize'
+      merchantName:
+        type: string
+      merchantTermsLink:
+        type: string
+      merchantLink:
+        type: string
+      debiCheckMinimum:
+        $ref: '#/definitions/modelValueEnabledPair'
+      supplier:
+        $ref: '#/definitions/modelSupplier'
+      orderRefundRequest:
+        type: string
+      orderRefundAmount:
+        type: integer
+        format: int32
+      orderRefundFee:
+        type: integer
+        format: int32
+      monthlyPayments:
+        type: boolean
+      type:
+        type: string
+      balance:
+        type: integer
+        format: int32
+      description:
+        type: string
+      isIncreasedDepositAmountAllowed:
+        type: boolean
+      suspendOnCancel:
+        type: boolean
+      voucherSettings:
+        $ref: '#/definitions/modelVoucherSettings'
+  modelOrderCancellationTermsResponse:
+    type: object
+    properties:
+      autoCancellation:
+        type: boolean
+      definition:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelCancellationDefinition'
+  modelCustomize:
+    type: object
+    properties:
+      logo:
+        $ref: '#/definitions/modelLogo'
+      imageUrl:
+        $ref: '#/definitions/modelImageUrl'
+      paymentWidget:
+        $ref: '#/definitions/modelPaymentWidgetLogo'
+  modelVoucherSettings:
+    type: object
+    properties:
+      active:
+        type: boolean
+      minimumSavingGoalInCents:
+        type: integer
+        format: int32
+      maximumSavingGoalInCents:
+        type: integer
+        format: int32
+      rewardType:
+        type: string
+      rewardFlatAmountInCents:
+        type: integer
+        format: int32
+      rewardPercentage:
+        type: integer
+        format: int32
+      voucherProvider:
+        type: string
+  modelPaymentWidgetLogo:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: string
+  modelCancellationPolicy:
+    type: object
+    properties:
+      name:
+        type: string
+        enum:
+        - Deposit
+        - Percentage
+        - FlatFee
+        - Combination
+      definition:
+        $ref: '#/definitions/modelCancellationPolicyDefinition'
+  modelStatementRequest:
+    type: object
+    properties:
+      type:
+        type: string
+      orderId:
+        type: string
+      email:
+        type: string
+      paymentPlanId:
+        type: string
+  modelPlanPayment:
+    type: object
+    properties:
+      _id:
+        type: string
+      due:
+        type: string
+      amount:
+        type: integer
+        format: int32
+      paid:
+        type: boolean
+      timestamp:
+        type: number
+        format: double
+      paymentMethod:
+        type: string
+      paymentType:
+        type: string
+      amountExcludingFee:
+        type: integer
+        format: int32
+      fee:
+        type: integer
+        format: int32
+      pending:
+        type: boolean
+      failed:
+        type: boolean
+      reconciliated:
+        type: boolean
+      refundedAmount:
+        type: integer
+        format: int32
+      refundPaymentId:
+        type: string
+      connectorData:
+        $ref: '#/definitions/modelPlanPaymentConnectorData'
+      verifiedAt:
+        type: string
+      dueAt:
+        type: string
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header

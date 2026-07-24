@@ -1,0 +1,954 @@
+swagger: '2.0'
+info:
+  title: Layup endpoints AbsaDebiCheckService MerchantService API
+  version: 1.4.16
+  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
+
+
+    # Introduction
+
+
+    ## What is LayUp
+
+
+    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
+
+
+    1. Order Creation
+
+    2. Deposit Received (and holding Stock for your client)
+
+    3. Order Completion.
+
+
+    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
+
+
+    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
+
+
+    ## How to use LayUp
+
+
+    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
+
+    '
+host: localhost:3000
+schemes:
+- http
+- https
+- wss
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: MerchantService
+paths:
+  /v1/merchants:
+    post:
+      operationId: MerchantService_Create
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelMerchantResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelMerchantRequest'
+      - name: _id
+        in: query
+        required: false
+        type: string
+      - name: avs
+        in: query
+        required: false
+        type: string
+      tags:
+      - MerchantService
+  /v1/merchants-to-settle:
+    get:
+      operationId: MerchantService_getMerchantsToSettle
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelMerchantToSettleResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      tags:
+      - MerchantService
+  /v1/merchants/shop-directory:
+    get:
+      operationId: MerchantService_getShops
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelMerchantResponseShops'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: featured
+        in: query
+        required: false
+        type: boolean
+      tags:
+      - MerchantService
+  /v1/merchants/{_id}:
+    get:
+      operationId: MerchantService_Get
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelMerchantResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - MerchantService
+    delete:
+      operationId: MerchantService_Del
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelMerchantResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      tags:
+      - MerchantService
+    put:
+      operationId: MerchantService_Update
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/modelMerchantResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        type: string
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/modelMerchantRequest'
+      - name: avs
+        in: query
+        required: false
+        type: string
+      tags:
+      - MerchantService
+definitions:
+  modelImageUrl:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: string
+  modelBankDetails:
+    type: object
+    properties:
+      accountType:
+        type: string
+      accountNumber:
+        type: string
+      branchCode:
+        type: string
+      bankName:
+        type: string
+      verified:
+        type: boolean
+  modelMerchantToSettleResponse:
+    type: object
+    properties:
+      merchants:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelMerchantIdResponse'
+  modelLogo:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: string
+  modelBillingAddress:
+    type: object
+    properties:
+      country:
+        type: string
+      province:
+        type: string
+      streetAddress:
+        type: string
+      city:
+        type: string
+      postalCode:
+        type: string
+  modelPaymentMethod:
+    type: object
+    properties:
+      creditOrDebitCard:
+        type: boolean
+      eft:
+        type: boolean
+      debiCheck:
+        type: boolean
+      payAt:
+        type: boolean
+      capitecPay:
+        type: boolean
+      dashpay:
+        type: boolean
+      terminalCard:
+        type: boolean
+      offline:
+        type: boolean
+      embeddedCheckout:
+        type: boolean
+  modelMerchantResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      domain:
+        type: string
+      active:
+        type: boolean
+      flatFee:
+        type: integer
+        format: int32
+      percFee:
+        type: number
+        format: double
+      users:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelUser'
+      notifyUrl:
+        type: string
+      paymentNotifyUrl:
+        type: string
+      timestamp:
+        type: number
+        format: double
+      merchantTermsLink:
+        type: string
+      settlementDay:
+        type: integer
+        format: int32
+      settlementFrequency:
+        type: string
+      settlementType:
+        type: string
+      supportEmail:
+        type: string
+      supportMobile:
+        type: string
+      imageUrl:
+        type: string
+      newOrder:
+        $ref: '#/definitions/modelNotification'
+      amendmentOrder:
+        $ref: '#/definitions/modelNotification'
+      cancelledOrder:
+        $ref: '#/definitions/modelNotification'
+      completedOrder:
+        $ref: '#/definitions/modelNotification'
+      successfulPayment:
+        $ref: '#/definitions/modelNotification'
+      failedPayment:
+        $ref: '#/definitions/modelNotification'
+      missedPayment:
+        $ref: '#/definitions/modelNotification'
+      autoSettlement:
+        type: boolean
+      absorbsFee:
+        type: boolean
+      expire:
+        type: integer
+        format: int32
+      cancellationTerms:
+        $ref: '#/definitions/modelCancellationTermRequest'
+      weeklyPayments:
+        type: boolean
+      paymentPlans:
+        $ref: '#/definitions/modelPaymentPlanSettings'
+      expiredOrder:
+        $ref: '#/definitions/modelNotification'
+      completedOrder_75:
+        $ref: '#/definitions/modelNotification_Percentage'
+      customFeatures:
+        $ref: '#/definitions/modelCustomize'
+      features:
+        $ref: '#/definitions/modelFeature'
+      cancellationRequest:
+        $ref: '#/definitions/modelNotification'
+      merchantName:
+        type: string
+      billingAddress:
+        $ref: '#/definitions/modelBillingAddress'
+      vatNo:
+        type: string
+      registeredEntity:
+        type: string
+      bankDetails:
+        $ref: '#/definitions/modelBankDetails'
+      settlements:
+        $ref: '#/definitions/modelNotification'
+      invoices:
+        $ref: '#/definitions/modelNotification'
+      onboardingState:
+        type: string
+      accountType:
+        type: string
+      contractDocumentId:
+        type: string
+      merchantBankingPercFee:
+        type: integer
+        format: int32
+      adminPercFee:
+        type: integer
+        format: int32
+      contractUrl:
+        type: string
+      contractUpdated:
+        type: boolean
+      bankDetailsValidation:
+        $ref: '#/definitions/modelBankInfo'
+      bankValidationPendingReference:
+        type: string
+      merchantContractSigned:
+        type: string
+      transfers:
+        $ref: '#/definitions/modelNotification'
+      refunds:
+        $ref: '#/definitions/modelNotification'
+      suspendedOrder:
+        $ref: '#/definitions/modelNotification'
+      monthlyPayments:
+        type: boolean
+      displayOnWeb:
+        $ref: '#/definitions/modelshopDirectorySettings'
+      tradingName:
+        type: string
+      pricelistId:
+        type: string
+      accountSettings:
+        $ref: '#/definitions/modelMerchantAccountSettings'
+      feeSystem:
+        type: string
+      communication:
+        $ref: '#/definitions/modelCommunication'
+      defaultBillingMethod:
+        type: string
+      enableTwoFactorAuthentication:
+        type: boolean
+      voucherSettings:
+        $ref: '#/definitions/modelMerchantVoucherSettings'
+      settlementBatchReferencePrefix:
+        type: string
+      terminalSettings:
+        $ref: '#/definitions/modelTerminalSettings'
+  modelUser:
+    type: object
+    properties:
+      _id:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+        format: email
+      idNumber:
+        type: string
+      address:
+        type: string
+      postalCode:
+        type: string
+      city:
+        type: string
+      province:
+        type: string
+      country:
+        type: string
+      role:
+        type: string
+        enum:
+        - CLIENT
+        - MERCHANT
+        - ADMIN
+        default: CLIENT
+      active:
+        type: boolean
+      merchantId:
+        type: string
+      cellNumber:
+        type: string
+      dateOfBirth:
+        type: string
+      name:
+        type: string
+      verified:
+        type: boolean
+      verifiedEmail:
+        type: boolean
+      verifiedMobile:
+        type: boolean
+      merchantRole:
+        type: string
+      merchantIds:
+        type: array
+        items:
+          type: string
+    description: This user is loaded in by the authentication middleware.
+  modelshopDirectorySettings:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      webAvailability:
+        type: string
+      webLogoImage:
+        type: string
+      webCategory:
+        type: array
+        items:
+          type: string
+      featured:
+        type: boolean
+  modelMerchantIdResponse:
+    type: object
+    properties:
+      _id:
+        type: string
+  modelValueEnabledPair:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: integer
+        format: int32
+  modelDefaultDepositType:
+    type: object
+    properties:
+      depositType:
+        type: string
+      enabled:
+        type: boolean
+      percentage:
+        type: integer
+        format: int32
+      flat:
+        type: integer
+        format: int32
+  modelCancellationTermRequest:
+    type: object
+    properties:
+      active:
+        type: boolean
+      definition:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelCancellationDefinition'
+  modelNotification_Percentage:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      emails:
+        type: array
+        items:
+          type: string
+      value:
+        type: integer
+        format: int32
+  modelMerchantRequest:
+    type: object
+    properties:
+      name:
+        type: string
+      domain:
+        type: string
+      active:
+        type: boolean
+      flatFee:
+        type: integer
+        format: int32
+      percFee:
+        type: number
+        format: double
+      notifyUrl:
+        type: string
+      paymentNotifyUrl:
+        type: string
+      expire:
+        type: integer
+        format: int32
+      merchantTermsLink:
+        type: string
+      supportEmail:
+        type: string
+      supportMobile:
+        type: string
+      imageUrl:
+        type: string
+      newOrder:
+        $ref: '#/definitions/modelNotification'
+      amendmentOrder:
+        $ref: '#/definitions/modelNotification'
+      cancelledOrder:
+        $ref: '#/definitions/modelNotification'
+      completedOrder:
+        $ref: '#/definitions/modelNotification'
+      successfulPayment:
+        $ref: '#/definitions/modelNotification'
+      failedPayment:
+        $ref: '#/definitions/modelNotification'
+      missedPayment:
+        $ref: '#/definitions/modelNotification'
+      autoSettlement:
+        type: boolean
+      settlementFrequency:
+        type: string
+      settlementType:
+        type: string
+      settlementDay:
+        type: integer
+        format: int32
+      bankDetails:
+        $ref: '#/definitions/modelBankDetails'
+      absorbsFee:
+        type: boolean
+      cancellationTerms:
+        $ref: '#/definitions/modelCancellationTermRequest'
+      weeklyPayments:
+        type: boolean
+      paymentPlans:
+        $ref: '#/definitions/modelPaymentPlanSettings'
+      expiredOrder:
+        $ref: '#/definitions/modelNotification'
+      completedOrder_75:
+        $ref: '#/definitions/modelNotification_Percentage'
+      customFeatures:
+        $ref: '#/definitions/modelCustomize'
+      features:
+        $ref: '#/definitions/modelFeature'
+      cancellationRequest:
+        $ref: '#/definitions/modelNotification'
+      billingAddress:
+        $ref: '#/definitions/modelBillingAddress'
+      vatNo:
+        type: string
+      registeredEntity:
+        type: string
+      settlements:
+        $ref: '#/definitions/modelNotification'
+      invoices:
+        $ref: '#/definitions/modelNotification'
+      onboardingState:
+        type: string
+      accountType:
+        type: string
+      contractDocumentId:
+        type: string
+      merchantBankingPercFee:
+        type: integer
+        format: int32
+      adminPercFee:
+        type: integer
+        format: int32
+      contractUrl:
+        type: string
+      contractUpdated:
+        type: boolean
+      bankDetailsValidation:
+        $ref: '#/definitions/modelBankInfo'
+      bankValidationPendingReference:
+        type: string
+      merchantContractSigned:
+        type: string
+      transfers:
+        $ref: '#/definitions/modelNotification'
+      refunds:
+        $ref: '#/definitions/modelNotification'
+      simulated:
+        type: boolean
+      suspendedOrder:
+        $ref: '#/definitions/modelNotification'
+      monthlyPayments:
+        type: boolean
+      displayOnWeb:
+        $ref: '#/definitions/modelshopDirectorySettings'
+      tradingName:
+        type: string
+      pricelistId:
+        type: string
+      communication:
+        $ref: '#/definitions/modelCommunication'
+      defaultBillingMethod:
+        type: string
+      enableTwoFactorAuthentication:
+        type: boolean
+      voucherSettings:
+        $ref: '#/definitions/modelMerchantVoucherSettings'
+      settlementBatchReferencePrefix:
+        type: string
+    title: -- Communication
+  modelNotification:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      emails:
+        type: array
+        items:
+          type: string
+  modelCancellationPolicyDefinition:
+    type: object
+    properties:
+      deposit:
+        type: boolean
+      percentage:
+        type: integer
+        format: int32
+      flatFee:
+        type: integer
+        format: int32
+      percentageShouldUseTotalPaid:
+        type: boolean
+  modelCancellationTypeDefinition:
+    type: object
+    properties:
+      missed:
+        type: integer
+        format: int32
+      percentage:
+        type: integer
+        format: int32
+  modelCommunication:
+    type: object
+    properties:
+      channels:
+        type: array
+        items:
+          type: string
+      messages:
+        $ref: '#/definitions/modelCommunicationMessage'
+  modelPaymentPlanSettings:
+    type: object
+    properties:
+      weeklyPayments:
+        type: boolean
+      splitPayments:
+        type: boolean
+      orderExpiry:
+        $ref: '#/definitions/modelOrderExpiry'
+      maxMonths:
+        $ref: '#/definitions/modelValueEnabledPair'
+      paymentMethods:
+        $ref: '#/definitions/modelPaymentMethod'
+      editPaymentPlanSettings:
+        type: boolean
+      defaultDepositType:
+        $ref: '#/definitions/modelDefaultDepositType'
+      minMonths:
+        $ref: '#/definitions/modelValueEnabledPair'
+      debiCheckMinimum:
+        $ref: '#/definitions/modelValueEnabledPair'
+      monthlyPayments:
+        type: boolean
+      suspendOnCancel:
+        type: boolean
+  modelOrderExpiryReminder:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      daysBeforeExpiryInDays:
+        type: integer
+        format: int32
+    title: Communication
+  modelCommunicationMessage:
+    type: object
+    properties:
+      orderExpiryReminder:
+        $ref: '#/definitions/modelOrderExpiryReminder'
+      orderActivated:
+        $ref: '#/definitions/modelMessageNotification'
+      cancellation:
+        $ref: '#/definitions/modelMessageNotification'
+      refund:
+        $ref: '#/definitions/modelMessageNotification'
+  modelVoucherProvider:
+    type: object
+    properties:
+      name:
+        type: string
+      apiKey:
+        type: string
+      apiUrl:
+        type: string
+  modelMerchantResponseGetShops:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      domain:
+        type: string
+      displayOnWeb:
+        $ref: '#/definitions/modelshopDirectorySettings'
+      createdAt:
+        type: string
+  modelMessageNotification:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+  modelMerchantResponseShops:
+    type: object
+    properties:
+      categories:
+        type: array
+        items:
+          type: string
+      shops:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelMerchantResponseGetShops'
+  modelCancellationDefinition:
+    type: object
+    properties:
+      type:
+        $ref: '#/definitions/modelCancellationType'
+      policy:
+        $ref: '#/definitions/modelCancellationPolicy'
+      start:
+        type: integer
+        format: int32
+      end:
+        type: integer
+        format: int32
+      gracePeriod:
+        type: integer
+        format: int32
+  modelCancellationType:
+    type: object
+    properties:
+      name:
+        type: string
+      definition:
+        $ref: '#/definitions/modelCancellationTypeDefinition'
+      finalPaymentMissed:
+        type: boolean
+  modelMerchantAccountSettings:
+    type: object
+    properties:
+      numberOfUsers:
+        type: integer
+        format: int32
+      apiAccess:
+        type: boolean
+  modelOrderExpiry:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: integer
+        format: int32
+  modelMerchantVoucherSettings:
+    type: object
+    properties:
+      active:
+        type: boolean
+      minimumSavingGoalInCents:
+        type: integer
+        format: int32
+      maximumSavingGoalInCents:
+        type: integer
+        format: int32
+      rewardType:
+        type: string
+      rewardFlatAmountInCents:
+        type: integer
+        format: int32
+      rewardPercentage:
+        type: integer
+        format: int32
+      voucherProviders:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/modelVoucherProvider'
+  modelTerminalSettings:
+    type: object
+    properties:
+      requireOrderReference:
+        type: boolean
+      forceUniqueOrderReference:
+        type: boolean
+      requireDeposit:
+        type: boolean
+      editableDescription:
+        type: boolean
+  modelBankValidation:
+    type: object
+    properties:
+      verified:
+        type: boolean
+      value:
+        type: string
+  modelCustomize:
+    type: object
+    properties:
+      logo:
+        $ref: '#/definitions/modelLogo'
+      imageUrl:
+        $ref: '#/definitions/modelImageUrl'
+      paymentWidget:
+        $ref: '#/definitions/modelPaymentWidgetLogo'
+  modelPaymentWidgetLogo:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      value:
+        type: string
+  modelCancellationPolicy:
+    type: object
+    properties:
+      name:
+        type: string
+        enum:
+        - Deposit
+        - Percentage
+        - FlatFee
+        - Combination
+      definition:
+        $ref: '#/definitions/modelCancellationPolicyDefinition'
+  modelFeature:
+    type: object
+    properties:
+      enableCustomWidgetLogo:
+        type: boolean
+      enableCustomEmailLogo:
+        type: boolean
+      enableDefaultPaymentPlanImage:
+        type: boolean
+      enableDebiCheck:
+        type: boolean
+      enableCreditCard:
+        type: boolean
+      enableInstantEFT:
+        type: boolean
+      enableAutoCancellation:
+        type: boolean
+      enableManualCancellation:
+        type: boolean
+      enableLayupFee:
+        type: boolean
+      enableAmendmentApi:
+        type: boolean
+      enablePayAt:
+        type: boolean
+      enableCapitecPay:
+        type: boolean
+      enableDashpay:
+        type: boolean
+      enableTerminalCard:
+        type: boolean
+      enableOfflinePayment:
+        type: boolean
+      enableEmbeddedCheckout:
+        type: boolean
+  modelBankInfo:
+    type: object
+    properties:
+      bankName:
+        $ref: '#/definitions/modelBankValidation'
+      account:
+        $ref: '#/definitions/modelBankValidation'
+      accountType:
+        $ref: '#/definitions/modelBankValidation'
+      branchCode:
+        $ref: '#/definitions/modelBankValidation'
+      idNumber:
+        $ref: '#/definitions/modelBankValidation'
+      verified:
+        type: boolean
+      clientName:
+        $ref: '#/definitions/modelBankValidation'
+      cellNumber:
+        $ref: '#/definitions/modelBankValidation'
+      initials:
+        $ref: '#/definitions/modelBankValidation'
+      email:
+        $ref: '#/definitions/modelBankValidation'
+      validationResponseErrors:
+        type: array
+        items:
+          type: string
+securityDefinitions:
+  apiKey:
+    type: apiKey
+    name: apikey
+    in: header
