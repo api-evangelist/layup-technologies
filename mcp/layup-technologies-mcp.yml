@@ -1,0 +1,367 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/layup-technologies-openapi-original.json
+note: No official hosted/remote MCP server was found for LayUp. This is a candidate tool list derived
+  one-tool-per-operation from the published Swagger 2.0 spec.
+server:
+  name: layup-technologies
+  transport: http
+tools:
+- name: AbsaDebiCheckService_output
+  description: POST /v1/absa/debicheck/output
+  source_operation: openapi/layup-technologies-openapi-original.json#AbsaDebiCheckService_output
+- name: AbsaDebiCheckService_reply
+  description: POST /v1/absa/debicheck/reply
+  source_operation: openapi/layup-technologies-openapi-original.json#AbsaDebiCheckService_reply
+- name: AbsaEftService_output
+  description: POST /v1/absa/eft/output
+  source_operation: openapi/layup-technologies-openapi-original.json#AbsaEftService_output
+- name: AbsaEftService_reply
+  description: POST /v1/absa/eft/reply
+  source_operation: openapi/layup-technologies-openapi-original.json#AbsaEftService_reply
+- name: authService_GenerateApiKey
+  description: 'Warning: Calling this endpoint will replace any existing apikeys on your account.'
+  source_operation: openapi/layup-technologies-openapi-original.json#authService_GenerateApiKey
+- name: authService_Login
+  description: POST /v1/auth/login
+  source_operation: openapi/layup-technologies-openapi-original.json#authService_Login
+- name: authService_Register
+  description: POST /v1/auth/register
+  source_operation: openapi/layup-technologies-openapi-original.json#authService_Register
+- name: authService_GenerateTerminalApiKey
+  description: GET /v1/auth/terminal-key
+  source_operation: openapi/layup-technologies-openapi-original.json#authService_GenerateTerminalApiKey
+- name: BankTransactionService_create
+  description: POST /v1/bank-transactions
+  source_operation: openapi/layup-technologies-openapi-original.json#BankTransactionService_create
+- name: BankTransactionService_linkBatch
+  description: PUT /v1/bank-transactions/link-batch
+  source_operation: openapi/layup-technologies-openapi-original.json#BankTransactionService_linkBatch
+- name: BankTransactionService_createPayment
+  description: POST /v1/bank-transactions/{id}/payment
+  source_operation: openapi/layup-technologies-openapi-original.json#BankTransactionService_createPayment
+- name: BankService_getMany
+  description: GET /v1/banks
+  source_operation: openapi/layup-technologies-openapi-original.json#BankService_getMany
+- name: BankService_create
+  description: POST /v1/banks
+  source_operation: openapi/layup-technologies-openapi-original.json#BankService_create
+- name: BankService_delete
+  description: DELETE /v1/banks/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#BankService_delete
+- name: BankService_update
+  description: PUT /v1/banks/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#BankService_update
+- name: CardService_GetMany
+  description: GET /v1/cards
+  source_operation: openapi/layup-technologies-openapi-original.json#CardService_GetMany
+- name: CardService_Create
+  description: POST /v1/cards
+  source_operation: openapi/layup-technologies-openapi-original.json#CardService_Create
+- name: CardService_Get
+  description: GET /v1/cards/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#CardService_Get
+- name: CardService_Remove
+  description: DELETE /v1/cards/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#CardService_Remove
+- name: CardService_Update
+  description: PUT /v1/cards/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#CardService_Update
+- name: ConnectorService_Update
+  description: PUT /v1/connectors/{paymentProviderPaymentId}
+  source_operation: openapi/layup-technologies-openapi-original.json#ConnectorService_Update
+- name: DebiCheckService_CreateLegacy
+  description: POST /v1/debicheck
+  source_operation: openapi/layup-technologies-openapi-original.json#DebiCheckService_CreateLegacy
+- name: DebiCheckService_GetManyCollection
+  description: GET /v1/debicheck/collection
+  source_operation: openapi/layup-technologies-openapi-original.json#DebiCheckService_GetManyCollection
+- name: DebiCheckService_CreateCollection
+  description: POST /v1/debicheck/collection
+  source_operation: openapi/layup-technologies-openapi-original.json#DebiCheckService_CreateCollection
+- name: DebiCheckService_GetMandateList
+  description: GET /v1/debicheck/list/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#DebiCheckService_GetMandateList
+- name: DebiCheckService_GetMandate
+  description: GET /v1/debicheck/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#DebiCheckService_GetMandate
+- name: DebitOrderMandateService_create
+  description: POST /v1/debit-order-mandates
+  source_operation: openapi/layup-technologies-openapi-original.json#DebitOrderMandateService_create
+- name: PaymentService_refund
+  description: GET /v1/generate-refund
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_refund
+- name: IntegrationService_GetCueOrders
+  description: GET /v1/integrations/cue/user/{cellNumber}/orders
+  source_operation: openapi/layup-technologies-openapi-original.json#IntegrationService_GetCueOrders
+- name: ShopifyService_calculateShipping
+  description: POST /v1/integrations/shopify/calculate-shipping
+  source_operation: openapi/layup-technologies-openapi-original.json#ShopifyService_calculateShipping
+- name: ShopifyService_processDiscount
+  description: GET /v1/integrations/shopify/discounts
+  source_operation: openapi/layup-technologies-openapi-original.json#ShopifyService_processDiscount
+- name: ShopifyService_linkOrder
+  description: POST /v1/integrations/shopify/link-order
+  source_operation: openapi/layup-technologies-openapi-original.json#ShopifyService_linkOrder
+- name: ShopifyService_processOrder
+  description: POST /v1/integrations/shopify/orders
+  source_operation: openapi/layup-technologies-openapi-original.json#ShopifyService_processOrder
+- name: ShopifyService_getShopSettings
+  description: POST /v1/integrations/shopify/shop-settings/{shopDomain}
+  source_operation: openapi/layup-technologies-openapi-original.json#ShopifyService_getShopSettings
+- name: ShopifyService_getOrderNotes
+  description: POST /v1/integrations/shopify/shopify-order-notes
+  source_operation: openapi/layup-technologies-openapi-original.json#ShopifyService_getOrderNotes
+- name: InternationalMsisdnService_GetMany
+  description: GET /v1/international-msisdns
+  source_operation: openapi/layup-technologies-openapi-original.json#InternationalMsisdnService_GetMany
+- name: InternationalMsisdnService_Update
+  description: POST /v1/international-msisdns
+  source_operation: openapi/layup-technologies-openapi-original.json#InternationalMsisdnService_Update
+- name: InternationalMsisdnService_Get
+  description: GET /v1/international-msisdns/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#InternationalMsisdnService_Get
+- name: InternationalMsisdnService_Del
+  description: DELETE /v1/international-msisdns/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#InternationalMsisdnService_Del
+- name: InvoicesService_updatePdf
+  description: PUT /v1/invoice/{id}
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_updatePdf
+- name: InvoicesService_getMany
+  description: GET /v1/invoices
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_getMany
+- name: InvoicesService_create
+  description: POST /v1/invoices
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_create
+- name: InvoicesService_update
+  description: PUT /v1/invoices
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_update
+- name: InvoicesService_getPdf
+  description: GET /v1/invoices/:id/pdf
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_getPdf
+- name: InvoicesService_createByFees
+  description: POST /v1/invoices/fees
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_createByFees
+- name: InvoicesService_getInvoiceById
+  description: GET /v1/invoices/{id}
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_getInvoiceById
+- name: InvoicesService_getInvoiceReportById
+  description: GET /v1/invoices/{id}/report
+  source_operation: openapi/layup-technologies-openapi-original.json#InvoicesService_getInvoiceReportById
+- name: JournalFeeService_Create
+  description: POST /v1/journal-fees
+  source_operation: openapi/layup-technologies-openapi-original.json#JournalFeeService_Create
+- name: JournalService_Create
+  description: POST /v1/journals
+  source_operation: openapi/layup-technologies-openapi-original.json#JournalService_Create
+- name: PaymentService_manualRefund
+  description: GET /v1/manual-refund
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_manualRefund
+- name: MerchantService_Create
+  description: POST /v1/merchants
+  source_operation: openapi/layup-technologies-openapi-original.json#MerchantService_Create
+- name: MerchantService_getMerchantsToSettle
+  description: GET /v1/merchants-to-settle
+  source_operation: openapi/layup-technologies-openapi-original.json#MerchantService_getMerchantsToSettle
+- name: MerchantService_getShops
+  description: GET /v1/merchants/shop-directory
+  source_operation: openapi/layup-technologies-openapi-original.json#MerchantService_getShops
+- name: MerchantService_Get
+  description: GET /v1/merchants/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#MerchantService_Get
+- name: MerchantService_Del
+  description: DELETE /v1/merchants/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#MerchantService_Del
+- name: MerchantService_Update
+  description: PUT /v1/merchants/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#MerchantService_Update
+- name: DebitOrderMandateService_get
+  description: GET /v1/merchants/{merchantId}/debit-order-mandates
+  source_operation: openapi/layup-technologies-openapi-original.json#DebitOrderMandateService_get
+- name: PaymentService_CreateOffline
+  description: POST /v1/offline-payments
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_CreateOffline
+- name: PaymentService_DeleteOffline
+  description: DELETE /v1/offline-payments/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_DeleteOffline
+- name: OrderAmendmentService_GetMany
+  description: GET /v1/order-amendments
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderAmendmentService_GetMany
+- name: OrderAmendmentService_Create
+  description: POST /v1/order-amendments
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderAmendmentService_Create
+- name: OrderAmendmentService_Get
+  description: GET /v1/order-amendments/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderAmendmentService_Get
+- name: OrderService_GetMany
+  description: GET /v1/orders
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_GetMany
+- name: OrderService_Create
+  description: POST /v1/orders
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_Create
+- name: OrderService_SendOrderRequest
+  description: POST /v1/orders-send-request
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_SendOrderRequest
+- name: OrderService_Attach
+  description: GET /v1/orders/attach/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_Attach
+- name: OrderService_GetByReferenceAndCellNumber
+  description: GET /v1/orders/reference/{reference}/cellNumber/{cellNumber}
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_GetByReferenceAndCellNumber
+- name: OrderService_Get
+  description: GET /v1/orders/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_Get
+- name: OrderService_Del
+  description: DELETE /v1/orders/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_Del
+- name: OrderService_Update
+  description: PUT /v1/orders/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_Update
+- name: OrderService_GetCancellationTerms
+  description: GET /v1/orders/{_id}/cancellation-terms
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_GetCancellationTerms
+- name: PayAtService_adviseTransaction
+  description: POST /v1/payAt/adviseTransaction
+  source_operation: openapi/layup-technologies-openapi-original.json#PayAtService_adviseTransaction
+- name: PayAtService_authorize
+  description: POST /v1/payAt/authorize
+  source_operation: openapi/layup-technologies-openapi-original.json#PayAtService_authorize
+- name: PayAtService_echoTest
+  description: POST /v1/payAt/echoTest
+  source_operation: openapi/layup-technologies-openapi-original.json#PayAtService_echoTest
+- name: PayAtService_enquiry
+  description: POST /v1/payAt/enquire
+  source_operation: openapi/layup-technologies-openapi-original.json#PayAtService_enquiry
+- name: PayAtService_reverseAuthorization
+  description: POST /v1/payAt/reverseAuthorization
+  source_operation: openapi/layup-technologies-openapi-original.json#PayAtService_reverseAuthorization
+- name: PaymentPlanService_Create
+  description: POST /v1/payment-plan
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_Create
+- name: PaymentPlanService_sendPaymentPlanNotification
+  description: POST /v1/payment-plan-send-notification
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_sendPaymentPlanNotification
+- name: PaymentPlanService_CreateSplitPayment
+  description: POST /v1/payment-plan-split
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_CreateSplitPayment
+- name: PaymentPlanService_CreatePreview
+  description: POST /v1/payment-plan/preview
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_CreatePreview
+- name: PaymentPlanService_GetPreview
+  description: GET /v1/payment-plan/preview/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_GetPreview
+- name: PaymentPlanService_Get
+  description: GET /v1/payment-plan/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_Get
+- name: PaymentPlanService_Del
+  description: DELETE /v1/payment-plan/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_Del
+- name: PaymentPlanService_Update
+  description: PUT /v1/payment-plan/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_Update
+- name: PaymentPlanService_getByMsisdnAndToken
+  description: GET /v1/payment-plan/{token}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentPlanService_getByMsisdnAndToken
+- name: PaymentProviderSettlementService_create
+  description: POST /v1/paymentProviderSettlements
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentProviderSettlementService_create
+- name: PaymentProviderSettlementService_linkBatch
+  description: PUT /v1/paymentProviderSettlements/link-batch
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentProviderSettlementService_linkBatch
+- name: PaymentProviderSettlementService_linkPayment
+  description: PUT /v1/paymentProviderSettlements/{id}/linkPayment/{paymentId}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentProviderSettlementService_linkPayment
+- name: PaymentService_GetMany
+  description: GET /v1/payments
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_GetMany
+- name: PaymentService_Delete
+  description: DELETE /v1/payments
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_Delete
+- name: PaymentService_Create
+  description: POST /v1/payments
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_Create
+- name: PaymentService_Get
+  description: GET /v1/payments/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_Get
+- name: PaymentService_UpdateById
+  description: PUT /v1/payments/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_UpdateById
+- name: PaymentService_realtimeRefund
+  description: GET /v1/realtime-refund
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_realtimeRefund
+- name: PaymentService_RefundPaymentMailer
+  description: GET /v1/refund-payments/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_RefundPaymentMailer
+- name: BankTransactionService_update
+  description: PUT /v1/release-suspense
+  source_operation: openapi/layup-technologies-openapi-original.json#BankTransactionService_update
+- name: authService_ForgotPassword
+  description: POST /v1/request-password-reset
+  source_operation: openapi/layup-technologies-openapi-original.json#authService_ForgotPassword
+- name: authService_MerchantBillingChangesRequest
+  description: POST /v1/send-billing-settlements-change-request
+  source_operation: openapi/layup-technologies-openapi-original.json#authService_MerchantBillingChangesRequest
+- name: OrderService_StatementRequest
+  description: POST /v1/statement
+  source_operation: openapi/layup-technologies-openapi-original.json#OrderService_StatementRequest
+- name: TerminalPaymentAppsService_getMany
+  description: GET /v1/terminalPaymentApps
+  source_operation: openapi/layup-technologies-openapi-original.json#TerminalPaymentAppsService_getMany
+- name: TerminalService_get
+  description: GET /v1/terminals
+  source_operation: openapi/layup-technologies-openapi-original.json#TerminalService_get
+- name: TerminalService_create
+  description: POST /v1/terminals
+  source_operation: openapi/layup-technologies-openapi-original.json#TerminalService_create
+- name: TerminalService_update
+  description: PUT /v1/terminals/{id}
+  source_operation: openapi/layup-technologies-openapi-original.json#TerminalService_update
+- name: TerminalService_getBySerial
+  description: GET /v1/terminals/{serial}
+  source_operation: openapi/layup-technologies-openapi-original.json#TerminalService_getBySerial
+- name: TokenService_Create
+  description: POST /v1/tokens
+  source_operation: openapi/layup-technologies-openapi-original.json#TokenService_Create
+- name: PaymentService_TransferPayment
+  description: POST /v1/transfer-payments
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_TransferPayment
+- name: PaymentService_UndoTransfer
+  description: POST /v1/undo-transfer-payments
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentService_UndoTransfer
+- name: UserService_GetMany
+  description: GET /v1/users
+  source_operation: openapi/layup-technologies-openapi-original.json#UserService_GetMany
+- name: UserService_Create
+  description: Description
+  source_operation: openapi/layup-technologies-openapi-original.json#UserService_Create
+- name: UserService_Get
+  description: GET /v1/users/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#UserService_Get
+- name: UserService_Del
+  description: Description
+  source_operation: openapi/layup-technologies-openapi-original.json#UserService_Del
+- name: UserService_Update
+  description: PUT /v1/users/{_id}
+  source_operation: openapi/layup-technologies-openapi-original.json#UserService_Update
+- name: VerifyService_Get
+  description: GET /v1/verify
+  source_operation: openapi/layup-technologies-openapi-original.json#VerifyService_Get
+- name: DebiCheckService_Create
+  description: POST /v2/debi-check
+  source_operation: openapi/layup-technologies-openapi-original.json#DebiCheckService_Create
+- name: PaymentServiceV2_Create
+  description: POST /v2/payments
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentServiceV2_Create
+- name: PaymentServiceV2_GetReport
+  description: GET /v2/payments-report
+  source_operation: openapi/layup-technologies-openapi-original.json#PaymentServiceV2_GetReport
+- name: SettlementService_Create
+  description: POST /v2/settlements
+  source_operation: openapi/layup-technologies-openapi-original.json#SettlementService_Create
+- name: SettlementService_GetReport
+  description: GET /v2/settlements-report
+  source_operation: openapi/layup-technologies-openapi-original.json#SettlementService_GetReport
+- name: SettlementService_DownloadReport
+  description: Redirect to pre-signed URL
+  source_operation: openapi/layup-technologies-openapi-original.json#SettlementService_DownloadReport

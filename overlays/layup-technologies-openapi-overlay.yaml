@@ -1,0 +1,25 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for LayUp API
+  version: 1.0.0
+extends: openapi/layup-technologies-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: layup-technologies
+    x-apievangelist-notes: >-
+      The published Swagger 2.0 declares host localhost:3000; the real hosts are
+      https://api.layup.co.za (production) and https://sandbox-api.layup.co.za
+      (sandbox). Authentication is the apikey HTTP header.
+- target: $.host
+  update: api.layup.co.za
+- target: $.schemes
+  update:
+  - https
+- target: $.info
+  update:
+    x-servers:
+    - url: https://api.layup.co.za
+      description: Production
+    - url: https://sandbox-api.layup.co.za
+      description: Sandbox

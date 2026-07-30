@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+note: >-
+  No real /.well-known/ discovery documents were found. The API host
+  (api.layup.co.za) returns 401 for all paths including /.well-known/*; the
+  marketing host (layup.co.za) is a client-rendered SPA that returns its 200
+  HTML shell for every path (soft-404), so 200s there are not genuine documents.
+hosts:
+- host: https://api.layup.co.za
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 401
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+    file: null
+- host: https://layup.co.za
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA shell (soft-404), not a real security.txt
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell (soft-404), not a real api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA shell (soft-404), not a real ai-plugin.json

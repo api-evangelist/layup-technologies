@@ -1,0 +1,15 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/layup-technologies
+packages:
+- language: php
+  registry: github
+  name: layup/sdk
+  url: https://github.com/layup-technologies/php-sdk
+  install: composer require layup/sdk (VCS repository https://github.com/layup-technologies/php-sdk)
+  official: true
+  description: >-
+    LayUp API SDK (PHP Kit) to manage LayUp Core API integration. Composer
+    package name "layup/sdk", PSR-4 namespace Layup\\, MIT licensed, authored by
+    LayUp (zander@layup.co.za). Requires PHP >=7.2 and guzzlehttp/guzzle. Not
+    published to Packagist; installed from the GitHub VCS repository.

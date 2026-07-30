@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/layup-technologies
+note: >-
+  LayUp ships e-commerce platform plugins (prebuilt merchant checkout surfaces)
+  rather than a client-side JS component library. These embed LayUp lay-by
+  checkout into hosted storefronts.
+families:
+- family: E-commerce plugins
+  components:
+  - name: WooCommerce payment gateway (layup-gateway)
+    kind: plugin
+    platform: WooCommerce / WordPress
+    language: php
+    url: https://github.com/layup-technologies/layup-gateway
+    official: true
+    description: LayUp payment gateway plugin for WooCommerce.
+  - name: Shopify integration
+    kind: platform-integration
+    platform: Shopify
+    url: https://documentation.layup.co.za/
+    official: true
+    description: >-
+      LayUp integrates with Shopify (ShopifyService tag in the API); merchants
+      add LayUp as a lay-by payment option on Shopify storefronts.
+  - name: Magento plugin
+    kind: plugin
+    platform: Magento
+    url: https://layup.co.za/business/plugin-magento
+    official: true
+    description: >-
+      LayUp Magento plugin (advertised on the business site
+      /business/plugin-magento route).

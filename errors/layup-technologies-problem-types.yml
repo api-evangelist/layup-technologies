@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.layup.co.za/
+spec_source: openapi/layup-technologies-openapi-original.json
+format: json
+note: >-
+  LayUp does not use RFC 9457 application/problem+json. Errors are returned as
+  application/json with standard HTTP status codes. The OpenAPI (Swagger 2.0)
+  attaches a generic 200/204/403/404 response set to every operation; the
+  documentation enumerates the status codes below with example validation
+  messages. Titles/causes are taken from the documented error reference.
+problems:
+- status: 400
+  title: Bad Request
+  cause: >-
+    Validation failure — missing required fields, invalid data types, format
+    violations, or business-rule violations (e.g. deposit constraints).
+  source: documentation.layup.co.za
+- status: 403
+  title: Forbidden
+  cause: Authorization / permission issue (invalid or missing apikey header, or insufficient access).
+  source: openapi 403 response + documentation
+- status: 404
+  title: Not Found
+  cause: Requested resource does not exist.
+  source: openapi 404 response + documentation
+- status: 500
+  title: Internal Server Error
+  cause: Server-side failure.
+  source: documentation.layup.co.za

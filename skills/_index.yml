@@ -1,0 +1,11 @@
+generated: '2026-07-20'
+method: generated
+skills:
+- file: layup-technologies-create-layby-order.md
+  name: Create and collect a LayUp lay-by order
+  api: openapi/layup-technologies-openapi-original.json
+  operations: [PaymentPlanService_CreatePreview, OrderService_Create, OrderService_SendOrderRequest, OrderService_Get, PaymentService_Create]
+- file: layup-technologies-reconcile-settlements.md
+  name: Reconcile LayUp merchant settlements
+  api: openapi/layup-technologies-openapi-original.json
+  operations: [MerchantService_getMerchantsToSettle, SettlementService_Create, SettlementService_GetReport, SettlementService_DownloadReport]

@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/layup-technologies-openapi-original.json
+docs: https://documentation.layup.co.za/#authentication
+notes: >-
+  API-key based authentication. The key is passed in the apikey HTTP header on
+  every request. Separate sandbox and live keys; sandbox base URL
+  https://sandbox-api.layup.co.za, production https://api.layup.co.za. No OAuth
+  or OpenID Connect.
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: apikey
+  sources:
+  - openapi/layup-technologies-openapi-original.json

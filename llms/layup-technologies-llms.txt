@@ -1,0 +1,29 @@
+# LayUp Technologies
+
+> LayUp is a South African lay-by / "Save Now, Buy Later" payment platform. Merchants let customers reserve goods with a deposit and pay the balance in scheduled instalments (weekly or monthly) before delivery — no credit, no interest. LayUp schedules payments, holds inventory, and settles merchants when orders complete. The REST API (apikey header auth) covers merchants, orders, order amendments, payment plans, payments, cards, DebiCheck, EFT, PayAt, invoices, and settlements, plus order and payment webhooks.
+
+## APIs
+- [LayUp API documentation](https://documentation.layup.co.za/): Full API reference with authentication, webhooks, and worked lay-by examples.
+- [Interactive API reference (Swagger)](https://api-documentation.layup.co.za/): Interactive Swagger 2.0 explorer (94 paths, 119 operations across 29 services).
+
+## Specs
+- [OpenAPI (Swagger 2.0)](https://api-documentation.layup.co.za/swagger.json): Machine-readable API definition.
+
+## Authentication
+- API-key based. Pass the key in the `apikey` HTTP header on every request.
+- Sandbox base URL: https://sandbox-api.layup.co.za
+- Production base URL: https://api.layup.co.za
+
+## Services
+- MerchantService, OrderService, OrderAmendmentService, PaymentPlanService, PaymentService, CardService, DebiCheckService, DebitOrderMandateService, SettlementService, InvoicesService, PayAtService, BankService, ShopifyService, IntegrationService.
+
+## SDKs & Plugins
+- [PHP SDK (layup/sdk)](https://github.com/layup-technologies/php-sdk): First-party PHP kit for the LayUp Core API.
+- [WooCommerce gateway](https://github.com/layup-technologies/layup-gateway): LayUp payment gateway plugin for WooCommerce.
+
+## Docs
+- [Business / pricing](https://layup.co.za/business/pricing)
+- [Blog](https://blogs.layup.co.za/)
+- [Privacy policy](https://layup.co.za/privacy-policy)
+- [Contact / support](https://layup.co.za/contact-us)
+- [GitHub organization](https://github.com/layup-technologies)

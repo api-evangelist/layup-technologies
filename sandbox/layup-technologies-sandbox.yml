@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.layup.co.za/
+environments:
+- name: sandbox
+  base_url: https://sandbox-api.layup.co.za
+  auth: apikey header (sandbox API key)
+  purpose: >-
+    Interactive/test environment for exploring the LayUp API before going live.
+- name: production
+  base_url: https://api.layup.co.za
+  auth: apikey header (live API key)
+test_values:
+  note: >-
+    LayUp does not publish magic test card numbers or fixture identifiers in its
+    public documentation. Testing is done against the sandbox host with a
+    sandbox API key issued to the merchant. No verbatim test values are recorded
+    here to avoid fabrication.
+webhook_source_ip: 99.81.244.160

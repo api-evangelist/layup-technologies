@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.layup.co.za/
+spec_source: openapi/layup-technologies-openapi-original.json
+authentication:
+  style: api-key
+  header: apikey
+  location: header
+  detail: >-
+    API-key based authentication. The key is passed in the apikey HTTP header on
+    every request. Separate sandbox and live keys; sandbox base URL
+    https://sandbox-api.layup.co.za, production https://api.layup.co.za.
+  cross_ref: authentication/layup-technologies-authentication.yml
+idempotency:
+  supported: false
+  note: No idempotency-key mechanism is documented in the API or the docs.
+pagination:
+  style: limit-skip
+  params:
+  - limit
+  - skip
+  detail: >-
+    List endpoints accept limit (maximum number of results) and skip
+    (offset) query parameters.
+content_types:
+  request: application/json
+  response: application/json
+error_envelope:
+  format: json
+  detail: >-
+    Errors are returned as application/json with standard HTTP status codes
+    (400/403/404/500). Not RFC 9457 problem+json.
+  cross_ref: errors/layup-technologies-problem-types.yml
+webhooks:
+  supported: true
+  types:
+  - order
+  - payment
+  detail: >-
+    Order webhooks fire on order state changes; payment webhooks fire on payment
+    state changes. Webhook requests originate from IP 99.81.244.160.
+  cross_ref: asyncapi/layup-technologies-webhooks.yml
+versioning:
+  cross_ref: lifecycle/layup-technologies-lifecycle.yml
+rate_limiting:
+  signaled: false
+  note: No rate-limit headers or policy documented.

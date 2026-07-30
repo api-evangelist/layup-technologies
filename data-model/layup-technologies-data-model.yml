@@ -1,0 +1,71 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/layup-technologies-openapi-original.json
+note: >-
+  Entity graph derived from the LayUp API path/service structure. LayUp uses
+  Mongo-style string ids (the _id path parameter throughout). Relationships are
+  inferred from the API surface (orders carry payment plans and payments; a
+  merchant owns orders and settlements) rather than from explicit schema $ref
+  links, since the Swagger DTOs are largely flat.
+entities:
+- name: Merchant
+  id_field: _id
+  path: /v1/merchants/{_id}
+  relationships:
+  - has_many: orders
+  - has_many: settlements
+  - has_many: banks
+- name: Order
+  id_field: _id
+  path: /v1/orders/{_id}
+  relationships:
+  - belongs_to: merchant
+  - has_one: paymentPlan
+  - has_many: payments
+  - has_many: orderAmendments
+- name: OrderAmendment
+  id_field: _id
+  path: /v1/order-amendments/{_id}
+  relationships:
+  - belongs_to: order
+- name: PaymentPlan
+  id_field: _id
+  path: /v1/payment-plan/{_id}
+  relationships:
+  - belongs_to: order
+- name: Payment
+  id_field: _id
+  path: /v1/payments/{_id}
+  relationships:
+  - belongs_to: order
+  - belongs_to: user
+- name: User
+  id_field: _id
+  path: /v1/users (UserService)
+  relationships:
+  - has_many: payments
+- name: Card
+  id_field: _id
+  path: /v1/cards/{_id}
+  relationships:
+  - belongs_to: user
+- name: Invoice
+  id_field: id
+  path: /v1/invoices
+  relationships:
+  - belongs_to: merchant
+- name: Settlement
+  id_field: merchantId
+  path: /v2/settlements
+  relationships:
+  - belongs_to: merchant
+- name: Bank
+  id_field: _id
+  path: /v1/banks/{_id}
+  relationships:
+  - belongs_to: merchant
+- name: DebiCheckMandate
+  id_field: _id
+  path: /v1/debicheck/{_id}
+  relationships:
+  - belongs_to: user

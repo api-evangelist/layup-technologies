@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/layup-technologies-openapi-original.json
+standards:
+- id: openapi-swagger2
+  conforms: true
+  evidence: Published Swagger 2.0 document at api-documentation.layup.co.za/swagger.json (94 paths, 119 operations).
+- id: apikey-auth
+  conforms: true
+  evidence: securityDefinitions declares an apiKey scheme named "apikey" in the header.
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 security scheme declared.
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use application/json, not application/problem+json.
+- id: rfc8594-deprecation-sunset
+  conforms: false
+  evidence: No Sunset/Deprecation header support documented; no deprecated operations in the spec.
+- id: idempotency-key
+  conforms: false
+  evidence: No Idempotency-Key header/parameter documented in spec or docs.
+- id: pagination-limit-skip
+  conforms: true
+  evidence: Documentation defines limit and skip pagination parameters.
+- id: debicheck
+  conforms: true
+  evidence: DebiCheckService / AbsaDebiCheckService endpoints implement South African DebiCheck authenticated debit-order mandates.
+- id: json-api
+  conforms: false

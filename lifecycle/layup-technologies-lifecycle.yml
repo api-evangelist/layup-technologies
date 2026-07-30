@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.layup.co.za/
+versioning:
+  scheme: uri-path
+  current: v1
+  notes: >-
+    Endpoints are versioned in the path (/v1/..., with some /v2/ and /v3/
+    endpoints for newer DebiCheck, payments and settlement operations). The
+    Swagger document reports version 1.4.16; the documentation page reports
+    v1.5.0.
+  docs: https://documentation.layup.co.za/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []
+note: >-
+  No status page (status.layup.co.za does not resolve) and no formal deprecation
+  policy were found, so no StatusPage or Deprecation pointer is emitted.

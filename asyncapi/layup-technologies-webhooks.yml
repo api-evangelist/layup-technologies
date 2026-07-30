@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.layup.co.za/#order-webhooks
+spec_type: Webhooks
+note: >-
+  LayUp documents webhooks but does not publish an AsyncAPI document. This
+  captures the webhook catalog. Webhook requests originate from IP
+  99.81.244.160.
+delivery:
+  transport: https-post
+  source_ip: 99.81.244.160
+webhooks:
+- name: order
+  description: Sent when an order changes state.
+  states:
+  - PLACED
+  - PARTIAL
+  - COMPLETED
+  - SUSPENDED
+  - CANCELLING
+  - CANCELLED
+  - EXPIRED
+- name: payment
+  description: Sent when a payment changes state.
