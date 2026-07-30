@@ -1,26 +1,537 @@
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1
 aid: layup-technologies
 name: LayUp Technologies
-description: LayUp Technologies is a company surfaced as a portfolio company of techstars and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  LayUp Technologies is a South African fintech that operates a lay-by / "Save
+  Now, Buy Later" payment platform. Merchants use LayUp to let customers reserve
+  goods with a deposit and pay the balance off in scheduled instalments (weekly
+  or monthly) before taking delivery, avoiding credit and interest. The platform
+  schedules payments, holds inventory, and settles merchants once orders
+  complete. LayUp exposes a REST API (apikey header auth) covering merchants,
+  orders, order amendments, payment plans, payments, cards, DebiCheck and debit
+  order mandates, EFT, PayAt, invoices, settlements, and integrations for
+  platforms such as Shopify, plus order and payment webhooks. It ships a
+  first-party PHP SDK and a WooCommerce payment gateway plugin, and is a
+  Techstars-backed company.
 url: https://raw.githubusercontent.com/api-evangelist/layup-technologies/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - techstars
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: has-public-openapi
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://layup.co.za/assets/layup-banner-CQfDGx2y.webp
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
-- Company
-apis: []
+- Payments
+- Lay-By
+- Save Now Buy Later
+- BNPL
+- Instalments
+- Fintech
+- South Africa
+- DebiCheck
+- E-commerce
+- Merchants
+apis:
+- aid: layup-technologies:layup-technologies-absadebicheckservice-api
+  name: LayUp Technologies AbsaDebiCheckService API
+  description: >-
+    The AbsaDebiCheckService API from LayUp Technologies — 2 operation(s) for absadebicheckservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - AbsaDebiCheckService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-absadebicheckservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-absaeftservice-api
+  name: LayUp Technologies AbsaEftService API
+  description: The AbsaEftService API from LayUp Technologies — 2 operation(s) for absaeftservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - AbsaEftService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-absaeftservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-authservice-api
+  name: LayUp Technologies authService API
+  description: The authService API from LayUp Technologies — 6 operation(s) for authservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - authService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-authservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-bankservice-api
+  name: LayUp Technologies BankService API
+  description: The BankService API from LayUp Technologies — 2 operation(s) for bankservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - BankService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-bankservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-banktransactionservice-api
+  name: LayUp Technologies BankTransactionService API
+  description: >-
+    The BankTransactionService API from LayUp Technologies — 4 operation(s) for banktransactionservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - BankTransactionService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-banktransactionservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-cardservice-api
+  name: LayUp Technologies CardService API
+  description: The CardService API from LayUp Technologies — 2 operation(s) for cardservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - CardService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-cardservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-connectorservice-api
+  name: LayUp Technologies ConnectorService API
+  description: The ConnectorService API from LayUp Technologies — 1 operation(s) for connectorservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - ConnectorService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-connectorservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-debicheckservice-api
+  name: LayUp Technologies DebiCheckService API
+  description: The DebiCheckService API from LayUp Technologies — 5 operation(s) for debicheckservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - DebiCheckService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-debicheckservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-debitordermandateservice-api
+  name: LayUp Technologies DebitOrderMandateService API
+  description: >-
+    The DebitOrderMandateService API from LayUp Technologies — 2 operation(s) for debitordermandateservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - DebitOrderMandateService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-debitordermandateservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-integrationservice-api
+  name: LayUp Technologies IntegrationService API
+  description: >-
+    The IntegrationService API from LayUp Technologies — 1 operation(s) for integrationservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - IntegrationService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-integrationservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-internationalmsisdnservice-api
+  name: LayUp Technologies InternationalMsisdnService API
+  description: >-
+    The InternationalMsisdnService API from LayUp Technologies — 2 operation(s) for internationalmsisdnservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - InternationalMsisdnService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-internationalmsisdnservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-invoicesservice-api
+  name: LayUp Technologies InvoicesService API
+  description: The InvoicesService API from LayUp Technologies — 6 operation(s) for invoicesservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - InvoicesService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-invoicesservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-journalfeeservice-api
+  name: LayUp Technologies JournalFeeService API
+  description: >-
+    The JournalFeeService API from LayUp Technologies — 1 operation(s) for journalfeeservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - JournalFeeService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-journalfeeservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-journalservice-api
+  name: LayUp Technologies JournalService API
+  description: The JournalService API from LayUp Technologies — 1 operation(s) for journalservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - JournalService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-journalservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-merchantservice-api
+  name: LayUp Technologies MerchantService API
+  description: The MerchantService API from LayUp Technologies — 4 operation(s) for merchantservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - MerchantService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-merchantservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-orderamendmentservice-api
+  name: LayUp Technologies OrderAmendmentService API
+  description: >-
+    The OrderAmendmentService API from LayUp Technologies — 2 operation(s) for orderamendmentservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - OrderAmendmentService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-orderamendmentservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-orderservice-api
+  name: LayUp Technologies OrderService API
+  description: The OrderService API from LayUp Technologies — 7 operation(s) for orderservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - OrderService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-orderservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-payatservice-api
+  name: LayUp Technologies PayAtService API
+  description: The PayAtService API from LayUp Technologies — 5 operation(s) for payatservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - PayAtService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-payatservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-paymentplanservice-api
+  name: LayUp Technologies PaymentPlanService API
+  description: >-
+    The PaymentPlanService API from LayUp Technologies — 7 operation(s) for paymentplanservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - PaymentPlanService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-paymentplanservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-paymentprovidersettlementservice-api
+  name: LayUp Technologies PaymentProviderSettlementService API
+  description: >-
+    The PaymentProviderSettlementService API from LayUp Technologies — 3 operation(s) for paymentprovidersettlementservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - PaymentProviderSettlementService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-paymentprovidersettlementservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-paymentservice-api
+  name: LayUp Technologies PaymentService API
+  description: The PaymentService API from LayUp Technologies — 10 operation(s) for paymentservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - PaymentService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-paymentservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-paymentservicev2-api
+  name: LayUp Technologies PaymentServiceV2 API
+  description: The PaymentServiceV2 API from LayUp Technologies — 2 operation(s) for paymentservicev2.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - PaymentServiceV2
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-paymentservicev2-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-settlementservice-api
+  name: LayUp Technologies SettlementService API
+  description: >-
+    The SettlementService API from LayUp Technologies — 3 operation(s) for settlementservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - SettlementService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-settlementservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-shopifyservice-api
+  name: LayUp Technologies ShopifyService API
+  description: The ShopifyService API from LayUp Technologies — 6 operation(s) for shopifyservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - ShopifyService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-shopifyservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-terminalpaymentappsservice-api
+  name: LayUp Technologies TerminalPaymentAppsService API
+  description: >-
+    The TerminalPaymentAppsService API from LayUp Technologies — 1 operation(s) for terminalpaymentappsservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - TerminalPaymentAppsService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-terminalpaymentappsservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-terminalservice-api
+  name: LayUp Technologies TerminalService API
+  description: The TerminalService API from LayUp Technologies — 3 operation(s) for terminalservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - TerminalService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-terminalservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-tokenservice-api
+  name: LayUp Technologies TokenService API
+  description: The TokenService API from LayUp Technologies — 1 operation(s) for tokenservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - TokenService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-tokenservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-userservice-api
+  name: LayUp Technologies UserService API
+  description: The UserService API from LayUp Technologies — 2 operation(s) for userservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - UserService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-userservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-verifyservice-api
+  name: LayUp Technologies VerifyService API
+  description: The VerifyService API from LayUp Technologies — 1 operation(s) for verifyservice.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - VerifyService
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-verifyservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/layup-technologies-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/layup-technologies-agentic-access.yml
+- type: Authentication
+  url: authentication/layup-technologies-authentication.yml
 - type: Website
   url: https://layup.co.za/
+- type: DeveloperPortal
+  url: https://documentation.layup.co.za/
+- type: Documentation
+  url: https://documentation.layup.co.za/
+- type: APIReference
+  url: https://api-documentation.layup.co.za/
+- type: GettingStarted
+  url: https://documentation.layup.co.za/#how-to-use-layup
+- type: Blog
+  url: https://blogs.layup.co.za/
+- type: Pricing
+  url: https://layup.co.za/business/pricing
+- type: SignUp
+  url: https://merchant.layup.co.za/
+- type: Login
+  url: https://app.layup.co.za/
+- type: PrivacyPolicy
+  url: https://layup.co.za/privacy-policy
+- type: Support
+  url: https://layup.co.za/contact-us
+- type: GitHubOrganization
+  url: https://github.com/layup-technologies
+- type: OpenAPI
+  url: openapi/layup-technologies-openapi-original.json
+- type: Packages
+  url: packages/layup-technologies-packages.yml
+- type: SDKs
+  url: packages/layup-technologies-packages.yml
+- type: Components
+  url: components/layup-technologies-components.yml
+- type: MCPServer
+  url: mcp/layup-technologies-mcp.yml
+- type: LLMsTxt
+  url: llms/layup-technologies-llms.txt
+- type: Conformance
+  url: conformance/layup-technologies-conformance.yml
+- type: ErrorCatalog
+  url: errors/layup-technologies-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/layup-technologies-lifecycle.yml
+- type: Conventions
+  url: conventions/layup-technologies-conventions.yml
+- type: Sandbox
+  url: sandbox/layup-technologies-sandbox.yml
+- type: DataModel
+  url: data-model/layup-technologies-data-model.yml
+- type: Webhooks
+  url: asyncapi/layup-technologies-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/layup-technologies-openapi-overlay.yaml
