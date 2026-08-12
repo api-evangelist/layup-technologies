@@ -506,7 +506,7 @@ common:
 - type: GitHubOrganization
   url: https://github.com/layup-technologies
 - type: OpenAPI
-  url: openapi/layup-technologies-openapi-original.json
+  url: openapi/_original/layup-technologies-openapi-original.json
 - type: Packages
   url: packages/layup-technologies-packages.yml
 - type: SDKs
