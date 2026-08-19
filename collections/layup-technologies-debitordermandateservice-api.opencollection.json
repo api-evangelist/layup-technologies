@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService DebitOrderMandateService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DebitOrderMandateService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "DebitOrderMandateService_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/debit-order-mandates"
+          }
+        },
+        {
+          "info": {
+            "name": "DebitOrderMandateService_get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/merchants/:merchantId/debit-order-mandates",
+            "params": [
+              {
+                "name": "merchantId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

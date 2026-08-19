@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService authService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "authService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Warning: Calling this endpoint will replace any existing apikeys on your account.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/auth/apikey"
+          },
+          "docs": "Warning: Calling this endpoint will replace any existing apikeys on your account."
+        },
+        {
+          "info": {
+            "name": "authService_Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/auth/login"
+          }
+        },
+        {
+          "info": {
+            "name": "authService_Register",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/auth/register",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "avs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRealtimeVerification",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "authService_GenerateTerminalApiKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/auth/terminal-key",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "authService_ForgotPassword",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/request-password-reset"
+          }
+        },
+        {
+          "info": {
+            "name": "authService_MerchantBillingChangesRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/send-billing-settlements-change-request"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

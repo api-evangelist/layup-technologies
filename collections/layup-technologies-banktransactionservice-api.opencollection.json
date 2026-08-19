@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService BankTransactionService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BankTransactionService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "BankTransactionService_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/bank-transactions"
+          }
+        },
+        {
+          "info": {
+            "name": "BankTransactionService_linkBatch",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/bank-transactions/link-batch",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bankTransactionBatchId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "BankTransactionService_createPayment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/bank-transactions/:id/payment",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "BankTransactionService_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/release-suspense"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

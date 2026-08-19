@@ -1,0 +1,340 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService ShopifyService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ShopifyService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ShopifyService_calculateShipping",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/integrations/shopify/calculate-shipping",
+            "params": [
+              {
+                "name": "customerData.firstName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.lastName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.phone",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.address2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.city",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.province",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.postalCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "shopDomain",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ShopifyService_processDiscount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/integrations/shopify/discounts",
+            "params": [
+              {
+                "name": "discountCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "shopDomain",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ShopifyService_linkOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/integrations/shopify/link-order",
+            "params": [
+              {
+                "name": "shopDomain",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.createdAt",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.customer.name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.customer.email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.customer.phone",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.customer.displayName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.totalPriceSet",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.taxesIncluded",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.shippingLine.discountedPriceSet",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "draftOrder.totalTaxSet",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ShopifyService_processOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/integrations/shopify/orders",
+            "params": [
+              {
+                "name": "shopDomain",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "shippingData.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "shippingData.handle",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "shippingData.title",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "discount.discountType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "discount.discountValue",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "discount.discountAllocation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "discount.discountSelection",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "discount.discountTitle",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "discount.entitledProductIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "discount.entitledVariantIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "locationData",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.firstName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.lastName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.phone",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.address2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.city",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.province",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customerData.postalCode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ShopifyService_getShopSettings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/integrations/shopify/shop-settings/:shopDomain",
+            "params": [
+              {
+                "name": "shopDomain",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ShopifyService_getOrderNotes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/integrations/shopify/shopify-order-notes",
+            "params": [
+              {
+                "name": "shopDomain",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

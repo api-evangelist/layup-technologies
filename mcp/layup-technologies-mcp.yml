@@ -365,3 +365,9 @@ tools:
 - name: SettlementService_DownloadReport
   description: Redirect to pre-signed URL
   source_operation: openapi/layup-technologies-openapi-original.json#SettlementService_DownloadReport
+deployment:
+  mode: none
+  verified: derived
+  tools: 119
+  checked: '2026-08-12'
+  source: catalog MCP census

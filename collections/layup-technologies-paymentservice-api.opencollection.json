@@ -1,0 +1,430 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService PaymentService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PaymentService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PaymentService_refund",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/generate-refund",
+            "params": [
+              {
+                "name": "body.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.refundReference",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.paymentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.excludeFees",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.refundMethod",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.autoRefund",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_manualRefund",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/manual-refund",
+            "params": [
+              {
+                "name": "body.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.refundReference",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.paymentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.excludeFees",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.refundMethod",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.autoRefund",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_CreateOffline",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/offline-payments",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_DeleteOffline",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/offline-payments/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_GetMany",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/payments",
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentPlanId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "method",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromDatePayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDatePayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "settled",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "failed",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "provider",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "destinationId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "destinationType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/payments",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "secret",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/payments",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/payments/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "verify",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "msisdn",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isEmbeddedCheckout",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "registrationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_UpdateById",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/payments/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "secret",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_realtimeRefund",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/realtime-refund",
+            "params": [
+              {
+                "name": "body.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.refundReference",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.paymentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.excludeFees",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.refundMethod",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body.autoRefund",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_RefundPaymentMailer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/refund-payments/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_TransferPayment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/transfer-payments"
+          }
+        },
+        {
+          "info": {
+            "name": "PaymentService_UndoTransfer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/undo-transfer-payments"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,960 @@
+{
+  "item": [
+    {
+      "id": "85faea0f-39f3-4aca-9ee2-c0181008783f",
+      "name": "PaymentServiceV2",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e558b78-09c9-4ea7-9389-0f6b39b57473",
+          "name": "Payment Service V2 Create",
+          "request": {
+            "name": "Payment Service V2 Create",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"destinationId\": \"<string>\",\n  \"amount\": \"<integer>\",\n  \"redirectUrl\": \"<string>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentProvider\": \"<string>\",\n  \"destinationType\": \"<string>\",\n  \"connectorData\": {\n    \"bankTransactionId\": \"<string>\"\n  },\n  \"save\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "94183215-654e-48e0-b90e-daa8cffea270",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationId\": \"<string>\",\n  \"amount\": \"<integer>\",\n  \"redirectUrl\": \"<string>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentProvider\": \"<string>\",\n  \"destinationType\": \"<string>\",\n  \"connectorData\": {\n    \"bankTransactionId\": \"<string>\"\n  },\n  \"save\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"string\",\n  \"parameters\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"method\": \"string\",\n  \"_id\": \"string\",\n  \"checkoutId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ff7046b-7f98-48bd-9a63-3780ca03a56a",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationId\": \"<string>\",\n  \"amount\": \"<integer>\",\n  \"redirectUrl\": \"<string>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentProvider\": \"<string>\",\n  \"destinationType\": \"<string>\",\n  \"connectorData\": {\n    \"bankTransactionId\": \"<string>\"\n  },\n  \"save\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "617b326c-ac27-45a6-ad3e-889502b43292",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationId\": \"<string>\",\n  \"amount\": \"<integer>\",\n  \"redirectUrl\": \"<string>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentProvider\": \"<string>\",\n  \"destinationType\": \"<string>\",\n  \"connectorData\": {\n    \"bankTransactionId\": \"<string>\"\n  },\n  \"save\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "636b6a86-925d-4d88-ac83-025c206691a0",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"destinationId\": \"<string>\",\n  \"amount\": \"<integer>\",\n  \"redirectUrl\": \"<string>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentProvider\": \"<string>\",\n  \"destinationType\": \"<string>\",\n  \"connectorData\": {\n    \"bankTransactionId\": \"<string>\"\n  },\n  \"save\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3f71140-8d16-45a8-915a-697cd3001154",
+          "name": "Payment Service V2 Get Report",
+          "request": {
+            "name": "Payment Service V2 Get Report",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "payments-report"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "merchantId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paid",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paymentPlanId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "method",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDatePayments",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDatePayments",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "settled",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "failed",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "provider",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "destinationId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "destinationType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b519cca4-fa73-4edf-aee7-e7f6005f65ba",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments-report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "merchantId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"payments\": [\n    {\n      \"id\": \"string\",\n      \"amount\": 1937.8686914229704,\n      \"client\": \"string\",\n      \"createdAt\": \"string\",\n      \"datePaid\": \"string\",\n      \"due\": \"string\",\n      \"fee\": 79.40256733709904,\n      \"fees\": [\n        {\n          \"id\": \"string\",\n          \"productName\": \"string\",\n          \"amountExcludingVAT\": 3340.190800710041,\n          \"amountVAT\": 5.810193886800485,\n          \"amountTotal\": 3032.7780476524113,\n          \"merchantId\": \"string\",\n          \"createdAt\": \"string\",\n          \"updatedAt\": \"string\",\n          \"settlementId\": \"string\",\n          \"paymentId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"productName\": \"string\",\n          \"amountExcludingVAT\": 7487.8375035233,\n          \"amountVAT\": 4004.9543947610846,\n          \"amountTotal\": 4192.8587621215365,\n          \"merchantId\": \"string\",\n          \"createdAt\": \"string\",\n          \"updatedAt\": \"string\",\n          \"settlementId\": \"string\",\n          \"paymentId\": \"string\"\n        }\n      ],\n      \"feesPerProduct\": [\n        {\n          \"quantity\": 3896.671640269208,\n          \"amountTotal\": 855.9509218558803,\n          \"amountExcludingVAT\": 8991.281111290027,\n          \"amountVAT\": 522.5052013284214,\n          \"product\": {\n            \"_id\": \"string\",\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"feeType\": \"string\",\n            \"method\": \"string\",\n            \"billingType\": \"string\"\n          }\n        },\n        {\n          \"quantity\": 6477.638953298214,\n          \"amountTotal\": 6173.714783789912,\n          \"amountExcludingVAT\": 7716.821827779097,\n          \"amountVAT\": 8818.67470091879,\n          \"product\": {\n            \"_id\": \"string\",\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"feeType\": \"string\",\n            \"method\": \"string\",\n            \"billingType\": \"string\"\n          }\n        }\n      ],\n      \"locked\": false,\n      \"orderName\": \"string\",\n      \"orderReference\": \"string\",\n      \"paymentMethod\": \"string\",\n      \"paymentStatus\": \"string\",\n      \"paymentType\": \"string\",\n      \"settlementBatch\": \"string\",\n      \"state\": \"string\",\n      \"updatedAt\": \"string\",\n      \"verifiedAt\": \"string\",\n      \"dateSettled\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"amount\": 7221.247582770627,\n      \"client\": \"string\",\n      \"createdAt\": \"string\",\n      \"datePaid\": \"string\",\n      \"due\": \"string\",\n      \"fee\": 4405.930254675565,\n      \"fees\": [\n        {\n          \"id\": \"string\",\n          \"productName\": \"string\",\n          \"amountExcludingVAT\": 738.9648751968048,\n          \"amountVAT\": 5797.067618828381,\n          \"amountTotal\": 3792.4990384471457,\n          \"merchantId\": \"string\",\n          \"createdAt\": \"string\",\n          \"updatedAt\": \"string\",\n          \"settlementId\": \"string\",\n          \"paymentId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"productName\": \"string\",\n          \"amountExcludingVAT\": 2504.23497110735,\n          \"amountVAT\": 4936.592757460281,\n          \"amountTotal\": 9917.252034093573,\n          \"merchantId\": \"string\",\n          \"createdAt\": \"string\",\n          \"updatedAt\": \"string\",\n          \"settlementId\": \"string\",\n          \"paymentId\": \"string\"\n        }\n      ],\n      \"feesPerProduct\": [\n        {\n          \"quantity\": 8711.245397528639,\n          \"amountTotal\": 523.3791089015838,\n          \"amountExcludingVAT\": 9753.68382887582,\n          \"amountVAT\": 6558.8811679174005,\n          \"product\": {\n            \"_id\": \"string\",\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"feeType\": \"string\",\n            \"method\": \"string\",\n            \"billingType\": \"string\"\n          }\n        },\n        {\n          \"quantity\": 1943.5526264031955,\n          \"amountTotal\": 4501.037443820007,\n          \"amountExcludingVAT\": 3194.7777067883576,\n          \"amountVAT\": 4254.666366783534,\n          \"product\": {\n            \"_id\": \"string\",\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"feeType\": \"string\",\n            \"method\": \"string\",\n            \"billingType\": \"string\"\n          }\n        }\n      ],\n      \"locked\": false,\n      \"orderName\": \"string\",\n      \"orderReference\": \"string\",\n      \"paymentMethod\": \"string\",\n      \"paymentStatus\": \"string\",\n      \"paymentType\": \"string\",\n      \"settlementBatch\": \"string\",\n      \"state\": \"string\",\n      \"updatedAt\": \"string\",\n      \"verifiedAt\": \"string\",\n      \"dateSettled\": \"string\"\n    }\n  ],\n  \"export\": [\n    {\n      \"client\": \"string\",\n      \"amount\": 5306.061540486577,\n      \"createdAt\": \"string\",\n      \"verifiedAt\": \"string\",\n      \"due\": \"string\",\n      \"fee\": 2600.482380689415,\n      \"orderName\": \"string\",\n      \"orderReference\": \"string\",\n      \"paymentStatus\": \"string\",\n      \"paymentType\": \"string\",\n      \"settlementBatch\": \"string\",\n      \"state\": \"string\",\n      \"updatedAt\": \"string\",\n      \"datePaid\": \"string\",\n      \"dateSettled\": \"string\"\n    },\n    {\n      \"client\": \"string\",\n      \"amount\": 5215.091436671316,\n      \"createdAt\": \"string\",\n      \"verifiedAt\": \"string\",\n      \"due\": \"string\",\n      \"fee\": 9284.821076087155,\n      \"orderName\": \"string\",\n      \"orderReference\": \"string\",\n      \"paymentStatus\": \"string\",\n      \"paymentType\": \"string\",\n      \"settlementBatch\": \"string\",\n      \"state\": \"string\",\n      \"updatedAt\": \"string\",\n      \"datePaid\": \"string\",\n      \"dateSettled\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba942316-b04c-4db1-90c3-d69bcbf9956a",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments-report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "merchantId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fffdcf98-6c12-4918-ad01-7bc5e8222734",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments-report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "merchantId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4da2a199-e12e-47e1-a9b2-0ea3ee5d75b3",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "payments-report"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "merchantId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a1e4f81e-16d6-4212-b449-ecc9b47225bf",
+    "name": "Layup endpoints AbsaDebiCheckService PaymentServiceV2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

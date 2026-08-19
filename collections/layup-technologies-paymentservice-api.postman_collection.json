@@ -1,0 +1,3961 @@
+{
+  "item": [
+    {
+      "id": "939794fb-eb4c-4355-8645-6a8618a2c485",
+      "name": "PaymentService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1ab7ad6e-dacd-4b23-a1f0-e6f74e8dfe7a",
+          "name": "Payment Service refund",
+          "request": {
+            "name": "Payment Service refund",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "generate-refund"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "body.amount",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.refundReference",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.paymentId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.excludeFees",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.refundMethod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.autoRefund",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95d11690-e676-443d-8937-686c243f29d1",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "generate-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 6818,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 315.9102266373137,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 1239,\n  \"fee\": 189,\n  \"failed\": false,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 745,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"string\",\n    \"paymentMethod\": \"string\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c72c9412-92ed-43b4-b818-9161f3fd81fc",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "generate-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b9ef354-4465-43dc-be11-229b0621e0c7",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "generate-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "954cfbc6-5acc-4151-a3ab-cc2e22e4a819",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "generate-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b0b00ff-2667-4bfb-8f4a-4b42a8fdbeae",
+          "name": "Payment Service manual Refund",
+          "request": {
+            "name": "Payment Service manual Refund",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "manual-refund"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "body.amount",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.refundReference",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.paymentId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.excludeFees",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.refundMethod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.autoRefund",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4edebdfe-f415-492a-942e-98db37c39fed",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "manual-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 6818,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 315.9102266373137,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 1239,\n  \"fee\": 189,\n  \"failed\": false,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 745,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"string\",\n    \"paymentMethod\": \"string\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "38df4e32-b75d-4b1b-a10c-6ead66dbabe2",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "manual-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "377f6169-4e99-4f60-9288-9c47e6e0aac0",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "manual-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5c90e70d-a206-45e2-9b77-cb9b037e5709",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "manual-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e39e772b-159a-485d-a5d8-fe3a25203a44",
+          "name": "Payment Service Create Offline",
+          "request": {
+            "name": "Payment Service Create Offline",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "offline-payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"<integer>\",\n  \"paymentPlanId\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"note\": \"<string>\",\n  \"verifiedAt\": \"<string>\",\n  \"paymentType\": \"<string>\",\n  \"excludeFees\": \"<boolean>\",\n  \"settled\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "02112c01-9767-47cf-99ea-40d9ae251599",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 13333,\n  \"note\": \"Processed by employeeX\",\n  \"paymentPlanId\": \"123f7f1496bd78001d6852f3\",\n  \"reference\": \"Cash in hand\",\n  \"verifiedAt\": \"2022-01-27T14:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 6818,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 315.9102266373137,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 1239,\n  \"fee\": 189,\n  \"failed\": false,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 745,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"string\",\n    \"paymentMethod\": \"string\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2cb0abe6-5ee8-4a13-89f5-c351f213550c",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 13333,\n  \"note\": \"Processed by employeeX\",\n  \"paymentPlanId\": \"123f7f1496bd78001d6852f3\",\n  \"reference\": \"Cash in hand\",\n  \"verifiedAt\": \"2022-01-27T14:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ef7a4db9-bbf9-4cd2-94b9-89865ade124b",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 13333,\n  \"note\": \"Processed by employeeX\",\n  \"paymentPlanId\": \"123f7f1496bd78001d6852f3\",\n  \"reference\": \"Cash in hand\",\n  \"verifiedAt\": \"2022-01-27T14:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7a600fde-f452-43ca-82b9-c368c5645b9e",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 13333,\n  \"note\": \"Processed by employeeX\",\n  \"paymentPlanId\": \"123f7f1496bd78001d6852f3\",\n  \"reference\": \"Cash in hand\",\n  \"verifiedAt\": \"2022-01-27T14:00:00.000Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8c3dd1c-04fb-4047-b266-1957d47cb12f",
+          "name": "Payment Service Delete Offline",
+          "request": {
+            "name": "Payment Service Delete Offline",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "offline-payments",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b79e84b-e155-47e4-9e5c-02ef30eb8797",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 6818,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 315.9102266373137,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 1239,\n  \"fee\": 189,\n  \"failed\": false,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 745,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"string\",\n    \"paymentMethod\": \"string\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf524d79-1b11-402f-8fc6-fc963d816a4e",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59052b13-64d9-4b5b-9c13-4c7b8e9ded3a",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "318b5c71-75a1-470c-bd5b-5aa086a96de7",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "offline-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "192e41f7-1dbb-4918-8c1a-51ecc5ef2b1a",
+          "name": "Payment Service Get Many",
+          "request": {
+            "name": "Payment Service Get Many",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paid",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paymentPlanId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "2000-03-20"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "2030-03-20"
+                },
+                {
+                  "disabled": false,
+                  "key": "method",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDatePayments",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDatePayments",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "settled",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "failed",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "provider",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "destinationId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "destinationType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fae7d694-f46a-405c-abfc-a700c6cbe8fd",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "2000-03-20"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "2030-03-20"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"payments\": [\n    {\n      \"_id\": \"string\",\n      \"paymentPlanId\": \"string\",\n      \"due\": \"string\",\n      \"amount\": 9845,\n      \"paid\": false,\n      \"userId\": \"string\",\n      \"locked\": false,\n      \"pending\": true,\n      \"timestamp\": 287.26891414335597,\n      \"paymentMethod\": \"string\",\n      \"paymentType\": \"string\",\n      \"note\": \"string\",\n      \"reference\": \"string\",\n      \"orderStatus\": \"string\",\n      \"amountExcludingFee\": 2485,\n      \"fee\": 8921,\n      \"failed\": false,\n      \"verifyError\": \"string\",\n      \"refundedAmount\": 9166,\n      \"refundPaymentId\": \"string\",\n      \"connectorData\": {\n        \"paymentProvider\": \"string\",\n        \"paymentMethod\": \"string\"\n      },\n      \"destinationId\": \"string\",\n      \"destinationType\": \"string\"\n    },\n    {\n      \"_id\": \"string\",\n      \"paymentPlanId\": \"string\",\n      \"due\": \"string\",\n      \"amount\": 6712,\n      \"paid\": true,\n      \"userId\": \"string\",\n      \"locked\": false,\n      \"pending\": true,\n      \"timestamp\": 924.5140387869377,\n      \"paymentMethod\": \"string\",\n      \"paymentType\": \"string\",\n      \"note\": \"string\",\n      \"reference\": \"string\",\n      \"orderStatus\": \"string\",\n      \"amountExcludingFee\": 632,\n      \"fee\": 7815,\n      \"failed\": false,\n      \"verifyError\": \"string\",\n      \"refundedAmount\": 7575,\n      \"refundPaymentId\": \"string\",\n      \"connectorData\": {\n        \"paymentProvider\": \"string\",\n        \"paymentMethod\": \"string\"\n      },\n      \"destinationId\": \"string\",\n      \"destinationType\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "582ffdd7-a5a8-45d8-ad63-9830cd328b11",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "2000-03-20"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "2030-03-20"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5f319f86-66ae-415f-b32b-f20cbb9f43e9",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "2000-03-20"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "2030-03-20"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "33a8cbdc-af39-4153-a7bc-e57602f6a73b",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "paid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "paymentPlanId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "2000-03-20"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "2030-03-20"
+                    },
+                    {
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDatePayments",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "settled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "failed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "provider",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destinationType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11baca3b-e90a-4a5c-b97c-3029b64c8577",
+          "name": "Payment Service Delete",
+          "request": {
+            "name": "Payment Service Delete",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "806a1ee5-cf78-4980-8549-cd1f9b2f544d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 6818,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 315.9102266373137,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 1239,\n  \"fee\": 189,\n  \"failed\": false,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 745,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"string\",\n    \"paymentMethod\": \"string\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b7978e1-fa5f-4828-948d-3b93c6078bb9",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bc546457-4740-4914-a7fe-90a72a12721e",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1079716f-5a17-415f-acb1-edd9ded46121",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e00f769-6d44-432e-bdaa-ce623dfcf03d",
+          "name": "Payment Service Create",
+          "request": {
+            "name": "Payment Service Create",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "secret",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentPlanId\": \"<string>\",\n  \"amount\": \"<integer>\",\n  \"notifyUrl\": \"<string>\",\n  \"useSavedCard\": \"<boolean>\",\n  \"eft\": \"<boolean>\",\n  \"checkout\": \"<boolean>\",\n  \"save\": \"<boolean>\",\n  \"suspenseId\": \"<string>\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"paid\": \"<boolean>\",\n  \"failed\": \"<boolean>\",\n  \"payAt\": \"<boolean>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentProviderSettlementId\": \"<string>\",\n  \"destinationType\": \"<string>\",\n  \"destinationId\": \"<string>\",\n  \"isEmbeddedCheckout\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "812ebd99-0399-4a5e-a1a9-9a73389d9ff5",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"string\",\n  \"parameters\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"method\": \"string\",\n  \"_id\": \"string\",\n  \"checkoutId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d012f36-e75a-4345-b854-9b614eb55820",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d3fda0f1-1b74-4043-a1dc-9da2613f0476",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "502962cc-e2b8-41f6-b77e-0d697e1ab9f6",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2ecbf8e-29c3-401f-beaf-0084e4b4feb6",
+          "name": "Payment Service Get",
+          "request": {
+            "name": "Payment Service Get",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "payments",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "verify",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "force",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "msisdn",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isEmbeddedCheckout",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "registrationId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5532f996-52d3-4e56-8bf1-012c05da91a9",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "verify",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msisdn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isEmbeddedCheckout",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "registrationId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 1574,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 1008.3739572873907,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 9687,\n  \"fee\": 6390,\n  \"failed\": true,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 6357,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "123fd296-f543-4bea-b2fe-7e822c8bf652",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "verify",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msisdn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isEmbeddedCheckout",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "registrationId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9843110-54d8-468a-a49c-2200244b211e",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "verify",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msisdn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isEmbeddedCheckout",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "registrationId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "efc28ea4-8606-4b6b-a268-af50a854b9fb",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "verify",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msisdn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isEmbeddedCheckout",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "registrationId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a006563a-18e0-4b93-a569-56a4fa539ef0",
+          "name": "Payment Service Update By Id",
+          "request": {
+            "name": "Payment Service Update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "payments",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "secret",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentPlanId\": \"<string>\",\n  \"amount\": \"<integer>\",\n  \"notifyUrl\": \"<string>\",\n  \"useSavedCard\": \"<boolean>\",\n  \"eft\": \"<boolean>\",\n  \"checkout\": \"<boolean>\",\n  \"save\": \"<boolean>\",\n  \"suspenseId\": \"<string>\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"paid\": \"<boolean>\",\n  \"failed\": \"<boolean>\",\n  \"payAt\": \"<boolean>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentProviderSettlementId\": \"<string>\",\n  \"destinationType\": \"<string>\",\n  \"destinationId\": \"<string>\",\n  \"isEmbeddedCheckout\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2bb4e7eb-390a-440b-a49f-a4a53968f556",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 1574,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 1008.3739572873907,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 9687,\n  \"fee\": 6390,\n  \"failed\": true,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 6357,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a5a03a3-a83f-4968-a023-3fd3fabb450d",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81ec8489-96f5-4006-95d0-0ecc51a57551",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "de8784e8-b30f-47be-89ed-fab2acbcb299",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "secret",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "837379a5-a0c2-4a2a-893e-49300c7a4b4a",
+          "name": "Payment Service realtime Refund",
+          "request": {
+            "name": "Payment Service realtime Refund",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "realtime-refund"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "body.amount",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.refundReference",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.paymentId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.excludeFees",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.refundMethod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "body.autoRefund",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c465e305-fab9-4c96-ab9b-0c1e7092005a",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "realtime-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 1574,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 1008.3739572873907,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 9687,\n  \"fee\": 6390,\n  \"failed\": true,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 6357,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14784089-9d5e-452e-9f7c-75c2f8b54ec4",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "realtime-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06239081-db58-4e54-ae50-31a65fedab83",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "realtime-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34c2e576-fdc2-4e73-afa7-801e2a0460ba",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "realtime-refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "body.amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "body.refundReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.paymentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.excludeFees",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "body.refundMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "body.autoRefund",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "894543c3-802e-406e-863b-eca8e448a41b",
+          "name": "Payment Service Refund Payment Mailer",
+          "request": {
+            "name": "Payment Service Refund Payment Mailer",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "refund-payments",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6b5e17a-f0f2-4d6c-8153-955fbafcb927",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "refund-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 1574,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 1008.3739572873907,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 9687,\n  \"fee\": 6390,\n  \"failed\": true,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 6357,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa89131e-b5a4-493a-a986-015d72da6625",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "refund-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "081854a1-77c2-439c-8773-55c075d55c5a",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "refund-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1adaaaa0-e674-41d2-bef2-8a88e6bf4a1b",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "refund-payments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c098f146-5757-4069-af5a-eb5c51108e01",
+          "name": "Payment Service Transfer Payment",
+          "request": {
+            "name": "Payment Service Transfer Payment",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "transfer-payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"_id\": \"<string>\",\n  \"_destinationPaymentPlanId\": \"<string>\",\n  \"amount\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d6357294-9af0-4077-8425-3680f9d10c1f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 1574,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 1008.3739572873907,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 9687,\n  \"fee\": 6390,\n  \"failed\": true,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 6357,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2a79e10-0b4a-43fa-92aa-26bd6b039803",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "27c28d66-4f64-4ef5-9bac-ab5a825fd7d2",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b9955d28-a065-4eeb-9ecb-d02e04b82f21",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb4510ca-1986-4e26-9f8a-e50109c81686",
+          "name": "Payment Service Undo Transfer",
+          "request": {
+            "name": "Payment Service Undo Transfer",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "undo-transfer-payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"_id\": \"<string>\",\n  \"_destinationPaymentPlanId\": \"<string>\",\n  \"amount\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da9d61fe-4acf-4ab5-9f10-385579325eaa",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "undo-transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"paymentPlanId\": \"string\",\n  \"due\": \"string\",\n  \"amount\": 1574,\n  \"paid\": false,\n  \"userId\": \"string\",\n  \"locked\": true,\n  \"pending\": true,\n  \"timestamp\": 1008.3739572873907,\n  \"paymentMethod\": \"string\",\n  \"paymentType\": \"string\",\n  \"note\": \"string\",\n  \"reference\": \"string\",\n  \"orderStatus\": \"string\",\n  \"amountExcludingFee\": 9687,\n  \"fee\": 6390,\n  \"failed\": true,\n  \"verifyError\": \"string\",\n  \"refundedAmount\": 6357,\n  \"refundPaymentId\": \"string\",\n  \"connectorData\": {\n    \"paymentProvider\": \"<string>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"destinationId\": \"string\",\n  \"destinationType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b75f71cf-0320-4643-82b1-cce606ae1f97",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "undo-transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d8c6e8da-3396-4b25-a2cf-48b09bd83f0f",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "undo-transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cdbb4774-fef0-4927-a9f5-868ef5a56d73",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "undo-transfer-payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "785ac2bd-26b5-4904-b623-720dfa6c0dca",
+    "name": "Layup endpoints AbsaDebiCheckService PaymentService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

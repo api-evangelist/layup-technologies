@@ -1,0 +1,538 @@
+{
+  "item": [
+    {
+      "id": "81b72308-073a-4815-9393-9dfec1614bda",
+      "name": "DebitOrderMandateService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cfafe6fc-c7a4-47f4-9c73-021d2112aa5a",
+          "name": "Debit Order Mandate Service create",
+          "request": {
+            "name": "Debit Order Mandate Service create",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "debit-order-mandates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"merchantId\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"holderName\": \"<string>\",\n  \"holderSurname\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"accountType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"branchCode\": \"<string>\",\n  \"identificationType\": \"<string>\",\n  \"identificationNumber\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8ac1dc9a-4eef-4f58-9ae0-74f67dce93a7",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantId\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"holderName\": \"<string>\",\n  \"holderSurname\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"accountType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"branchCode\": \"<string>\",\n  \"identificationType\": \"<string>\",\n  \"identificationNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"mandateId\": \"string\",\n  \"merchantId\": \"string\",\n  \"reference\": \"string\",\n  \"holderName\": \"string\",\n  \"holderSurname\": \"string\",\n  \"contact\": \"string\",\n  \"accountType\": \"string\",\n  \"accountNumber\": \"string\",\n  \"branchCode\": \"string\",\n  \"identificationType\": \"string\",\n  \"identificationNumber\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46c56ee5-470e-4494-a3f3-c30409eb8928",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantId\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"holderName\": \"<string>\",\n  \"holderSurname\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"accountType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"branchCode\": \"<string>\",\n  \"identificationType\": \"<string>\",\n  \"identificationNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "43b2c54b-0e9f-4801-a8cd-b8a5dae9b4e2",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantId\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"holderName\": \"<string>\",\n  \"holderSurname\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"accountType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"branchCode\": \"<string>\",\n  \"identificationType\": \"<string>\",\n  \"identificationNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "561b742a-4618-4e3e-ad9a-a6a70db682c7",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantId\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"holderName\": \"<string>\",\n  \"holderSurname\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"accountType\": \"<string>\",\n  \"accountNumber\": \"<string>\",\n  \"branchCode\": \"<string>\",\n  \"identificationType\": \"<string>\",\n  \"identificationNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e75d24b0-4424-4040-9b19-60aa2e7cbc93",
+          "name": "Debit Order Mandate Service get",
+          "request": {
+            "name": "Debit Order Mandate Service get",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "merchants",
+                ":merchantId",
+                "debit-order-mandates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfb862de-d100-414e-ba5b-00a05dcefa58",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":merchantId",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "merchantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"mandateId\": \"string\",\n  \"merchantId\": \"string\",\n  \"reference\": \"string\",\n  \"holderName\": \"string\",\n  \"holderSurname\": \"string\",\n  \"contact\": \"string\",\n  \"accountType\": \"string\",\n  \"accountNumber\": \"string\",\n  \"branchCode\": \"string\",\n  \"identificationType\": \"string\",\n  \"identificationNumber\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7092d97f-418a-48ba-afbe-5ba51028f3f3",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":merchantId",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "merchantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0753bbf1-dab7-4838-becc-0bb92e6f5b1f",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":merchantId",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "merchantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aef170df-6347-4e7e-ba9c-d64fe1ac2273",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":merchantId",
+                    "debit-order-mandates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "merchantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c99821ee-4440-4617-be34-d9f9d8c3763a",
+    "name": "Layup endpoints AbsaDebiCheckService DebitOrderMandateService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

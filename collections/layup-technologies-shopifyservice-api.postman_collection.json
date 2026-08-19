@@ -1,0 +1,2432 @@
+{
+  "item": [
+    {
+      "id": "c6011f43-4013-4706-b865-2619e881eeb8",
+      "name": "ShopifyService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c57a2f63-dc6e-4319-9758-d8c56939b491",
+          "name": "Shopify Service calculate Shipping",
+          "request": {
+            "name": "Shopify Service calculate Shipping",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "integrations",
+                "shopify",
+                "calculate-shipping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customerData.firstName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.lastName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.phone",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.address",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.address2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.province",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.postalCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "shopDomain",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c72a933-9a4f-403b-a875-d9f32a70c1e2",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "calculate-shipping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"prices\": [\n    {\n      \"title\": \"string\",\n      \"amount\": \"string\",\n      \"handle\": \"string\"\n    },\n    {\n      \"title\": \"string\",\n      \"amount\": \"string\",\n      \"handle\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70f70ddc-9d07-4ceb-898f-dd65e0518fba",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "calculate-shipping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e7669f78-d3fe-47bc-ab1c-5e487dacb522",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "calculate-shipping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84540b6c-09a4-44d0-a263-ec7d1b4779d8",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "calculate-shipping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a9285fa-0e76-44a9-affb-8c15a9ab7e3d",
+          "name": "Shopify Service process Discount",
+          "request": {
+            "name": "Shopify Service process Discount",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "integrations",
+                "shopify",
+                "discounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "discountCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "shopDomain",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b30c575d-0c38-4ec5-82fd-bfb42ea5fc36",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "discounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "discountCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"discountType\": \"string\",\n    \"discountValue\": \"string\",\n    \"discountAllocation\": \"string\",\n    \"discountSelection\": \"string\",\n    \"discountTitle\": \"string\",\n    \"entitledProductIds\": [\n      7560.286133819418,\n      3518.0283889315247\n    ],\n    \"entitledVariantIds\": [\n      109.24215462634112,\n      363.3846953153541\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d3b3e4d-bb24-49e5-8f9d-cb1b1f7302cd",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "discounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "discountCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bb55e760-dd9c-4238-8d75-b62a6277abb4",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "discounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "discountCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c354063e-09d3-4de1-a808-a166223ee931",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "discounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "discountCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86c6b1f8-cadf-494f-8a9f-dd1efc54650d",
+          "name": "Shopify Service link Order",
+          "request": {
+            "name": "Shopify Service link Order",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "integrations",
+                "shopify",
+                "link-order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "shopDomain",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.createdAt",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.customer.name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.customer.email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.customer.phone",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.customer.displayName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.totalPriceSet",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.taxesIncluded",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.shippingLine.discountedPriceSet",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "draftOrder.totalTaxSet",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6f78199a-068a-4a9e-bc38-56a9c94e2607",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "link-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.createdAt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.taxesIncluded",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "draftOrder.shippingLine.discountedPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalTaxSet",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"message\": \"string\",\n  \"data\": \"string\",\n  \"orderId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7b1b622-c656-4967-899d-1022d5327f88",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "link-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.createdAt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.taxesIncluded",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "draftOrder.shippingLine.discountedPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalTaxSet",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "75b79bd0-2c39-4e00-b326-5ec490c796af",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "link-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.createdAt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.taxesIncluded",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "draftOrder.shippingLine.discountedPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalTaxSet",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9dbfc6de-e899-4b94-8f13-a785b3374da9",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "link-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.createdAt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.customer.displayName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.taxesIncluded",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "draftOrder.shippingLine.discountedPriceSet",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "draftOrder.totalTaxSet",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af94b3e5-7825-4ebb-8ed2-8f2b2b5fcb14",
+          "name": "Shopify Service process Order",
+          "request": {
+            "name": "Shopify Service process Order",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "integrations",
+                "shopify",
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "shopDomain",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "shippingData.amount",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "shippingData.handle",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "shippingData.title",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.discountType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.discountValue",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.discountAllocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.discountSelection",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.discountTitle",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.entitledProductIds",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.entitledProductIds",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.entitledVariantIds",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "discount.entitledVariantIds",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "locationData",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.firstName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.lastName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.phone",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.address",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.address2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.province",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerData.postalCode",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb125225-225b-480c-9203-b76125c8334d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "shippingData.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.handle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountValue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountAllocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountSelection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountTitle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "locationData",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"message\": \"string\",\n  \"data\": \"string\",\n  \"orderId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "29645307-8e04-4833-9def-0dd3ebd6e50e",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "shippingData.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.handle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountValue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountAllocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountSelection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountTitle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "locationData",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "41c9f22e-2bc0-494a-bb3b-c28f43ea7975",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "shippingData.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.handle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountValue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountAllocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountSelection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountTitle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "locationData",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "da769d2c-4358-4e32-a9e5-c8952a8c47d4",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "shippingData.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.handle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shippingData.title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountValue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountAllocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountSelection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.discountTitle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledProductIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "discount.entitledVariantIds",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "locationData",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.phone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.address2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.province",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customerData.postalCode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4de89f9-ddcb-41cd-b080-24fbdbb61f4e",
+          "name": "Shopify Service get Shop Settings",
+          "request": {
+            "name": "Shopify Service get Shop Settings",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "integrations",
+                "shopify",
+                "shop-settings",
+                ":shopDomain"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shopDomain",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c49e41f9-9344-43c7-a3da-778c993f4815",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shop-settings",
+                    ":shopDomain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shopDomain",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"enabledOnAll\": false,\n  \"enabledOnProduct\": false,\n  \"enabledOnCart\": false,\n  \"enabledAccept\": true,\n  \"acceptMsg\": \"string\",\n  \"acceptBtn\": \"string\",\n  \"terms\": \"string\",\n  \"products\": [\n    {\n      \"productId\": \"string\",\n      \"eventDateString\": \"string\",\n      \"enabledOnLayup\": true,\n      \"minMonths\": 8601,\n      \"maxMonths\": 269,\n      \"deposit\": 5790,\n      \"depositType\": \"string\",\n      \"previewTemplate\": \"string\",\n      \"learnMore\": \"string\",\n      \"layupType\": \"string\"\n    },\n    {\n      \"productId\": \"string\",\n      \"eventDateString\": \"string\",\n      \"enabledOnLayup\": true,\n      \"minMonths\": 9922,\n      \"maxMonths\": 6463,\n      \"deposit\": 4936,\n      \"depositType\": \"string\",\n      \"previewTemplate\": \"string\",\n      \"learnMore\": \"string\",\n      \"layupType\": \"string\"\n    }\n  ],\n  \"logoUrl\": \"string\",\n  \"learnMore\": \"string\",\n  \"merchantName\": \"string\",\n  \"deposit\": 5497,\n  \"depositType\": \"string\",\n  \"minMonths\": 3109,\n  \"maxMonths\": 9829,\n  \"shopifyLocations\": [\n    {\n      \"address\": {\n        \"address1\": \"string\",\n        \"address2\": \"string\",\n        \"city\": \"string\",\n        \"phone\": \"string\",\n        \"province\": \"string\",\n        \"zip\": \"string\"\n      },\n      \"id\": \"string\",\n      \"legacyResourceId\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"address\": {\n        \"address1\": \"string\",\n        \"address2\": \"string\",\n        \"city\": \"string\",\n        \"phone\": \"string\",\n        \"province\": \"string\",\n        \"zip\": \"string\"\n      },\n      \"id\": \"string\",\n      \"legacyResourceId\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"enabledDiscount\": false,\n  \"enabledOnPopupCart\": true,\n  \"popupCartSelector\": \"string\",\n  \"popupCartQuantitySelector\": \"string\",\n  \"popupCartRemoveSelector\": \"string\",\n  \"buttonLayout\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b420905-2601-4fed-bd5c-2ebb4ef12336",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shop-settings",
+                    ":shopDomain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shopDomain",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3b25311d-57a0-4ac7-b43b-e3a90379f40b",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shop-settings",
+                    ":shopDomain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shopDomain",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c8d07db4-4347-4c23-84c1-6e7a4ece9dba",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shop-settings",
+                    ":shopDomain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shopDomain",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77f85f2c-4c04-43e7-969b-37f9d6b7c714",
+          "name": "Shopify Service get Order Notes",
+          "request": {
+            "name": "Shopify Service get Order Notes",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "integrations",
+                "shopify",
+                "shopify-order-notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "shopDomain",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "804c7a8d-c6fa-4341-adb7-afe3a777140e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shopify-order-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notes\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"tags\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b404cddd-3105-4f33-af84-4f2b0775b367",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shopify-order-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "311d6732-4c99-48f6-a89b-b9594e4c6c12",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shopify-order-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3dceb71c-2c18-46e5-b1cd-9134301ae99d",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "integrations",
+                    "shopify",
+                    "shopify-order-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shopDomain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2cc6fa5b-94dc-46e0-920a-efbea002cdec",
+    "name": "Layup endpoints AbsaDebiCheckService ShopifyService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

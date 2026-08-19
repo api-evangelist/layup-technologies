@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService SettlementService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SettlementService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SettlementService_Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/settlements",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taskToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "SettlementService_GetReport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/settlements-report",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Redirect to pre-signed URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v3/settlement-reports/:merchantId/:settlementReferenceWithExtension",
+            "params": [
+              {
+                "name": "merchantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "settlementReferenceWithExtension",
+                "value": "",
+                "type": "path",
+                "description": "reference.zip"
+              }
+            ]
+          },
+          "docs": "Redirect to pre-signed URL"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

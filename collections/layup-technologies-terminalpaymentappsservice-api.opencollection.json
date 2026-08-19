@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService TerminalPaymentAppsService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TerminalPaymentAppsService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "TerminalPaymentAppsService_getMany",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/terminalPaymentApps"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

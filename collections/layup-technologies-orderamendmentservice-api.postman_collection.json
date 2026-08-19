@@ -1,0 +1,782 @@
+{
+  "item": [
+    {
+      "id": "8f2982eb-35af-4495-ae72-77d47772d743",
+      "name": "OrderAmendmentService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5aa8e11c-eb66-4f0f-91da-427522382155",
+          "name": "Order Amendment Service Get Many",
+          "request": {
+            "name": "Order Amendment Service Get Many",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "order-amendments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "orderId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6df3d4e7-aa96-4a28-8283-1e3e684cadb6",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderAmendments\": [\n    {\n      \"_id\": \"string\",\n      \"userId\": \"string\",\n      \"orderId\": \"string\",\n      \"amendmentType\": \"string\",\n      \"products\": [\n        {\n          \"_id\": \"string\",\n          \"amount\": 5649,\n          \"link\": \"https://MOjNHkjHHaCtBRCHwTbjZzcExU.sarbbnwPAp18QJhPlm,YhmwIpKRX8HQYtc8ge9Ggm72TburpyX67YeUENhSNykoAucG\",\n          \"sku\": \"string\",\n          \"name\": \"string\",\n          \"depositType\": \"string\"\n        },\n        {\n          \"_id\": \"string\",\n          \"amount\": 5698,\n          \"link\": \"http://EkkEQKAEMgyyXGrSAV.cuxGVcBZZj6zTUj9iDwVjJdflhI4v5W1qyjMt4SHP+EvpA4vwqS0h.L\",\n          \"sku\": \"string\",\n          \"name\": \"string\",\n          \"depositType\": \"string\"\n        }\n      ],\n      \"endDate\": \"string\",\n      \"from\": {\n        \"_id\": \"string\",\n        \"endDateMax\": \"1958-04-03T13:16:19.582Z\",\n        \"endDateMin\": \"1966-07-06T06:22:37.152Z\",\n        \"initiatorId\": \"string\",\n        \"products\": [\n          {\n            \"_id\": \"string\",\n            \"amount\": 5655,\n            \"link\": \"http://rMWfhbN.byefLM53tjfzLE\",\n            \"sku\": \"string\",\n            \"name\": \"string\",\n            \"depositType\": \"string\"\n          },\n          {\n            \"_id\": \"string\",\n            \"amount\": 5079,\n            \"link\": \"http://xXYbKNKpyoAGETDAhCjNiSYjvq.eykrBGjSr,7iYdQ72NatOcohgcuipO\",\n            \"sku\": \"string\",\n            \"name\": \"string\",\n            \"depositType\": \"string\"\n          }\n        ],\n        \"state\": \"PARTIAL\",\n        \"supplierId\": \"string\",\n        \"cancelledBy\": \"string\",\n        \"amountDue\": 2417,\n        \"flatFee\": 5415,\n        \"percFee\": 78.03320883656096,\n        \"depositPerc\": 3104.822923434142,\n        \"absorbsFee\": false,\n        \"reference\": \"string\",\n        \"name\": \"string\",\n        \"imageUrl\": \"string\",\n        \"plans\": [\n          {\n            \"_id\": \"string\",\n            \"orderId\": \"string\",\n            \"benefactorId\": \"string\",\n            \"completed\": false,\n            \"quantity\": 5419,\n            \"depositDue\": 8345,\n            \"amountDue\": 84,\n            \"automaticBilling\": false,\n            \"timestamp\": 3401.7537527228224,\n            \"payments\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"benefactor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frequency\": \"WEEKLY\",\n            \"offset\": 2389,\n            \"depositDueExcludingFee\": 4107,\n            \"amountDueExcludingFee\": 4440,\n            \"order\": {\n              \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n            },\n            \"debicheckStatus\": \"string\",\n            \"debicheckLastFailedReasons\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"debicheckMandateActiveId\": \"string\",\n            \"debicheckMandateIds\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"payAtReferenceNumber\": \"string\",\n            \"agreedToTerms\": false\n          },\n          {\n            \"_id\": \"string\",\n            \"orderId\": \"string\",\n            \"benefactorId\": \"string\",\n            \"completed\": false,\n            \"quantity\": 3917,\n            \"depositDue\": 2729,\n            \"amountDue\": 4381,\n            \"automaticBilling\": true,\n            \"timestamp\": 7480.612723908614,\n            \"payments\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"benefactor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frequency\": \"MONTHLY\",\n            \"offset\": 1073,\n            \"depositDueExcludingFee\": 7415,\n            \"amountDueExcludingFee\": 4678,\n            \"order\": {\n              \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n            },\n            \"debicheckStatus\": \"string\",\n            \"debicheckLastFailedReasons\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"debicheckMandateActiveId\": \"string\",\n            \"debicheckMandateIds\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"payAtReferenceNumber\": \"string\",\n            \"agreedToTerms\": true\n          }\n        ],\n        \"createdAt\": \"string\",\n        \"timestamp\": 884.6801131768656,\n        \"enablesSplit\": true,\n        \"depositAmount\": 7470,\n        \"depositType\": \"FLAT\",\n        \"expire\": \"string\",\n        \"cancellationTerms\": {\n          \"active\": true,\n          \"definition\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"weeklyPayments\": true,\n        \"paymentMethods\": {\n          \"creditOrDebitCard\": true,\n          \"eft\": false,\n          \"debiCheck\": false,\n          \"payAt\": true,\n          \"capitecPay\": false,\n          \"dashpay\": false,\n          \"terminalCard\": false,\n          \"offline\": true,\n          \"embeddedCheckout\": true\n        },\n        \"stateUpdatedAt\": \"string\",\n        \"updatedAt\": \"string\",\n        \"groupPaymentPlan\": {\n          \"enabled\": true,\n          \"cloneLimit\": 2431,\n          \"expiry\": 7587\n        },\n        \"cloneExpiry\": 7732,\n        \"cloneCount\": 3961,\n        \"orderCancellationRequest\": \"string\",\n        \"notifications\": [\n          {\n            \"change\": \"string\",\n            \"date\": \"string\",\n            \"name\": \"string\",\n            \"reason\": \"string\",\n            \"details\": \"string\",\n            \"read\": false,\n            \"userId\": \"string\",\n            \"type\": \"string\",\n            \"hide\": true,\n            \"unread\": true\n          },\n          {\n            \"change\": \"string\",\n            \"date\": \"string\",\n            \"name\": \"string\",\n            \"reason\": \"string\",\n            \"details\": \"string\",\n            \"read\": true,\n            \"userId\": \"string\",\n            \"type\": \"string\",\n            \"hide\": false,\n            \"unread\": false\n          }\n        ],\n        \"acceptedProposedCancellationTerms\": false,\n        \"customFeatures\": {\n          \"logo\": {\n            \"enabled\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"imageUrl\": {\n            \"enabled\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"paymentWidget\": {\n            \"enabled\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"merchantName\": \"string\",\n        \"merchantTermsLink\": \"string\",\n        \"merchantLink\": \"string\",\n        \"debiCheckMinimum\": {\n          \"enabled\": false,\n          \"value\": 8900\n        },\n        \"supplier\": {\n          \"_id\": \"string\",\n          \"name\": \"string\",\n          \"merchantId\": \"string\"\n        },\n        \"orderRefundRequest\": \"string\",\n        \"orderRefundAmount\": 9169,\n        \"orderRefundFee\": 6491,\n        \"monthlyPayments\": false,\n        \"type\": \"string\",\n        \"balance\": 2518,\n        \"description\": \"string\",\n        \"isIncreasedDepositAmountAllowed\": false,\n        \"suspendOnCancel\": false,\n        \"voucherSettings\": {\n          \"active\": true,\n          \"minimumSavingGoalInCents\": 2737,\n          \"maximumSavingGoalInCents\": 8076,\n          \"rewardType\": \"string\",\n          \"rewardFlatAmountInCents\": 274,\n          \"rewardPercentage\": 9873,\n          \"voucherProvider\": \"string\"\n        }\n      },\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"_id\": \"string\",\n      \"userId\": \"string\",\n      \"orderId\": \"string\",\n      \"amendmentType\": \"string\",\n      \"products\": [\n        {\n          \"_id\": \"string\",\n          \"amount\": 4803,\n          \"link\": \"https://ZKKlCBTkqXUKIYw.effDeTZef.pUxm7ypi9zjQFUWmeK8b9Pae56LtxLqdPtzxyGjHCF8kfGK7B\",\n          \"sku\": \"string\",\n          \"name\": \"string\",\n          \"depositType\": \"string\"\n        },\n        {\n          \"_id\": \"string\",\n          \"amount\": 2984,\n          \"link\": \"http://etmmCWJplf.juusywL3UiVjv2kk,VOGDcv1C.0Ou,ous3kdChlwPXAxqezeFNhqc\",\n          \"sku\": \"string\",\n          \"name\": \"string\",\n          \"depositType\": \"string\"\n        }\n      ],\n      \"endDate\": \"string\",\n      \"from\": {\n        \"_id\": \"string\",\n        \"endDateMax\": \"2018-09-26T01:41:53.399Z\",\n        \"endDateMin\": \"1961-02-24T14:22:40.488Z\",\n        \"initiatorId\": \"string\",\n        \"products\": [\n          {\n            \"_id\": \"string\",\n            \"amount\": 7206,\n            \"link\": \"http://bMDxjKKmJNwAbGCUOLtFYSWGqrxM.ldyxT.q0b5dgc8stda8IQww5\",\n            \"sku\": \"string\",\n            \"name\": \"string\",\n            \"depositType\": \"string\"\n          },\n          {\n            \"_id\": \"string\",\n            \"amount\": 3260,\n            \"link\": \"http://sgFOJn.ateqyuzqx-IwWk9dV9rA5xe44VJRu9so2pkoq6tRdbqysR\",\n            \"sku\": \"string\",\n            \"name\": \"string\",\n            \"depositType\": \"string\"\n          }\n        ],\n        \"state\": \"PARTIAL\",\n        \"supplierId\": \"string\",\n        \"cancelledBy\": \"string\",\n        \"amountDue\": 2058,\n        \"flatFee\": 1343,\n        \"percFee\": 5650.047648213658,\n        \"depositPerc\": 9789.4286619451,\n        \"absorbsFee\": true,\n        \"reference\": \"string\",\n        \"name\": \"string\",\n        \"imageUrl\": \"string\",\n        \"plans\": [\n          {\n            \"_id\": \"string\",\n            \"orderId\": \"string\",\n            \"benefactorId\": \"string\",\n            \"completed\": false,\n            \"quantity\": 2326,\n            \"depositDue\": 3709,\n            \"amountDue\": 7140,\n            \"automaticBilling\": false,\n            \"timestamp\": 1282.1867971674094,\n            \"payments\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"benefactor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frequency\": \"MONTHLY\",\n            \"offset\": 4158,\n            \"depositDueExcludingFee\": 3694,\n            \"amountDueExcludingFee\": 2105,\n            \"order\": {\n              \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n            },\n            \"debicheckStatus\": \"string\",\n            \"debicheckLastFailedReasons\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"debicheckMandateActiveId\": \"string\",\n            \"debicheckMandateIds\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"payAtReferenceNumber\": \"string\",\n            \"agreedToTerms\": false\n          },\n          {\n            \"_id\": \"string\",\n            \"orderId\": \"string\",\n            \"benefactorId\": \"string\",\n            \"completed\": true,\n            \"quantity\": 2355,\n            \"depositDue\": 8177,\n            \"amountDue\": 7693,\n            \"automaticBilling\": false,\n            \"timestamp\": 4978.087119327923,\n            \"payments\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"benefactor\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frequency\": \"MONTHLY\",\n            \"offset\": 9893,\n            \"depositDueExcludingFee\": 4959,\n            \"amountDueExcludingFee\": 5832,\n            \"order\": {\n              \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n            },\n            \"debicheckStatus\": \"string\",\n            \"debicheckLastFailedReasons\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"debicheckMandateActiveId\": \"string\",\n            \"debicheckMandateIds\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"payAtReferenceNumber\": \"string\",\n            \"agreedToTerms\": false\n          }\n        ],\n        \"createdAt\": \"string\",\n        \"timestamp\": 1091.4897871405117,\n        \"enablesSplit\": true,\n        \"depositAmount\": 2846,\n        \"depositType\": \"INSTALMENT\",\n        \"expire\": \"string\",\n        \"cancellationTerms\": {\n          \"active\": true,\n          \"definition\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"weeklyPayments\": false,\n        \"paymentMethods\": {\n          \"creditOrDebitCard\": true,\n          \"eft\": false,\n          \"debiCheck\": false,\n          \"payAt\": true,\n          \"capitecPay\": false,\n          \"dashpay\": true,\n          \"terminalCard\": false,\n          \"offline\": true,\n          \"embeddedCheckout\": true\n        },\n        \"stateUpdatedAt\": \"string\",\n        \"updatedAt\": \"string\",\n        \"groupPaymentPlan\": {\n          \"enabled\": true,\n          \"cloneLimit\": 6602,\n          \"expiry\": 5934\n        },\n        \"cloneExpiry\": 3023,\n        \"cloneCount\": 3281,\n        \"orderCancellationRequest\": \"string\",\n        \"notifications\": [\n          {\n            \"change\": \"string\",\n            \"date\": \"string\",\n            \"name\": \"string\",\n            \"reason\": \"string\",\n            \"details\": \"string\",\n            \"read\": true,\n            \"userId\": \"string\",\n            \"type\": \"string\",\n            \"hide\": false,\n            \"unread\": true\n          },\n          {\n            \"change\": \"string\",\n            \"date\": \"string\",\n            \"name\": \"string\",\n            \"reason\": \"string\",\n            \"details\": \"string\",\n            \"read\": true,\n            \"userId\": \"string\",\n            \"type\": \"string\",\n            \"hide\": true,\n            \"unread\": true\n          }\n        ],\n        \"acceptedProposedCancellationTerms\": false,\n        \"customFeatures\": {\n          \"logo\": {\n            \"enabled\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"imageUrl\": {\n            \"enabled\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"paymentWidget\": {\n            \"enabled\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"merchantName\": \"string\",\n        \"merchantTermsLink\": \"string\",\n        \"merchantLink\": \"string\",\n        \"debiCheckMinimum\": {\n          \"enabled\": false,\n          \"value\": 5922\n        },\n        \"supplier\": {\n          \"_id\": \"string\",\n          \"name\": \"string\",\n          \"merchantId\": \"string\"\n        },\n        \"orderRefundRequest\": \"string\",\n        \"orderRefundAmount\": 239,\n        \"orderRefundFee\": 8788,\n        \"monthlyPayments\": true,\n        \"type\": \"string\",\n        \"balance\": 4270,\n        \"description\": \"string\",\n        \"isIncreasedDepositAmountAllowed\": true,\n        \"suspendOnCancel\": false,\n        \"voucherSettings\": {\n          \"active\": false,\n          \"minimumSavingGoalInCents\": 8005,\n          \"maximumSavingGoalInCents\": 8498,\n          \"rewardType\": \"string\",\n          \"rewardFlatAmountInCents\": 3364,\n          \"rewardPercentage\": 7401,\n          \"voucherProvider\": \"string\"\n        }\n      },\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04d87816-2d18-4009-90ac-238caa6ce878",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "166190ed-dac6-47f0-a5a7-ee64ddda1f9b",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f470f56b-43e3-4b7a-aec4-7e0aeda2ab7b",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cf01c5d-ad3e-4446-adb3-6047067348e6",
+          "name": "Order Amendment Service Create",
+          "request": {
+            "name": "Order Amendment Service Create",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "order-amendments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": \"<string>\",\n  \"amendmentType\": \"<string>\",\n  \"products\": [\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    },\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    }\n  ],\n  \"endDate\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "febccb73-e7e7-41cf-b36d-4d32cb0351df",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orderId\": \"<string>\",\n  \"amendmentType\": \"<string>\",\n  \"products\": [\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    },\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    }\n  ],\n  \"endDate\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"userId\": \"string\",\n  \"orderId\": \"string\",\n  \"amendmentType\": \"string\",\n  \"products\": [\n    {\n      \"_id\": \"string\",\n      \"amount\": 2685,\n      \"link\": \"http://JQkXIONgPucDZDmdjtyZvKAuFMHgnnZ.lei2o1MVuFf3Fxd\",\n      \"sku\": \"string\",\n      \"name\": \"string\",\n      \"depositType\": \"string\"\n    },\n    {\n      \"_id\": \"string\",\n      \"amount\": 779,\n      \"link\": \"http://NUZFqBifeTKtKeW.hfjsmKK-c2rnm8B2lRWVepm29wM5Ek\",\n      \"sku\": \"string\",\n      \"name\": \"string\",\n      \"depositType\": \"string\"\n    }\n  ],\n  \"endDate\": \"string\",\n  \"from\": {\n    \"_id\": \"string\",\n    \"endDateMax\": \"2000-03-27T20:49:00.646Z\",\n    \"endDateMin\": \"2017-03-20T09:52:19.529Z\",\n    \"initiatorId\": \"string\",\n    \"products\": [\n      {\n        \"_id\": \"string\",\n        \"amount\": 5019,\n        \"link\": \"http://TxIhgIZxjaUeYkY.lnjrYd1zIZSI7svMylq9BhGDnJWaklgknJUV03qpPJSHP\",\n        \"sku\": \"string\",\n        \"name\": \"string\",\n        \"depositType\": \"string\"\n      },\n      {\n        \"_id\": \"string\",\n        \"amount\": 4655,\n        \"link\": \"https://dVfhDmYDoZrpFaleewK.iaHwtRAahuurx\",\n        \"sku\": \"string\",\n        \"name\": \"string\",\n        \"depositType\": \"string\"\n      }\n    ],\n    \"state\": \"PARTIAL\",\n    \"supplierId\": \"string\",\n    \"cancelledBy\": \"string\",\n    \"amountDue\": 6637,\n    \"flatFee\": 2110,\n    \"percFee\": 6857.167882215085,\n    \"depositPerc\": 687.5584492786091,\n    \"absorbsFee\": false,\n    \"reference\": \"string\",\n    \"name\": \"string\",\n    \"imageUrl\": \"string\",\n    \"plans\": [\n      {\n        \"_id\": \"string\",\n        \"orderId\": \"string\",\n        \"benefactorId\": \"string\",\n        \"completed\": false,\n        \"quantity\": 5789,\n        \"depositDue\": 2968,\n        \"amountDue\": 6906,\n        \"automaticBilling\": true,\n        \"timestamp\": 8967.089680657326,\n        \"payments\": [\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 8307,\n            \"paid\": false,\n            \"timestamp\": 9435.45275387122,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 5334,\n            \"fee\": 6862,\n            \"pending\": true,\n            \"failed\": true,\n            \"reconciliated\": true,\n            \"refundedAmount\": 884,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          },\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 4524,\n            \"paid\": true,\n            \"timestamp\": 2633.520237762237,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 6313,\n            \"fee\": 624,\n            \"pending\": true,\n            \"failed\": false,\n            \"reconciliated\": false,\n            \"refundedAmount\": 1456,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          }\n        ],\n        \"benefactor\": {\n          \"_id\": \"string\",\n          \"name\": \"string\",\n          \"email\": \"string\"\n        },\n        \"frequency\": \"MONTHLY\",\n        \"offset\": 135,\n        \"depositDueExcludingFee\": 6466,\n        \"amountDueExcludingFee\": 4834,\n        \"order\": {\n          \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n        },\n        \"debicheckStatus\": \"string\",\n        \"debicheckLastFailedReasons\": [\n          \"string\",\n          \"string\"\n        ],\n        \"debicheckMandateActiveId\": \"string\",\n        \"debicheckMandateIds\": [\n          \"string\",\n          \"string\"\n        ],\n        \"payAtReferenceNumber\": \"string\",\n        \"agreedToTerms\": false\n      },\n      {\n        \"_id\": \"string\",\n        \"orderId\": \"string\",\n        \"benefactorId\": \"string\",\n        \"completed\": true,\n        \"quantity\": 2287,\n        \"depositDue\": 2621,\n        \"amountDue\": 2209,\n        \"automaticBilling\": false,\n        \"timestamp\": 6350.621230127323,\n        \"payments\": [\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 8956,\n            \"paid\": true,\n            \"timestamp\": 7425.867634922945,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 703,\n            \"fee\": 2751,\n            \"pending\": true,\n            \"failed\": true,\n            \"reconciliated\": true,\n            \"refundedAmount\": 153,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          },\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 3373,\n            \"paid\": false,\n            \"timestamp\": 5743.965574102099,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 815,\n            \"fee\": 2055,\n            \"pending\": false,\n            \"failed\": false,\n            \"reconciliated\": true,\n            \"refundedAmount\": 1982,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          }\n        ],\n        \"benefactor\": {\n          \"_id\": \"string\",\n          \"name\": \"string\",\n          \"email\": \"string\"\n        },\n        \"frequency\": \"WEEKLY\",\n        \"offset\": 6640,\n        \"depositDueExcludingFee\": 1297,\n        \"amountDueExcludingFee\": 2224,\n        \"order\": {\n          \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n        },\n        \"debicheckStatus\": \"string\",\n        \"debicheckLastFailedReasons\": [\n          \"string\",\n          \"string\"\n        ],\n        \"debicheckMandateActiveId\": \"string\",\n        \"debicheckMandateIds\": [\n          \"string\",\n          \"string\"\n        ],\n        \"payAtReferenceNumber\": \"string\",\n        \"agreedToTerms\": false\n      }\n    ],\n    \"createdAt\": \"string\",\n    \"timestamp\": 4068.651024923892,\n    \"enablesSplit\": true,\n    \"depositAmount\": 6833,\n    \"depositType\": \"FLAT\",\n    \"expire\": \"string\",\n    \"cancellationTerms\": {\n      \"active\": true,\n      \"definition\": [\n        {\n          \"type\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"finalPaymentMissed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"policy\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": 2330,\n          \"end\": 963,\n          \"gracePeriod\": 3020\n        },\n        {\n          \"type\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"finalPaymentMissed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"policy\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": 9554,\n          \"end\": 7320,\n          \"gracePeriod\": 5059\n        }\n      ]\n    },\n    \"weeklyPayments\": false,\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": false,\n      \"eft\": false,\n      \"debiCheck\": false,\n      \"payAt\": false,\n      \"capitecPay\": false,\n      \"dashpay\": true,\n      \"terminalCard\": false,\n      \"offline\": false,\n      \"embeddedCheckout\": false\n    },\n    \"stateUpdatedAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"groupPaymentPlan\": {\n      \"enabled\": true,\n      \"cloneLimit\": 8355,\n      \"expiry\": 3451\n    },\n    \"cloneExpiry\": 4810,\n    \"cloneCount\": 8881,\n    \"orderCancellationRequest\": \"string\",\n    \"notifications\": [\n      {\n        \"change\": \"string\",\n        \"date\": \"string\",\n        \"name\": \"string\",\n        \"reason\": \"string\",\n        \"details\": \"string\",\n        \"read\": true,\n        \"userId\": \"string\",\n        \"type\": \"string\",\n        \"hide\": true,\n        \"unread\": true\n      },\n      {\n        \"change\": \"string\",\n        \"date\": \"string\",\n        \"name\": \"string\",\n        \"reason\": \"string\",\n        \"details\": \"string\",\n        \"read\": false,\n        \"userId\": \"string\",\n        \"type\": \"string\",\n        \"hide\": true,\n        \"unread\": true\n      }\n    ],\n    \"acceptedProposedCancellationTerms\": true,\n    \"customFeatures\": {\n      \"logo\": {\n        \"enabled\": true,\n        \"value\": \"string\"\n      },\n      \"imageUrl\": {\n        \"enabled\": true,\n        \"value\": \"string\"\n      },\n      \"paymentWidget\": {\n        \"enabled\": true,\n        \"value\": \"string\"\n      }\n    },\n    \"merchantName\": \"string\",\n    \"merchantTermsLink\": \"string\",\n    \"merchantLink\": \"string\",\n    \"debiCheckMinimum\": {\n      \"enabled\": false,\n      \"value\": 6160\n    },\n    \"supplier\": {\n      \"_id\": \"string\",\n      \"name\": \"string\",\n      \"merchantId\": \"string\"\n    },\n    \"orderRefundRequest\": \"string\",\n    \"orderRefundAmount\": 9028,\n    \"orderRefundFee\": 6517,\n    \"monthlyPayments\": true,\n    \"type\": \"string\",\n    \"balance\": 7407,\n    \"description\": \"string\",\n    \"isIncreasedDepositAmountAllowed\": true,\n    \"suspendOnCancel\": false,\n    \"voucherSettings\": {\n      \"active\": false,\n      \"minimumSavingGoalInCents\": 9312,\n      \"maximumSavingGoalInCents\": 3021,\n      \"rewardType\": \"string\",\n      \"rewardFlatAmountInCents\": 5592,\n      \"rewardPercentage\": 9240,\n      \"voucherProvider\": \"string\"\n    }\n  },\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06d4737a-7502-4171-9563-bd04f9bf51b9",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orderId\": \"<string>\",\n  \"amendmentType\": \"<string>\",\n  \"products\": [\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    },\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    }\n  ],\n  \"endDate\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "21c89d41-6609-410f-a150-b7932195aa8c",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orderId\": \"<string>\",\n  \"amendmentType\": \"<string>\",\n  \"products\": [\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    },\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    }\n  ],\n  \"endDate\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "839f9b7a-72c9-4f79-a0dd-f1b7f18a2e55",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"orderId\": \"<string>\",\n  \"amendmentType\": \"<string>\",\n  \"products\": [\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    },\n    {\n      \"_id\": \"<string>\",\n      \"amount\": \"<integer>\",\n      \"link\": \"<uri>\",\n      \"sku\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"depositType\": \"<string>\"\n    }\n  ],\n  \"endDate\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d15ea3e2-b9cc-4efa-b4b2-3222a44226de",
+          "name": "Order Amendment Service Get",
+          "request": {
+            "name": "Order Amendment Service Get",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "order-amendments",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cc449bb-13a6-486e-af0f-86355d8d8635",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"userId\": \"string\",\n  \"orderId\": \"string\",\n  \"amendmentType\": \"string\",\n  \"products\": [\n    {\n      \"_id\": \"string\",\n      \"amount\": 2685,\n      \"link\": \"http://JQkXIONgPucDZDmdjtyZvKAuFMHgnnZ.lei2o1MVuFf3Fxd\",\n      \"sku\": \"string\",\n      \"name\": \"string\",\n      \"depositType\": \"string\"\n    },\n    {\n      \"_id\": \"string\",\n      \"amount\": 779,\n      \"link\": \"http://NUZFqBifeTKtKeW.hfjsmKK-c2rnm8B2lRWVepm29wM5Ek\",\n      \"sku\": \"string\",\n      \"name\": \"string\",\n      \"depositType\": \"string\"\n    }\n  ],\n  \"endDate\": \"string\",\n  \"from\": {\n    \"_id\": \"string\",\n    \"endDateMax\": \"2000-03-27T20:49:00.646Z\",\n    \"endDateMin\": \"2017-03-20T09:52:19.529Z\",\n    \"initiatorId\": \"string\",\n    \"products\": [\n      {\n        \"_id\": \"string\",\n        \"amount\": 5019,\n        \"link\": \"http://TxIhgIZxjaUeYkY.lnjrYd1zIZSI7svMylq9BhGDnJWaklgknJUV03qpPJSHP\",\n        \"sku\": \"string\",\n        \"name\": \"string\",\n        \"depositType\": \"string\"\n      },\n      {\n        \"_id\": \"string\",\n        \"amount\": 4655,\n        \"link\": \"https://dVfhDmYDoZrpFaleewK.iaHwtRAahuurx\",\n        \"sku\": \"string\",\n        \"name\": \"string\",\n        \"depositType\": \"string\"\n      }\n    ],\n    \"state\": \"PARTIAL\",\n    \"supplierId\": \"string\",\n    \"cancelledBy\": \"string\",\n    \"amountDue\": 6637,\n    \"flatFee\": 2110,\n    \"percFee\": 6857.167882215085,\n    \"depositPerc\": 687.5584492786091,\n    \"absorbsFee\": false,\n    \"reference\": \"string\",\n    \"name\": \"string\",\n    \"imageUrl\": \"string\",\n    \"plans\": [\n      {\n        \"_id\": \"string\",\n        \"orderId\": \"string\",\n        \"benefactorId\": \"string\",\n        \"completed\": false,\n        \"quantity\": 5789,\n        \"depositDue\": 2968,\n        \"amountDue\": 6906,\n        \"automaticBilling\": true,\n        \"timestamp\": 8967.089680657326,\n        \"payments\": [\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 8307,\n            \"paid\": false,\n            \"timestamp\": 9435.45275387122,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 5334,\n            \"fee\": 6862,\n            \"pending\": true,\n            \"failed\": true,\n            \"reconciliated\": true,\n            \"refundedAmount\": 884,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          },\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 4524,\n            \"paid\": true,\n            \"timestamp\": 2633.520237762237,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 6313,\n            \"fee\": 624,\n            \"pending\": true,\n            \"failed\": false,\n            \"reconciliated\": false,\n            \"refundedAmount\": 1456,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          }\n        ],\n        \"benefactor\": {\n          \"_id\": \"string\",\n          \"name\": \"string\",\n          \"email\": \"string\"\n        },\n        \"frequency\": \"MONTHLY\",\n        \"offset\": 135,\n        \"depositDueExcludingFee\": 6466,\n        \"amountDueExcludingFee\": 4834,\n        \"order\": {\n          \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n        },\n        \"debicheckStatus\": \"string\",\n        \"debicheckLastFailedReasons\": [\n          \"string\",\n          \"string\"\n        ],\n        \"debicheckMandateActiveId\": \"string\",\n        \"debicheckMandateIds\": [\n          \"string\",\n          \"string\"\n        ],\n        \"payAtReferenceNumber\": \"string\",\n        \"agreedToTerms\": false\n      },\n      {\n        \"_id\": \"string\",\n        \"orderId\": \"string\",\n        \"benefactorId\": \"string\",\n        \"completed\": true,\n        \"quantity\": 2287,\n        \"depositDue\": 2621,\n        \"amountDue\": 2209,\n        \"automaticBilling\": false,\n        \"timestamp\": 6350.621230127323,\n        \"payments\": [\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 8956,\n            \"paid\": true,\n            \"timestamp\": 7425.867634922945,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 703,\n            \"fee\": 2751,\n            \"pending\": true,\n            \"failed\": true,\n            \"reconciliated\": true,\n            \"refundedAmount\": 153,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          },\n          {\n            \"_id\": \"string\",\n            \"due\": \"string\",\n            \"amount\": 3373,\n            \"paid\": false,\n            \"timestamp\": 5743.965574102099,\n            \"paymentMethod\": \"string\",\n            \"paymentType\": \"string\",\n            \"amountExcludingFee\": 815,\n            \"fee\": 2055,\n            \"pending\": false,\n            \"failed\": false,\n            \"reconciliated\": true,\n            \"refundedAmount\": 1982,\n            \"refundPaymentId\": \"string\",\n            \"connectorData\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verifiedAt\": \"string\",\n            \"dueAt\": \"string\"\n          }\n        ],\n        \"benefactor\": {\n          \"_id\": \"string\",\n          \"name\": \"string\",\n          \"email\": \"string\"\n        },\n        \"frequency\": \"WEEKLY\",\n        \"offset\": 6640,\n        \"depositDueExcludingFee\": 1297,\n        \"amountDueExcludingFee\": 2224,\n        \"order\": {\n          \"value\": \"<Circular reference to #/components/schemas/modelOrderResponse detected>\"\n        },\n        \"debicheckStatus\": \"string\",\n        \"debicheckLastFailedReasons\": [\n          \"string\",\n          \"string\"\n        ],\n        \"debicheckMandateActiveId\": \"string\",\n        \"debicheckMandateIds\": [\n          \"string\",\n          \"string\"\n        ],\n        \"payAtReferenceNumber\": \"string\",\n        \"agreedToTerms\": false\n      }\n    ],\n    \"createdAt\": \"string\",\n    \"timestamp\": 4068.651024923892,\n    \"enablesSplit\": true,\n    \"depositAmount\": 6833,\n    \"depositType\": \"FLAT\",\n    \"expire\": \"string\",\n    \"cancellationTerms\": {\n      \"active\": true,\n      \"definition\": [\n        {\n          \"type\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"finalPaymentMissed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"policy\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": 2330,\n          \"end\": 963,\n          \"gracePeriod\": 3020\n        },\n        {\n          \"type\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"finalPaymentMissed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"policy\": {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"definition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": 9554,\n          \"end\": 7320,\n          \"gracePeriod\": 5059\n        }\n      ]\n    },\n    \"weeklyPayments\": false,\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": false,\n      \"eft\": false,\n      \"debiCheck\": false,\n      \"payAt\": false,\n      \"capitecPay\": false,\n      \"dashpay\": true,\n      \"terminalCard\": false,\n      \"offline\": false,\n      \"embeddedCheckout\": false\n    },\n    \"stateUpdatedAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"groupPaymentPlan\": {\n      \"enabled\": true,\n      \"cloneLimit\": 8355,\n      \"expiry\": 3451\n    },\n    \"cloneExpiry\": 4810,\n    \"cloneCount\": 8881,\n    \"orderCancellationRequest\": \"string\",\n    \"notifications\": [\n      {\n        \"change\": \"string\",\n        \"date\": \"string\",\n        \"name\": \"string\",\n        \"reason\": \"string\",\n        \"details\": \"string\",\n        \"read\": true,\n        \"userId\": \"string\",\n        \"type\": \"string\",\n        \"hide\": true,\n        \"unread\": true\n      },\n      {\n        \"change\": \"string\",\n        \"date\": \"string\",\n        \"name\": \"string\",\n        \"reason\": \"string\",\n        \"details\": \"string\",\n        \"read\": false,\n        \"userId\": \"string\",\n        \"type\": \"string\",\n        \"hide\": true,\n        \"unread\": true\n      }\n    ],\n    \"acceptedProposedCancellationTerms\": true,\n    \"customFeatures\": {\n      \"logo\": {\n        \"enabled\": true,\n        \"value\": \"string\"\n      },\n      \"imageUrl\": {\n        \"enabled\": true,\n        \"value\": \"string\"\n      },\n      \"paymentWidget\": {\n        \"enabled\": true,\n        \"value\": \"string\"\n      }\n    },\n    \"merchantName\": \"string\",\n    \"merchantTermsLink\": \"string\",\n    \"merchantLink\": \"string\",\n    \"debiCheckMinimum\": {\n      \"enabled\": false,\n      \"value\": 6160\n    },\n    \"supplier\": {\n      \"_id\": \"string\",\n      \"name\": \"string\",\n      \"merchantId\": \"string\"\n    },\n    \"orderRefundRequest\": \"string\",\n    \"orderRefundAmount\": 9028,\n    \"orderRefundFee\": 6517,\n    \"monthlyPayments\": true,\n    \"type\": \"string\",\n    \"balance\": 7407,\n    \"description\": \"string\",\n    \"isIncreasedDepositAmountAllowed\": true,\n    \"suspendOnCancel\": false,\n    \"voucherSettings\": {\n      \"active\": false,\n      \"minimumSavingGoalInCents\": 9312,\n      \"maximumSavingGoalInCents\": 3021,\n      \"rewardType\": \"string\",\n      \"rewardFlatAmountInCents\": 5592,\n      \"rewardPercentage\": 9240,\n      \"voucherProvider\": \"string\"\n    }\n  },\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97fe5ffd-9288-4629-8272-dfe8de8ebd0a",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1e914f2c-1ad6-4370-92cc-77cf4aaa161c",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bbfe9efd-37e7-4dc9-a1c7-0e2ad8bbd410",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "order-amendments",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b0c6f055-0c86-4df3-8979-ffcc45503c86",
+    "name": "Layup endpoints AbsaDebiCheckService OrderAmendmentService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

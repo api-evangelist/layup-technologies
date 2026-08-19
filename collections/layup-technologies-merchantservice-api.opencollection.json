@@ -1,0 +1,123 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService MerchantService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MerchantService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "MerchantService_Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/merchants",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "avs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "MerchantService_getMerchantsToSettle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/merchants-to-settle"
+          }
+        },
+        {
+          "info": {
+            "name": "MerchantService_getShops",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/merchants/shop-directory",
+            "params": [
+              {
+                "name": "featured",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "MerchantService_Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/merchants/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "MerchantService_Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/merchants/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "avs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "MerchantService_Del",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/merchants/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

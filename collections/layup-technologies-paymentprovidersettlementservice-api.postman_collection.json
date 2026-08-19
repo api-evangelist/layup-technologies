@@ -1,0 +1,851 @@
+{
+  "item": [
+    {
+      "id": "8af17a25-280b-482d-9c17-7a4ee3771e4f",
+      "name": "PaymentProviderSettlementService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15cfc44b-c108-48d5-9c26-d3ad00e2dd58",
+          "name": "Payment Provider Settlement Service create",
+          "request": {
+            "name": "Payment Provider Settlement Service create",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "paymentProviderSettlements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentProviderSettlements\": [\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    },\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "34ec2b1f-f7a3-4903-822e-73432d12569e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"paymentProviderSettlements\": [\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    },\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"settlements\": [\n    {\n      \"amountInCents\": 3907,\n      \"reference\": \"string\",\n      \"paymentProvider\": \"string\",\n      \"paymentProviderPaymentId\": \"string\",\n      \"transactionDate\": \"string\",\n      \"paymentReference\": \"string\",\n      \"fileStorageReference\": \"string\",\n      \"paymentMethod\": \"string\",\n      \"feeInCents\": 656,\n      \"_id\": \"string\"\n    },\n    {\n      \"amountInCents\": 4460,\n      \"reference\": \"string\",\n      \"paymentProvider\": \"string\",\n      \"paymentProviderPaymentId\": \"string\",\n      \"transactionDate\": \"string\",\n      \"paymentReference\": \"string\",\n      \"fileStorageReference\": \"string\",\n      \"paymentMethod\": \"string\",\n      \"feeInCents\": 9331,\n      \"_id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fabd3aa5-0c06-4542-b768-b6ad1145a3e1",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"paymentProviderSettlements\": [\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    },\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "757304f6-604d-4624-8574-43408203a458",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"paymentProviderSettlements\": [\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    },\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "415a5eab-adb7-4b0c-a01b-b5470786497f",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"paymentProviderSettlements\": [\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    },\n    {\n      \"amountInCents\": \"<integer>\",\n      \"reference\": \"<string>\",\n      \"paymentProvider\": \"<string>\",\n      \"paymentProviderPaymentId\": \"<string>\",\n      \"transactionDate\": \"<string>\",\n      \"paymentReference\": \"<string>\",\n      \"fileStorageReference\": \"<string>\",\n      \"paymentMethod\": \"<string>\",\n      \"feeInCents\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67771d65-aef0-4129-9494-02f07f7b3bc0",
+          "name": "Payment Provider Settlement Service link Batch",
+          "request": {
+            "name": "Payment Provider Settlement Service link Batch",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "paymentProviderSettlements",
+                "link-batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "bankTransactionBatchId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41745679-34d9-40cd-9375-fcb7cb70a583",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    "link-batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bankTransactionBatchId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88bbe56a-1d18-4629-88e2-cc80aa908b15",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    "link-batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bankTransactionBatchId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0df4ab9e-fbef-40ae-a8b4-74a318ea627a",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    "link-batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bankTransactionBatchId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ef11160b-f64a-4596-9bc4-643d02f8f610",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    "link-batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bankTransactionBatchId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "426539a0-c472-4bca-af54-a6d2f4de8f96",
+          "name": "Payment Provider Settlement Service link Payment",
+          "request": {
+            "name": "Payment Provider Settlement Service link Payment",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "paymentProviderSettlements",
+                ":id",
+                "linkPayment",
+                ":paymentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "paymentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33a45cd8-ead3-4450-9694-ea4b5238d712",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    ":id",
+                    "linkPayment",
+                    ":paymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amountInCents\": 5430,\n  \"reference\": \"string\",\n  \"paymentProvider\": \"string\",\n  \"paymentProviderPaymentId\": \"string\",\n  \"transactionDate\": \"string\",\n  \"paymentReference\": \"string\",\n  \"fileStorageReference\": \"string\",\n  \"paymentMethod\": \"string\",\n  \"feeInCents\": 5623,\n  \"_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d575ad50-5bca-4861-b2d8-1706077b28da",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    ":id",
+                    "linkPayment",
+                    ":paymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "46ccf176-bc66-4683-86f8-1d1dda2ffebd",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    ":id",
+                    "linkPayment",
+                    ":paymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ade5705b-8797-4e04-8b18-5fa20a1f08ce",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paymentProviderSettlements",
+                    ":id",
+                    "linkPayment",
+                    ":paymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cded86dc-8c63-49eb-ad5f-07c8d5bef4da",
+    "name": "Layup endpoints AbsaDebiCheckService PaymentProviderSettlementService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

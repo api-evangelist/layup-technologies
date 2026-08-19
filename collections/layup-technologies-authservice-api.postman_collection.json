@@ -1,0 +1,1525 @@
+{
+  "item": [
+    {
+      "id": "5cd7ef3a-9242-41b8-a3bf-14033d6f857e",
+      "name": "authService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "80175f95-2169-42e0-90cc-54288e3fd89a",
+          "name": "Warning: Calling this endpoint will replace any existing apikeys on your account.",
+          "request": {
+            "name": "Warning: Calling this endpoint will replace any existing apikeys on your account.",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "auth",
+                "apikey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18dbbbd6-df22-43db-bfe6-b5fd811317bd",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apikey\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73672590-3210-4e55-a240-900c4b5ad02b",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0d837a51-65b0-4efb-abc3-d974ee45215e",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6e06b604-23e4-4eae-9020-7b9be5f29003",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "apikey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5fb7bcf-fc09-4d68-958b-9b935d515bde",
+          "name": "auth Service Login",
+          "request": {
+            "name": "auth Service Login",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\",\n  \"rememberMe\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0907d1b4-87b5-488a-b406-a09350ff4049",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\",\n  \"rememberMe\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"username\": \"string\",\n  \"email\": \"t7I1crTq7o4VC1@UjHIZIeOTS.twe\",\n  \"idNumber\": \"string\",\n  \"address\": \"string\",\n  \"postalCode\": \"string\",\n  \"city\": \"string\",\n  \"province\": \"string\",\n  \"country\": \"string\",\n  \"role\": \"CLIENT\",\n  \"active\": false,\n  \"merchantId\": \"string\",\n  \"cellNumber\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"name\": \"string\",\n  \"verified\": true,\n  \"timestamp\": 9695.8451280365,\n  \"hasPassword\": false,\n  \"verifiedEmail\": false,\n  \"verifiedMobile\": false,\n  \"merchantRole\": \"string\",\n  \"bankDetails\": {\n    \"bankName\": {\n      \"verified\": false,\n      \"value\": \"string\"\n    },\n    \"account\": {\n      \"verified\": true,\n      \"value\": \"string\"\n    },\n    \"accountType\": {\n      \"verified\": true,\n      \"value\": \"string\"\n    },\n    \"branchCode\": {\n      \"verified\": true,\n      \"value\": \"string\"\n    },\n    \"idNumber\": {\n      \"verified\": false,\n      \"value\": \"string\"\n    },\n    \"verified\": false,\n    \"clientName\": {\n      \"verified\": false,\n      \"value\": \"string\"\n    },\n    \"cellNumber\": {\n      \"verified\": false,\n      \"value\": \"string\"\n    },\n    \"initials\": {\n      \"verified\": true,\n      \"value\": \"string\"\n    },\n    \"email\": {\n      \"verified\": false,\n      \"value\": \"string\"\n    },\n    \"validationResponseErrors\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"merchantOnboarding\": {\n    \"name\": \"string\",\n    \"physicalAddress\": {\n      \"country\": \"string\",\n      \"province\": \"string\",\n      \"streetAddress\": \"string\",\n      \"city\": \"string\",\n      \"postalCode\": \"string\"\n    }\n  },\n  \"bankValidationPendingReference\": \"string\",\n  \"oneTimePass\": \"string\",\n  \"passportState\": \"string\",\n  \"passportNumber\": \"string\",\n  \"profileImage\": \"string\",\n  \"merchantIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"merchants\": [\n    {\n      \"_id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"_id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"isMerchantOwner\": false,\n  \"twoFactorAuthenticationRequired\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "31e9c742-9e49-4d43-8aee-7453ef08417a",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\",\n  \"rememberMe\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c4ccb22c-1c9c-45c2-9dbb-e8a95562a9f8",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\",\n  \"rememberMe\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "849d529c-799d-4976-a979-1a88fd0d0dc1",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<password>\",\n  \"rememberMe\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3debdeea-c57e-4c5a-8bf7-03e2602e9ee2",
+          "name": "auth Service Register",
+          "request": {
+            "name": "auth Service Register",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "auth",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "avs",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isRealtimeVerification",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<string>\",\n  \"email\": \"<email>\",\n  \"idNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"province\": \"<string>\",\n  \"country\": \"<string>\",\n  \"role\": \"CLIENT\",\n  \"password\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"dateOfBirth\": \"<string>\",\n  \"cellNumber\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"apikey\": \"<string>\",\n  \"shouldWelcome\": \"<boolean>\",\n  \"merchantCreatePlan\": \"<boolean>\",\n  \"merchantId\": \"<string>\",\n  \"merchantRole\": \"<string>\",\n  \"bankDetails\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantOnboarding\": {\n    \"name\": \"<string>\",\n    \"physicalAddress\": {\n      \"country\": \"<string>\",\n      \"province\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    }\n  },\n  \"bankValidationPendingReference\": \"<string>\",\n  \"passportState\": \"<string>\",\n  \"passportNumber\": \"<string>\",\n  \"profileImage\": \"<string>\",\n  \"merchantIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isMerchantOwner\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f9fe2d5c-280f-4f95-9cb7-489e647d20df",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isRealtimeVerification",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"email\": \"<email>\",\n  \"idNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"province\": \"<string>\",\n  \"country\": \"<string>\",\n  \"role\": \"CLIENT\",\n  \"password\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"dateOfBirth\": \"<string>\",\n  \"cellNumber\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"apikey\": \"<string>\",\n  \"shouldWelcome\": \"<boolean>\",\n  \"merchantCreatePlan\": \"<boolean>\",\n  \"merchantId\": \"<string>\",\n  \"merchantRole\": \"<string>\",\n  \"bankDetails\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantOnboarding\": {\n    \"name\": \"<string>\",\n    \"physicalAddress\": {\n      \"country\": \"<string>\",\n      \"province\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    }\n  },\n  \"bankValidationPendingReference\": \"<string>\",\n  \"passportState\": \"<string>\",\n  \"passportNumber\": \"<string>\",\n  \"profileImage\": \"<string>\",\n  \"merchantIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isMerchantOwner\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"username\": \"string\",\n  \"email\": \"M8VYz2Hn@NchJeVtvrizdoTeLWrudQK.pc\",\n  \"idNumber\": \"string\",\n  \"address\": \"string\",\n  \"postalCode\": \"string\",\n  \"city\": \"string\",\n  \"province\": \"string\",\n  \"country\": \"string\",\n  \"role\": \"CLIENT\",\n  \"active\": true,\n  \"merchantId\": \"string\",\n  \"cellNumber\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"name\": \"string\",\n  \"verified\": false,\n  \"timestamp\": 8750.244557171542,\n  \"hasPassword\": false,\n  \"verifiedEmail\": false,\n  \"verifiedMobile\": false,\n  \"merchantRole\": \"string\",\n  \"bankDetails\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantOnboarding\": {\n    \"name\": \"<string>\",\n    \"physicalAddress\": {\n      \"country\": \"<string>\",\n      \"province\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    }\n  },\n  \"bankValidationPendingReference\": \"string\",\n  \"oneTimePass\": \"string\",\n  \"passportState\": \"string\",\n  \"passportNumber\": \"string\",\n  \"profileImage\": \"string\",\n  \"merchantIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"merchants\": [\n    {\n      \"_id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"_id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"isMerchantOwner\": false,\n  \"twoFactorAuthenticationRequired\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f142953c-0fbf-46c1-8a1b-46e9e95ac8bb",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isRealtimeVerification",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"email\": \"<email>\",\n  \"idNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"province\": \"<string>\",\n  \"country\": \"<string>\",\n  \"role\": \"CLIENT\",\n  \"password\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"dateOfBirth\": \"<string>\",\n  \"cellNumber\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"apikey\": \"<string>\",\n  \"shouldWelcome\": \"<boolean>\",\n  \"merchantCreatePlan\": \"<boolean>\",\n  \"merchantId\": \"<string>\",\n  \"merchantRole\": \"<string>\",\n  \"bankDetails\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantOnboarding\": {\n    \"name\": \"<string>\",\n    \"physicalAddress\": {\n      \"country\": \"<string>\",\n      \"province\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    }\n  },\n  \"bankValidationPendingReference\": \"<string>\",\n  \"passportState\": \"<string>\",\n  \"passportNumber\": \"<string>\",\n  \"profileImage\": \"<string>\",\n  \"merchantIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isMerchantOwner\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "30fc8e3c-0d6c-4ff4-abf6-6d0be7fb348e",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isRealtimeVerification",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"email\": \"<email>\",\n  \"idNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"province\": \"<string>\",\n  \"country\": \"<string>\",\n  \"role\": \"CLIENT\",\n  \"password\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"dateOfBirth\": \"<string>\",\n  \"cellNumber\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"apikey\": \"<string>\",\n  \"shouldWelcome\": \"<boolean>\",\n  \"merchantCreatePlan\": \"<boolean>\",\n  \"merchantId\": \"<string>\",\n  \"merchantRole\": \"<string>\",\n  \"bankDetails\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantOnboarding\": {\n    \"name\": \"<string>\",\n    \"physicalAddress\": {\n      \"country\": \"<string>\",\n      \"province\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    }\n  },\n  \"bankValidationPendingReference\": \"<string>\",\n  \"passportState\": \"<string>\",\n  \"passportNumber\": \"<string>\",\n  \"profileImage\": \"<string>\",\n  \"merchantIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isMerchantOwner\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a51dc640-03f6-42df-95a5-06586327933f",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isRealtimeVerification",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"email\": \"<email>\",\n  \"idNumber\": \"<string>\",\n  \"address\": \"<string>\",\n  \"postalCode\": \"<string>\",\n  \"city\": \"<string>\",\n  \"province\": \"<string>\",\n  \"country\": \"<string>\",\n  \"role\": \"CLIENT\",\n  \"password\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"dateOfBirth\": \"<string>\",\n  \"cellNumber\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"apikey\": \"<string>\",\n  \"shouldWelcome\": \"<boolean>\",\n  \"merchantCreatePlan\": \"<boolean>\",\n  \"merchantId\": \"<string>\",\n  \"merchantRole\": \"<string>\",\n  \"bankDetails\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantOnboarding\": {\n    \"name\": \"<string>\",\n    \"physicalAddress\": {\n      \"country\": \"<string>\",\n      \"province\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    }\n  },\n  \"bankValidationPendingReference\": \"<string>\",\n  \"passportState\": \"<string>\",\n  \"passportNumber\": \"<string>\",\n  \"profileImage\": \"<string>\",\n  \"merchantIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"isMerchantOwner\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83bed6af-b835-47cf-b29d-9427de6b029e",
+          "name": "auth Service Generate Terminal Api Key",
+          "request": {
+            "name": "auth Service Generate Terminal Api Key",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "auth",
+                "terminal-key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ae80d8f-dbb0-4811-b226-5274ed72f0a4",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "terminal-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"terminalApiKey\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adfc5d7b-6579-40ba-a073-ed83aea5d039",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "terminal-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e3a33c71-6fbd-4667-9a96-797aa5804bfb",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "terminal-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bb61e5ad-e44c-4ace-8360-4c58d4aff70b",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "auth",
+                    "terminal-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2fcadad7-ee1b-478e-99fe-aad8013b21d0",
+          "name": "auth Service Forgot Password",
+          "request": {
+            "name": "auth Service Forgot Password",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "request-password-reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"value\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"isRealtimeVerification\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cf3a2bfb-0c4b-4a0c-a829-67fdd24ba1f2",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "request-password-reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"value\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"isRealtimeVerification\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0927c5fb-9616-4e77-b764-7cef39e096c4",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "request-password-reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"value\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"isRealtimeVerification\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "147d4061-181d-43d9-8410-1dada77e64d6",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "request-password-reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"value\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"isRealtimeVerification\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e853c11c-56c9-4c09-a68b-e7d06f6c6c92",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "request-password-reset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"value\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"redirectTo\": \"<string>\",\n  \"isRealtimeVerification\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5dc0302f-bc5a-41b0-a92e-5ec5bd905fc4",
+          "name": "auth Service Merchant Billing Changes Request",
+          "request": {
+            "name": "auth Service Merchant Billing Changes Request",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "send-billing-settlements-change-request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"merchantName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"userEmail\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"merchantContactNumber\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e104f92f-8569-4f49-905a-f0b2218b519d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "send-billing-settlements-change-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"userEmail\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"merchantContactNumber\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7642397-78b6-4c50-8073-7400b7c6423c",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "send-billing-settlements-change-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"userEmail\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"merchantContactNumber\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "834c15a8-e22f-4d98-bda4-44370b08cd0c",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "send-billing-settlements-change-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"userEmail\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"merchantContactNumber\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bd1a47ac-9bf8-4d76-ba30-849dee041c29",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "send-billing-settlements-change-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"userEmail\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"merchantContactNumber\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "740caa3b-fb0a-4bed-953a-c138b7749d70",
+    "name": "Layup endpoints AbsaDebiCheckService authService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

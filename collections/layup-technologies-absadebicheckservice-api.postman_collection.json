@@ -1,0 +1,553 @@
+{
+  "item": [
+    {
+      "id": "692f6dfd-432a-4bb4-bc4b-9337b10cdc18",
+      "name": "AbsaDebiCheckService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df06ac34-c23d-4c95-a261-2dee54ba6640",
+          "name": "Absa Debi Check Service output",
+          "request": {
+            "name": "Absa Debi Check Service output",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "absa",
+                "debicheck",
+                "output"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transmissionDate\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"transactions\": [\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    },\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a729d30f-8731-47a0-8a3b-acb9f7309e60",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "output"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionDate\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"transactions\": [\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    },\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e52d2611-5896-4f67-91e0-5a7845aa38d8",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "output"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionDate\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"transactions\": [\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    },\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f57d7398-74d0-402f-80cf-256c014456cd",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "output"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionDate\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"transactions\": [\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    },\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "909ee380-b38f-4166-860b-56f70d7c0992",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "output"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionDate\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"transactions\": [\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    },\n    {\n      \"paymentId\": \"<string>\",\n      \"accepted\": \"<boolean>\",\n      \"contractReference\": \"<string>\",\n      \"mandateReference\": \"<string>\",\n      \"sequenceType\": \"<string>\",\n      \"amountInCents\": \"<integer>\",\n      \"effectiveDate\": \"<string>\",\n      \"originalEndToEndTransactionIdentifier\": \"<string>\",\n      \"error\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd9641ba-023e-48a9-8b5b-e9aba9c66a69",
+          "name": "Absa Debi Check Service reply",
+          "request": {
+            "name": "Absa Debi Check Service reply",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "absa",
+                "debicheck",
+                "reply"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transmissionNumber\": \"<string>\",\n  \"transmissionDate\": \"<string>\",\n  \"transmissionStatus\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"rejectedReasons\": [\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3188a428-151a-404d-8520-c679a2575b14",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "reply"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionNumber\": \"<string>\",\n  \"transmissionDate\": \"<string>\",\n  \"transmissionStatus\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"rejectedReasons\": [\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a5252bb-9c1e-4d12-bf0d-4e88e31a20ce",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "reply"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionNumber\": \"<string>\",\n  \"transmissionDate\": \"<string>\",\n  \"transmissionStatus\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"rejectedReasons\": [\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "544beaaa-8890-43df-868b-79c4d4fe1250",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "reply"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionNumber\": \"<string>\",\n  \"transmissionDate\": \"<string>\",\n  \"transmissionStatus\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"rejectedReasons\": [\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e188f629-6f2c-4b86-bd35-486df9163114",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "absa",
+                    "debicheck",
+                    "reply"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transmissionNumber\": \"<string>\",\n  \"transmissionDate\": \"<string>\",\n  \"transmissionStatus\": \"<string>\",\n  \"fileStoragePath\": \"<string>\",\n  \"rejectedReasons\": [\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"contractReference\": \"<string>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7f4b717b-5fa4-4bdf-a92f-e6346c438b05",
+    "name": "Layup endpoints AbsaDebiCheckService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

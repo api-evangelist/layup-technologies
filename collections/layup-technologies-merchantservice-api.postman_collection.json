@@ -1,0 +1,1496 @@
+{
+  "item": [
+    {
+      "id": "1d13e9e8-c190-4c1e-95b0-b5a80951aa78",
+      "name": "MerchantService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2f8b3aa0-46a2-4ae9-8977-bd72cfdebf1a",
+          "name": "Merchant Service Create",
+          "request": {
+            "name": "Merchant Service Create",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "merchants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "avs",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"domain\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"flatFee\": \"<integer>\",\n  \"percFee\": \"<double>\",\n  \"notifyUrl\": \"<string>\",\n  \"paymentNotifyUrl\": \"<string>\",\n  \"expire\": \"<integer>\",\n  \"merchantTermsLink\": \"<string>\",\n  \"supportEmail\": \"<string>\",\n  \"supportMobile\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"newOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"amendmentOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"cancelledOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"successfulPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"failedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"missedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"autoSettlement\": \"<boolean>\",\n  \"settlementFrequency\": \"<string>\",\n  \"settlementType\": \"<string>\",\n  \"settlementDay\": \"<integer>\",\n  \"bankDetails\": {\n    \"accountType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"branchCode\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"verified\": \"<boolean>\"\n  },\n  \"absorbsFee\": \"<boolean>\",\n  \"cancellationTerms\": {\n    \"active\": \"<boolean>\",\n    \"definition\": [\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      },\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      }\n    ]\n  },\n  \"weeklyPayments\": \"<boolean>\",\n  \"paymentPlans\": {\n    \"weeklyPayments\": \"<boolean>\",\n    \"splitPayments\": \"<boolean>\",\n    \"orderExpiry\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"maxMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": \"<boolean>\",\n      \"eft\": \"<boolean>\",\n      \"debiCheck\": \"<boolean>\",\n      \"payAt\": \"<boolean>\",\n      \"capitecPay\": \"<boolean>\",\n      \"dashpay\": \"<boolean>\",\n      \"terminalCard\": \"<boolean>\",\n      \"offline\": \"<boolean>\",\n      \"embeddedCheckout\": \"<boolean>\"\n    },\n    \"editPaymentPlanSettings\": \"<boolean>\",\n    \"defaultDepositType\": {\n      \"depositType\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"percentage\": \"<integer>\",\n      \"flat\": \"<integer>\"\n    },\n    \"minMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"debiCheckMinimum\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"monthlyPayments\": \"<boolean>\",\n    \"suspendOnCancel\": \"<boolean>\"\n  },\n  \"expiredOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder_75\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<integer>\"\n  },\n  \"customFeatures\": {\n    \"logo\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"imageUrl\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"paymentWidget\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    }\n  },\n  \"features\": {\n    \"enableCustomWidgetLogo\": \"<boolean>\",\n    \"enableCustomEmailLogo\": \"<boolean>\",\n    \"enableDefaultPaymentPlanImage\": \"<boolean>\",\n    \"enableDebiCheck\": \"<boolean>\",\n    \"enableCreditCard\": \"<boolean>\",\n    \"enableInstantEFT\": \"<boolean>\",\n    \"enableAutoCancellation\": \"<boolean>\",\n    \"enableManualCancellation\": \"<boolean>\",\n    \"enableLayupFee\": \"<boolean>\",\n    \"enableAmendmentApi\": \"<boolean>\",\n    \"enablePayAt\": \"<boolean>\",\n    \"enableCapitecPay\": \"<boolean>\",\n    \"enableDashpay\": \"<boolean>\",\n    \"enableTerminalCard\": \"<boolean>\",\n    \"enableOfflinePayment\": \"<boolean>\",\n    \"enableEmbeddedCheckout\": \"<boolean>\"\n  },\n  \"cancellationRequest\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"billingAddress\": {\n    \"country\": \"<string>\",\n    \"province\": \"<string>\",\n    \"streetAddress\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"vatNo\": \"<string>\",\n  \"registeredEntity\": \"<string>\",\n  \"settlements\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"invoices\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"onboardingState\": \"<string>\",\n  \"accountType\": \"<string>\",\n  \"contractDocumentId\": \"<string>\",\n  \"merchantBankingPercFee\": \"<integer>\",\n  \"adminPercFee\": \"<integer>\",\n  \"contractUrl\": \"<string>\",\n  \"contractUpdated\": \"<boolean>\",\n  \"bankDetailsValidation\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"bankValidationPendingReference\": \"<string>\",\n  \"merchantContractSigned\": \"<string>\",\n  \"transfers\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"refunds\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"simulated\": \"<boolean>\",\n  \"suspendedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"monthlyPayments\": \"<boolean>\",\n  \"displayOnWeb\": {\n    \"enabled\": \"<boolean>\",\n    \"webAvailability\": \"<string>\",\n    \"webLogoImage\": \"<string>\",\n    \"webCategory\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"featured\": \"<boolean>\"\n  },\n  \"tradingName\": \"<string>\",\n  \"pricelistId\": \"<string>\",\n  \"communication\": {\n    \"channels\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"messages\": {\n      \"orderExpiryReminder\": {\n        \"enabled\": \"<boolean>\",\n        \"daysBeforeExpiryInDays\": \"<integer>\"\n      },\n      \"orderActivated\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"cancellation\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"refund\": {\n        \"enabled\": \"<boolean>\"\n      }\n    }\n  },\n  \"defaultBillingMethod\": \"<string>\",\n  \"enableTwoFactorAuthentication\": \"<boolean>\",\n  \"voucherSettings\": {\n    \"active\": \"<boolean>\",\n    \"minimumSavingGoalInCents\": \"<integer>\",\n    \"maximumSavingGoalInCents\": \"<integer>\",\n    \"rewardType\": \"<string>\",\n    \"rewardFlatAmountInCents\": \"<integer>\",\n    \"rewardPercentage\": \"<integer>\",\n    \"voucherProviders\": [\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      }\n    ]\n  },\n  \"settlementBatchReferencePrefix\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "addaf1c7-e2c9-4ace-808e-ae804230ca7c",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"name\": \"string\",\n  \"domain\": \"string\",\n  \"active\": true,\n  \"flatFee\": 965,\n  \"percFee\": 4032.6196376942435,\n  \"users\": [\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"MqPDHPG8TE7S@dOtpYrXoRKVVuIJngedAWxpgpQcvhxy.cyef\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": false,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": true,\n      \"verifiedEmail\": false,\n      \"verifiedMobile\": false,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"J12IVv3@IjDUcGIzM.fxz\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": true,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": false,\n      \"verifiedEmail\": true,\n      \"verifiedMobile\": true,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"notifyUrl\": \"string\",\n  \"paymentNotifyUrl\": \"string\",\n  \"timestamp\": 1507.2046422210672,\n  \"merchantTermsLink\": \"string\",\n  \"settlementDay\": 8013,\n  \"settlementFrequency\": \"string\",\n  \"settlementType\": \"string\",\n  \"supportEmail\": \"string\",\n  \"supportMobile\": \"string\",\n  \"imageUrl\": \"string\",\n  \"newOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"amendmentOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"cancelledOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"successfulPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"failedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"missedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"autoSettlement\": true,\n  \"absorbsFee\": false,\n  \"expire\": 4253,\n  \"cancellationTerms\": {\n    \"active\": \"<boolean>\",\n    \"definition\": [\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      },\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      }\n    ]\n  },\n  \"weeklyPayments\": false,\n  \"paymentPlans\": {\n    \"weeklyPayments\": \"<boolean>\",\n    \"splitPayments\": \"<boolean>\",\n    \"orderExpiry\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"maxMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": \"<boolean>\",\n      \"eft\": \"<boolean>\",\n      \"debiCheck\": \"<boolean>\",\n      \"payAt\": \"<boolean>\",\n      \"capitecPay\": \"<boolean>\",\n      \"dashpay\": \"<boolean>\",\n      \"terminalCard\": \"<boolean>\",\n      \"offline\": \"<boolean>\",\n      \"embeddedCheckout\": \"<boolean>\"\n    },\n    \"editPaymentPlanSettings\": \"<boolean>\",\n    \"defaultDepositType\": {\n      \"depositType\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"percentage\": \"<integer>\",\n      \"flat\": \"<integer>\"\n    },\n    \"minMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"debiCheckMinimum\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"monthlyPayments\": \"<boolean>\",\n    \"suspendOnCancel\": \"<boolean>\"\n  },\n  \"expiredOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder_75\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<integer>\"\n  },\n  \"customFeatures\": {\n    \"logo\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"imageUrl\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"paymentWidget\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    }\n  },\n  \"features\": {\n    \"enableCustomWidgetLogo\": \"<boolean>\",\n    \"enableCustomEmailLogo\": \"<boolean>\",\n    \"enableDefaultPaymentPlanImage\": \"<boolean>\",\n    \"enableDebiCheck\": \"<boolean>\",\n    \"enableCreditCard\": \"<boolean>\",\n    \"enableInstantEFT\": \"<boolean>\",\n    \"enableAutoCancellation\": \"<boolean>\",\n    \"enableManualCancellation\": \"<boolean>\",\n    \"enableLayupFee\": \"<boolean>\",\n    \"enableAmendmentApi\": \"<boolean>\",\n    \"enablePayAt\": \"<boolean>\",\n    \"enableCapitecPay\": \"<boolean>\",\n    \"enableDashpay\": \"<boolean>\",\n    \"enableTerminalCard\": \"<boolean>\",\n    \"enableOfflinePayment\": \"<boolean>\",\n    \"enableEmbeddedCheckout\": \"<boolean>\"\n  },\n  \"cancellationRequest\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantName\": \"string\",\n  \"billingAddress\": {\n    \"country\": \"<string>\",\n    \"province\": \"<string>\",\n    \"streetAddress\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"vatNo\": \"string\",\n  \"registeredEntity\": \"string\",\n  \"bankDetails\": {\n    \"accountType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"branchCode\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"verified\": \"<boolean>\"\n  },\n  \"settlements\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"invoices\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"onboardingState\": \"string\",\n  \"accountType\": \"string\",\n  \"contractDocumentId\": \"string\",\n  \"merchantBankingPercFee\": 8809,\n  \"adminPercFee\": 5250,\n  \"contractUrl\": \"string\",\n  \"contractUpdated\": false,\n  \"bankDetailsValidation\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"bankValidationPendingReference\": \"string\",\n  \"merchantContractSigned\": \"string\",\n  \"transfers\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"refunds\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"suspendedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"monthlyPayments\": false,\n  \"displayOnWeb\": {\n    \"enabled\": \"<boolean>\",\n    \"webAvailability\": \"<string>\",\n    \"webLogoImage\": \"<string>\",\n    \"webCategory\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"featured\": \"<boolean>\"\n  },\n  \"tradingName\": \"string\",\n  \"pricelistId\": \"string\",\n  \"accountSettings\": {\n    \"numberOfUsers\": 5617,\n    \"apiAccess\": false\n  },\n  \"feeSystem\": \"string\",\n  \"communication\": {\n    \"channels\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"messages\": {\n      \"orderExpiryReminder\": {\n        \"enabled\": \"<boolean>\",\n        \"daysBeforeExpiryInDays\": \"<integer>\"\n      },\n      \"orderActivated\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"cancellation\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"refund\": {\n        \"enabled\": \"<boolean>\"\n      }\n    }\n  },\n  \"defaultBillingMethod\": \"string\",\n  \"enableTwoFactorAuthentication\": true,\n  \"voucherSettings\": {\n    \"active\": \"<boolean>\",\n    \"minimumSavingGoalInCents\": \"<integer>\",\n    \"maximumSavingGoalInCents\": \"<integer>\",\n    \"rewardType\": \"<string>\",\n    \"rewardFlatAmountInCents\": \"<integer>\",\n    \"rewardPercentage\": \"<integer>\",\n    \"voucherProviders\": [\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      }\n    ]\n  },\n  \"settlementBatchReferencePrefix\": \"string\",\n  \"terminalSettings\": {\n    \"requireOrderReference\": false,\n    \"forceUniqueOrderReference\": false,\n    \"requireDeposit\": false,\n    \"editableDescription\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79e4e43b-9687-4115-9c8a-a48f35e416ae",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "245f1b6e-88f3-4e5f-9443-5eda822d1913",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "801accce-0eec-470d-8da2-68c8eb65b28a",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea4cacef-e958-4211-be56-6db469cb47ab",
+          "name": "Merchant Service get Merchants To Settle",
+          "request": {
+            "name": "Merchant Service get Merchants To Settle",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "merchants-to-settle"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b33e826-b543-4a3d-a876-0c0726548b61",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants-to-settle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"merchants\": [\n    {\n      \"_id\": \"string\"\n    },\n    {\n      \"_id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a757780-a486-4e38-b397-02cb9b81004a",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants-to-settle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a32a982-410f-4ff1-ac8e-75344c8a601e",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants-to-settle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "86f360d0-ff48-4021-9209-89c63a165e5f",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants-to-settle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca13f96f-73d8-414f-b1e3-303ef38f56e2",
+          "name": "Merchant Service get Shops",
+          "request": {
+            "name": "Merchant Service get Shops",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "merchants",
+                "shop-directory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "featured",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a185d06f-a2b2-4cd5-8416-bb29232dcdd9",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    "shop-directory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "featured",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"categories\": [\n    \"string\",\n    \"string\"\n  ],\n  \"shops\": [\n    {\n      \"_id\": \"string\",\n      \"name\": \"string\",\n      \"domain\": \"string\",\n      \"displayOnWeb\": {\n        \"enabled\": \"<boolean>\",\n        \"webAvailability\": \"<string>\",\n        \"webLogoImage\": \"<string>\",\n        \"webCategory\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"featured\": \"<boolean>\"\n      },\n      \"createdAt\": \"string\"\n    },\n    {\n      \"_id\": \"string\",\n      \"name\": \"string\",\n      \"domain\": \"string\",\n      \"displayOnWeb\": {\n        \"enabled\": \"<boolean>\",\n        \"webAvailability\": \"<string>\",\n        \"webLogoImage\": \"<string>\",\n        \"webCategory\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"featured\": \"<boolean>\"\n      },\n      \"createdAt\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "233ab6bc-dcbd-4204-977f-3284eca2f748",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    "shop-directory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "featured",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a99126d2-d053-45e4-9d5f-bfbc1ddc8b83",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    "shop-directory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "featured",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f22312cb-8a2d-4977-8176-112510bc61f2",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    "shop-directory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "featured",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a40c265-d88f-4b28-91c8-59c7574a165e",
+          "name": "Merchant Service Get",
+          "request": {
+            "name": "Merchant Service Get",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "merchants",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "972905f6-3266-4b97-b99c-2d280ba13a02",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"name\": \"string\",\n  \"domain\": \"string\",\n  \"active\": true,\n  \"flatFee\": 1783,\n  \"percFee\": 3408.9375393211785,\n  \"users\": [\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"eZpvf9K@NHrVyFFaYKSzURtSJcZbvmjN.wh\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": false,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": false,\n      \"verifiedEmail\": false,\n      \"verifiedMobile\": true,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"AMMiyZUCN4zXnBu@aIXnGios.beb\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": true,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": true,\n      \"verifiedEmail\": false,\n      \"verifiedMobile\": false,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"notifyUrl\": \"string\",\n  \"paymentNotifyUrl\": \"string\",\n  \"timestamp\": 4598.366428487933,\n  \"merchantTermsLink\": \"string\",\n  \"settlementDay\": 9340,\n  \"settlementFrequency\": \"string\",\n  \"settlementType\": \"string\",\n  \"supportEmail\": \"string\",\n  \"supportMobile\": \"string\",\n  \"imageUrl\": \"string\",\n  \"newOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"amendmentOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"cancelledOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"successfulPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"failedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"missedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"autoSettlement\": false,\n  \"absorbsFee\": false,\n  \"expire\": 3929,\n  \"cancellationTerms\": {\n    \"active\": \"<boolean>\",\n    \"definition\": [\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      },\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      }\n    ]\n  },\n  \"weeklyPayments\": true,\n  \"paymentPlans\": {\n    \"weeklyPayments\": \"<boolean>\",\n    \"splitPayments\": \"<boolean>\",\n    \"orderExpiry\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"maxMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": \"<boolean>\",\n      \"eft\": \"<boolean>\",\n      \"debiCheck\": \"<boolean>\",\n      \"payAt\": \"<boolean>\",\n      \"capitecPay\": \"<boolean>\",\n      \"dashpay\": \"<boolean>\",\n      \"terminalCard\": \"<boolean>\",\n      \"offline\": \"<boolean>\",\n      \"embeddedCheckout\": \"<boolean>\"\n    },\n    \"editPaymentPlanSettings\": \"<boolean>\",\n    \"defaultDepositType\": {\n      \"depositType\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"percentage\": \"<integer>\",\n      \"flat\": \"<integer>\"\n    },\n    \"minMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"debiCheckMinimum\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"monthlyPayments\": \"<boolean>\",\n    \"suspendOnCancel\": \"<boolean>\"\n  },\n  \"expiredOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder_75\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<integer>\"\n  },\n  \"customFeatures\": {\n    \"logo\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"imageUrl\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"paymentWidget\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    }\n  },\n  \"features\": {\n    \"enableCustomWidgetLogo\": \"<boolean>\",\n    \"enableCustomEmailLogo\": \"<boolean>\",\n    \"enableDefaultPaymentPlanImage\": \"<boolean>\",\n    \"enableDebiCheck\": \"<boolean>\",\n    \"enableCreditCard\": \"<boolean>\",\n    \"enableInstantEFT\": \"<boolean>\",\n    \"enableAutoCancellation\": \"<boolean>\",\n    \"enableManualCancellation\": \"<boolean>\",\n    \"enableLayupFee\": \"<boolean>\",\n    \"enableAmendmentApi\": \"<boolean>\",\n    \"enablePayAt\": \"<boolean>\",\n    \"enableCapitecPay\": \"<boolean>\",\n    \"enableDashpay\": \"<boolean>\",\n    \"enableTerminalCard\": \"<boolean>\",\n    \"enableOfflinePayment\": \"<boolean>\",\n    \"enableEmbeddedCheckout\": \"<boolean>\"\n  },\n  \"cancellationRequest\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantName\": \"string\",\n  \"billingAddress\": {\n    \"country\": \"<string>\",\n    \"province\": \"<string>\",\n    \"streetAddress\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"vatNo\": \"string\",\n  \"registeredEntity\": \"string\",\n  \"bankDetails\": {\n    \"accountType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"branchCode\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"verified\": \"<boolean>\"\n  },\n  \"settlements\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"invoices\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"onboardingState\": \"string\",\n  \"accountType\": \"string\",\n  \"contractDocumentId\": \"string\",\n  \"merchantBankingPercFee\": 9495,\n  \"adminPercFee\": 7789,\n  \"contractUrl\": \"string\",\n  \"contractUpdated\": true,\n  \"bankDetailsValidation\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"bankValidationPendingReference\": \"string\",\n  \"merchantContractSigned\": \"string\",\n  \"transfers\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"refunds\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"suspendedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"monthlyPayments\": false,\n  \"displayOnWeb\": {\n    \"enabled\": \"<boolean>\",\n    \"webAvailability\": \"<string>\",\n    \"webLogoImage\": \"<string>\",\n    \"webCategory\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"featured\": \"<boolean>\"\n  },\n  \"tradingName\": \"string\",\n  \"pricelistId\": \"string\",\n  \"accountSettings\": {\n    \"numberOfUsers\": 1058,\n    \"apiAccess\": false\n  },\n  \"feeSystem\": \"string\",\n  \"communication\": {\n    \"channels\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"messages\": {\n      \"orderExpiryReminder\": {\n        \"enabled\": \"<boolean>\",\n        \"daysBeforeExpiryInDays\": \"<integer>\"\n      },\n      \"orderActivated\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"cancellation\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"refund\": {\n        \"enabled\": \"<boolean>\"\n      }\n    }\n  },\n  \"defaultBillingMethod\": \"string\",\n  \"enableTwoFactorAuthentication\": false,\n  \"voucherSettings\": {\n    \"active\": \"<boolean>\",\n    \"minimumSavingGoalInCents\": \"<integer>\",\n    \"maximumSavingGoalInCents\": \"<integer>\",\n    \"rewardType\": \"<string>\",\n    \"rewardFlatAmountInCents\": \"<integer>\",\n    \"rewardPercentage\": \"<integer>\",\n    \"voucherProviders\": [\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      }\n    ]\n  },\n  \"settlementBatchReferencePrefix\": \"string\",\n  \"terminalSettings\": {\n    \"requireOrderReference\": false,\n    \"forceUniqueOrderReference\": true,\n    \"requireDeposit\": true,\n    \"editableDescription\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04fd0bf2-7bc3-4a85-860b-2059b4e3052b",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8bd140e8-ad08-4527-a401-2cd2159d8d46",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6622a28a-f933-4ff0-be09-799b6df15a62",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "575a71d9-7cf6-4c4c-9102-a87b7903e582",
+          "name": "Merchant Service Del",
+          "request": {
+            "name": "Merchant Service Del",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "merchants",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a15a2820-dac8-40d0-91e9-995ba4dbf11f",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"name\": \"string\",\n  \"domain\": \"string\",\n  \"active\": true,\n  \"flatFee\": 1783,\n  \"percFee\": 3408.9375393211785,\n  \"users\": [\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"eZpvf9K@NHrVyFFaYKSzURtSJcZbvmjN.wh\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": false,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": false,\n      \"verifiedEmail\": false,\n      \"verifiedMobile\": true,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"AMMiyZUCN4zXnBu@aIXnGios.beb\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": true,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": true,\n      \"verifiedEmail\": false,\n      \"verifiedMobile\": false,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"notifyUrl\": \"string\",\n  \"paymentNotifyUrl\": \"string\",\n  \"timestamp\": 4598.366428487933,\n  \"merchantTermsLink\": \"string\",\n  \"settlementDay\": 9340,\n  \"settlementFrequency\": \"string\",\n  \"settlementType\": \"string\",\n  \"supportEmail\": \"string\",\n  \"supportMobile\": \"string\",\n  \"imageUrl\": \"string\",\n  \"newOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"amendmentOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"cancelledOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"successfulPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"failedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"missedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"autoSettlement\": false,\n  \"absorbsFee\": false,\n  \"expire\": 3929,\n  \"cancellationTerms\": {\n    \"active\": \"<boolean>\",\n    \"definition\": [\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      },\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      }\n    ]\n  },\n  \"weeklyPayments\": true,\n  \"paymentPlans\": {\n    \"weeklyPayments\": \"<boolean>\",\n    \"splitPayments\": \"<boolean>\",\n    \"orderExpiry\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"maxMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": \"<boolean>\",\n      \"eft\": \"<boolean>\",\n      \"debiCheck\": \"<boolean>\",\n      \"payAt\": \"<boolean>\",\n      \"capitecPay\": \"<boolean>\",\n      \"dashpay\": \"<boolean>\",\n      \"terminalCard\": \"<boolean>\",\n      \"offline\": \"<boolean>\",\n      \"embeddedCheckout\": \"<boolean>\"\n    },\n    \"editPaymentPlanSettings\": \"<boolean>\",\n    \"defaultDepositType\": {\n      \"depositType\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"percentage\": \"<integer>\",\n      \"flat\": \"<integer>\"\n    },\n    \"minMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"debiCheckMinimum\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"monthlyPayments\": \"<boolean>\",\n    \"suspendOnCancel\": \"<boolean>\"\n  },\n  \"expiredOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder_75\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<integer>\"\n  },\n  \"customFeatures\": {\n    \"logo\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"imageUrl\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"paymentWidget\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    }\n  },\n  \"features\": {\n    \"enableCustomWidgetLogo\": \"<boolean>\",\n    \"enableCustomEmailLogo\": \"<boolean>\",\n    \"enableDefaultPaymentPlanImage\": \"<boolean>\",\n    \"enableDebiCheck\": \"<boolean>\",\n    \"enableCreditCard\": \"<boolean>\",\n    \"enableInstantEFT\": \"<boolean>\",\n    \"enableAutoCancellation\": \"<boolean>\",\n    \"enableManualCancellation\": \"<boolean>\",\n    \"enableLayupFee\": \"<boolean>\",\n    \"enableAmendmentApi\": \"<boolean>\",\n    \"enablePayAt\": \"<boolean>\",\n    \"enableCapitecPay\": \"<boolean>\",\n    \"enableDashpay\": \"<boolean>\",\n    \"enableTerminalCard\": \"<boolean>\",\n    \"enableOfflinePayment\": \"<boolean>\",\n    \"enableEmbeddedCheckout\": \"<boolean>\"\n  },\n  \"cancellationRequest\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantName\": \"string\",\n  \"billingAddress\": {\n    \"country\": \"<string>\",\n    \"province\": \"<string>\",\n    \"streetAddress\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"vatNo\": \"string\",\n  \"registeredEntity\": \"string\",\n  \"bankDetails\": {\n    \"accountType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"branchCode\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"verified\": \"<boolean>\"\n  },\n  \"settlements\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"invoices\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"onboardingState\": \"string\",\n  \"accountType\": \"string\",\n  \"contractDocumentId\": \"string\",\n  \"merchantBankingPercFee\": 9495,\n  \"adminPercFee\": 7789,\n  \"contractUrl\": \"string\",\n  \"contractUpdated\": true,\n  \"bankDetailsValidation\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"bankValidationPendingReference\": \"string\",\n  \"merchantContractSigned\": \"string\",\n  \"transfers\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"refunds\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"suspendedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"monthlyPayments\": false,\n  \"displayOnWeb\": {\n    \"enabled\": \"<boolean>\",\n    \"webAvailability\": \"<string>\",\n    \"webLogoImage\": \"<string>\",\n    \"webCategory\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"featured\": \"<boolean>\"\n  },\n  \"tradingName\": \"string\",\n  \"pricelistId\": \"string\",\n  \"accountSettings\": {\n    \"numberOfUsers\": 1058,\n    \"apiAccess\": false\n  },\n  \"feeSystem\": \"string\",\n  \"communication\": {\n    \"channels\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"messages\": {\n      \"orderExpiryReminder\": {\n        \"enabled\": \"<boolean>\",\n        \"daysBeforeExpiryInDays\": \"<integer>\"\n      },\n      \"orderActivated\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"cancellation\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"refund\": {\n        \"enabled\": \"<boolean>\"\n      }\n    }\n  },\n  \"defaultBillingMethod\": \"string\",\n  \"enableTwoFactorAuthentication\": false,\n  \"voucherSettings\": {\n    \"active\": \"<boolean>\",\n    \"minimumSavingGoalInCents\": \"<integer>\",\n    \"maximumSavingGoalInCents\": \"<integer>\",\n    \"rewardType\": \"<string>\",\n    \"rewardFlatAmountInCents\": \"<integer>\",\n    \"rewardPercentage\": \"<integer>\",\n    \"voucherProviders\": [\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      }\n    ]\n  },\n  \"settlementBatchReferencePrefix\": \"string\",\n  \"terminalSettings\": {\n    \"requireOrderReference\": false,\n    \"forceUniqueOrderReference\": true,\n    \"requireDeposit\": true,\n    \"editableDescription\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "194e25c0-d804-480b-b777-9e5c15c1335f",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bc14ba38-7d03-44ca-a430-f516af46b0df",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d8f76b23-5719-41f8-b737-e778a8aeab34",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d839fe3f-2885-479c-8fa7-c24319d77f33",
+          "name": "Merchant Service Update",
+          "request": {
+            "name": "Merchant Service Update",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "merchants",
+                ":_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "avs",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"domain\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"flatFee\": \"<integer>\",\n  \"percFee\": \"<double>\",\n  \"notifyUrl\": \"<string>\",\n  \"paymentNotifyUrl\": \"<string>\",\n  \"expire\": \"<integer>\",\n  \"merchantTermsLink\": \"<string>\",\n  \"supportEmail\": \"<string>\",\n  \"supportMobile\": \"<string>\",\n  \"imageUrl\": \"<string>\",\n  \"newOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"amendmentOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"cancelledOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"successfulPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"failedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"missedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"autoSettlement\": \"<boolean>\",\n  \"settlementFrequency\": \"<string>\",\n  \"settlementType\": \"<string>\",\n  \"settlementDay\": \"<integer>\",\n  \"bankDetails\": {\n    \"accountType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"branchCode\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"verified\": \"<boolean>\"\n  },\n  \"absorbsFee\": \"<boolean>\",\n  \"cancellationTerms\": {\n    \"active\": \"<boolean>\",\n    \"definition\": [\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      },\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      }\n    ]\n  },\n  \"weeklyPayments\": \"<boolean>\",\n  \"paymentPlans\": {\n    \"weeklyPayments\": \"<boolean>\",\n    \"splitPayments\": \"<boolean>\",\n    \"orderExpiry\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"maxMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": \"<boolean>\",\n      \"eft\": \"<boolean>\",\n      \"debiCheck\": \"<boolean>\",\n      \"payAt\": \"<boolean>\",\n      \"capitecPay\": \"<boolean>\",\n      \"dashpay\": \"<boolean>\",\n      \"terminalCard\": \"<boolean>\",\n      \"offline\": \"<boolean>\",\n      \"embeddedCheckout\": \"<boolean>\"\n    },\n    \"editPaymentPlanSettings\": \"<boolean>\",\n    \"defaultDepositType\": {\n      \"depositType\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"percentage\": \"<integer>\",\n      \"flat\": \"<integer>\"\n    },\n    \"minMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"debiCheckMinimum\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"monthlyPayments\": \"<boolean>\",\n    \"suspendOnCancel\": \"<boolean>\"\n  },\n  \"expiredOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder_75\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<integer>\"\n  },\n  \"customFeatures\": {\n    \"logo\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"imageUrl\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"paymentWidget\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    }\n  },\n  \"features\": {\n    \"enableCustomWidgetLogo\": \"<boolean>\",\n    \"enableCustomEmailLogo\": \"<boolean>\",\n    \"enableDefaultPaymentPlanImage\": \"<boolean>\",\n    \"enableDebiCheck\": \"<boolean>\",\n    \"enableCreditCard\": \"<boolean>\",\n    \"enableInstantEFT\": \"<boolean>\",\n    \"enableAutoCancellation\": \"<boolean>\",\n    \"enableManualCancellation\": \"<boolean>\",\n    \"enableLayupFee\": \"<boolean>\",\n    \"enableAmendmentApi\": \"<boolean>\",\n    \"enablePayAt\": \"<boolean>\",\n    \"enableCapitecPay\": \"<boolean>\",\n    \"enableDashpay\": \"<boolean>\",\n    \"enableTerminalCard\": \"<boolean>\",\n    \"enableOfflinePayment\": \"<boolean>\",\n    \"enableEmbeddedCheckout\": \"<boolean>\"\n  },\n  \"cancellationRequest\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"billingAddress\": {\n    \"country\": \"<string>\",\n    \"province\": \"<string>\",\n    \"streetAddress\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"vatNo\": \"<string>\",\n  \"registeredEntity\": \"<string>\",\n  \"settlements\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"invoices\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"onboardingState\": \"<string>\",\n  \"accountType\": \"<string>\",\n  \"contractDocumentId\": \"<string>\",\n  \"merchantBankingPercFee\": \"<integer>\",\n  \"adminPercFee\": \"<integer>\",\n  \"contractUrl\": \"<string>\",\n  \"contractUpdated\": \"<boolean>\",\n  \"bankDetailsValidation\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"bankValidationPendingReference\": \"<string>\",\n  \"merchantContractSigned\": \"<string>\",\n  \"transfers\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"refunds\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"simulated\": \"<boolean>\",\n  \"suspendedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"monthlyPayments\": \"<boolean>\",\n  \"displayOnWeb\": {\n    \"enabled\": \"<boolean>\",\n    \"webAvailability\": \"<string>\",\n    \"webLogoImage\": \"<string>\",\n    \"webCategory\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"featured\": \"<boolean>\"\n  },\n  \"tradingName\": \"<string>\",\n  \"pricelistId\": \"<string>\",\n  \"communication\": {\n    \"channels\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"messages\": {\n      \"orderExpiryReminder\": {\n        \"enabled\": \"<boolean>\",\n        \"daysBeforeExpiryInDays\": \"<integer>\"\n      },\n      \"orderActivated\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"cancellation\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"refund\": {\n        \"enabled\": \"<boolean>\"\n      }\n    }\n  },\n  \"defaultBillingMethod\": \"<string>\",\n  \"enableTwoFactorAuthentication\": \"<boolean>\",\n  \"voucherSettings\": {\n    \"active\": \"<boolean>\",\n    \"minimumSavingGoalInCents\": \"<integer>\",\n    \"maximumSavingGoalInCents\": \"<integer>\",\n    \"rewardType\": \"<string>\",\n    \"rewardFlatAmountInCents\": \"<integer>\",\n    \"rewardPercentage\": \"<integer>\",\n    \"voucherProviders\": [\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      }\n    ]\n  },\n  \"settlementBatchReferencePrefix\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f4b9445-7cd6-478a-b14e-cb80cc2eade5",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"string\",\n  \"name\": \"string\",\n  \"domain\": \"string\",\n  \"active\": true,\n  \"flatFee\": 1783,\n  \"percFee\": 3408.9375393211785,\n  \"users\": [\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"eZpvf9K@NHrVyFFaYKSzURtSJcZbvmjN.wh\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": false,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": false,\n      \"verifiedEmail\": false,\n      \"verifiedMobile\": true,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"_id\": \"string\",\n      \"username\": \"string\",\n      \"email\": \"AMMiyZUCN4zXnBu@aIXnGios.beb\",\n      \"idNumber\": \"string\",\n      \"address\": \"string\",\n      \"postalCode\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"country\": \"string\",\n      \"role\": \"CLIENT\",\n      \"active\": true,\n      \"merchantId\": \"string\",\n      \"cellNumber\": \"string\",\n      \"dateOfBirth\": \"string\",\n      \"name\": \"string\",\n      \"verified\": true,\n      \"verifiedEmail\": false,\n      \"verifiedMobile\": false,\n      \"merchantRole\": \"string\",\n      \"merchantIds\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"notifyUrl\": \"string\",\n  \"paymentNotifyUrl\": \"string\",\n  \"timestamp\": 4598.366428487933,\n  \"merchantTermsLink\": \"string\",\n  \"settlementDay\": 9340,\n  \"settlementFrequency\": \"string\",\n  \"settlementType\": \"string\",\n  \"supportEmail\": \"string\",\n  \"supportMobile\": \"string\",\n  \"imageUrl\": \"string\",\n  \"newOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"amendmentOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"cancelledOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"successfulPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"failedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"missedPayment\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"autoSettlement\": false,\n  \"absorbsFee\": false,\n  \"expire\": 3929,\n  \"cancellationTerms\": {\n    \"active\": \"<boolean>\",\n    \"definition\": [\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      },\n      {\n        \"type\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"missed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"finalPaymentMissed\": \"<boolean>\"\n        },\n        \"policy\": {\n          \"name\": \"<string>\",\n          \"definition\": {\n            \"deposit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"flatFee\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentageShouldUseTotalPaid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"start\": \"<integer>\",\n        \"end\": \"<integer>\",\n        \"gracePeriod\": \"<integer>\"\n      }\n    ]\n  },\n  \"weeklyPayments\": true,\n  \"paymentPlans\": {\n    \"weeklyPayments\": \"<boolean>\",\n    \"splitPayments\": \"<boolean>\",\n    \"orderExpiry\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"maxMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"paymentMethods\": {\n      \"creditOrDebitCard\": \"<boolean>\",\n      \"eft\": \"<boolean>\",\n      \"debiCheck\": \"<boolean>\",\n      \"payAt\": \"<boolean>\",\n      \"capitecPay\": \"<boolean>\",\n      \"dashpay\": \"<boolean>\",\n      \"terminalCard\": \"<boolean>\",\n      \"offline\": \"<boolean>\",\n      \"embeddedCheckout\": \"<boolean>\"\n    },\n    \"editPaymentPlanSettings\": \"<boolean>\",\n    \"defaultDepositType\": {\n      \"depositType\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"percentage\": \"<integer>\",\n      \"flat\": \"<integer>\"\n    },\n    \"minMonths\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"debiCheckMinimum\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<integer>\"\n    },\n    \"monthlyPayments\": \"<boolean>\",\n    \"suspendOnCancel\": \"<boolean>\"\n  },\n  \"expiredOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"completedOrder_75\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<integer>\"\n  },\n  \"customFeatures\": {\n    \"logo\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"imageUrl\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"paymentWidget\": {\n      \"enabled\": \"<boolean>\",\n      \"value\": \"<string>\"\n    }\n  },\n  \"features\": {\n    \"enableCustomWidgetLogo\": \"<boolean>\",\n    \"enableCustomEmailLogo\": \"<boolean>\",\n    \"enableDefaultPaymentPlanImage\": \"<boolean>\",\n    \"enableDebiCheck\": \"<boolean>\",\n    \"enableCreditCard\": \"<boolean>\",\n    \"enableInstantEFT\": \"<boolean>\",\n    \"enableAutoCancellation\": \"<boolean>\",\n    \"enableManualCancellation\": \"<boolean>\",\n    \"enableLayupFee\": \"<boolean>\",\n    \"enableAmendmentApi\": \"<boolean>\",\n    \"enablePayAt\": \"<boolean>\",\n    \"enableCapitecPay\": \"<boolean>\",\n    \"enableDashpay\": \"<boolean>\",\n    \"enableTerminalCard\": \"<boolean>\",\n    \"enableOfflinePayment\": \"<boolean>\",\n    \"enableEmbeddedCheckout\": \"<boolean>\"\n  },\n  \"cancellationRequest\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merchantName\": \"string\",\n  \"billingAddress\": {\n    \"country\": \"<string>\",\n    \"province\": \"<string>\",\n    \"streetAddress\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"vatNo\": \"string\",\n  \"registeredEntity\": \"string\",\n  \"bankDetails\": {\n    \"accountType\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"branchCode\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"verified\": \"<boolean>\"\n  },\n  \"settlements\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"invoices\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"onboardingState\": \"string\",\n  \"accountType\": \"string\",\n  \"contractDocumentId\": \"string\",\n  \"merchantBankingPercFee\": 9495,\n  \"adminPercFee\": 7789,\n  \"contractUrl\": \"string\",\n  \"contractUpdated\": true,\n  \"bankDetailsValidation\": {\n    \"bankName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"account\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"accountType\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"branchCode\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"idNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"verified\": \"<boolean>\",\n    \"clientName\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"cellNumber\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"initials\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"email\": {\n      \"verified\": \"<boolean>\",\n      \"value\": \"<string>\"\n    },\n    \"validationResponseErrors\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"bankValidationPendingReference\": \"string\",\n  \"merchantContractSigned\": \"string\",\n  \"transfers\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"refunds\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"suspendedOrder\": {\n    \"enabled\": \"<boolean>\",\n    \"emails\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"monthlyPayments\": false,\n  \"displayOnWeb\": {\n    \"enabled\": \"<boolean>\",\n    \"webAvailability\": \"<string>\",\n    \"webLogoImage\": \"<string>\",\n    \"webCategory\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"featured\": \"<boolean>\"\n  },\n  \"tradingName\": \"string\",\n  \"pricelistId\": \"string\",\n  \"accountSettings\": {\n    \"numberOfUsers\": 1058,\n    \"apiAccess\": false\n  },\n  \"feeSystem\": \"string\",\n  \"communication\": {\n    \"channels\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"messages\": {\n      \"orderExpiryReminder\": {\n        \"enabled\": \"<boolean>\",\n        \"daysBeforeExpiryInDays\": \"<integer>\"\n      },\n      \"orderActivated\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"cancellation\": {\n        \"enabled\": \"<boolean>\"\n      },\n      \"refund\": {\n        \"enabled\": \"<boolean>\"\n      }\n    }\n  },\n  \"defaultBillingMethod\": \"string\",\n  \"enableTwoFactorAuthentication\": false,\n  \"voucherSettings\": {\n    \"active\": \"<boolean>\",\n    \"minimumSavingGoalInCents\": \"<integer>\",\n    \"maximumSavingGoalInCents\": \"<integer>\",\n    \"rewardType\": \"<string>\",\n    \"rewardFlatAmountInCents\": \"<integer>\",\n    \"rewardPercentage\": \"<integer>\",\n    \"voucherProviders\": [\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"apiKey\": \"<string>\",\n        \"apiUrl\": \"<string>\"\n      }\n    ]\n  },\n  \"settlementBatchReferencePrefix\": \"string\",\n  \"terminalSettings\": {\n    \"requireOrderReference\": false,\n    \"forceUniqueOrderReference\": true,\n    \"requireDeposit\": true,\n    \"editableDescription\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd72e170-9447-4dbf-94c3-2fe0d84b1af6",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b51da9fb-479a-4f4b-8815-67e9f8c9cf85",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "17c36038-80ee-4bb6-babb-de69f0f9cdae",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "merchants",
+                    ":_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "avs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "13f532b6-e673-46ac-bfd8-a352fe9da663",
+    "name": "Layup endpoints AbsaDebiCheckService MerchantService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

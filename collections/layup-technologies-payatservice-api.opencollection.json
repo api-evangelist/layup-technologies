@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService PayAtService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PayAtService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PayAtService_adviseTransaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/payAt/adviseTransaction"
+          }
+        },
+        {
+          "info": {
+            "name": "PayAtService_authorize",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/payAt/authorize"
+          }
+        },
+        {
+          "info": {
+            "name": "PayAtService_echoTest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/payAt/echoTest"
+          }
+        },
+        {
+          "info": {
+            "name": "PayAtService_enquiry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/payAt/enquire"
+          }
+        },
+        {
+          "info": {
+            "name": "PayAtService_reverseAuthorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/payAt/reverseAuthorization"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,38 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AbsaDebiCheckService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AbsaDebiCheckService_output",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/absa/debicheck/output"
+          }
+        },
+        {
+          "info": {
+            "name": "AbsaDebiCheckService_reply",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/absa/debicheck/reply"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

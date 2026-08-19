@@ -1,0 +1,317 @@
+{
+  "item": [
+    {
+      "id": "91abe34e-e6b0-4d8e-b90a-494579f5e865",
+      "name": "JournalFeeService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1ee692c5-e3ba-4b13-8f22-d2b321282bc4",
+          "name": "Journal Fee Service Create",
+          "request": {
+            "name": "Journal Fee Service Create",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "journal-fees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"_id\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"amountTotal\": \"<double>\",\n  \"amountExcludingVAT\": \"<double>\",\n  \"amountVAT\": \"<double>\",\n  \"orderId\": \"<string>\",\n  \"paymentPlanId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"settled\": \"<boolean>\",\n  \"reconciled\": \"<boolean>\",\n  \"settlementId\": \"<string>\",\n  \"invoiceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d64249f5-4bdf-448b-b059-2b3ab96c5116",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "journal-fees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_id\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"amountTotal\": \"<double>\",\n  \"amountExcludingVAT\": \"<double>\",\n  \"amountVAT\": \"<double>\",\n  \"orderId\": \"<string>\",\n  \"paymentPlanId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"settled\": \"<boolean>\",\n  \"reconciled\": \"<boolean>\",\n  \"settlementId\": \"<string>\",\n  \"invoiceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"amountTotal\": \"<double>\",\n  \"amountExcludingVAT\": \"<double>\",\n  \"amountVAT\": \"<double>\",\n  \"orderId\": \"<string>\",\n  \"paymentPlanId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"settled\": \"<boolean>\",\n  \"reconciled\": \"<boolean>\",\n  \"settlementId\": \"<string>\",\n  \"invoiceId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70987589-d42d-460b-9e93-80dd5a50e61e",
+              "name": "Successfully processed the request, no content.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "journal-fees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_id\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"amountTotal\": \"<double>\",\n  \"amountExcludingVAT\": \"<double>\",\n  \"amountVAT\": \"<double>\",\n  \"orderId\": \"<string>\",\n  \"paymentPlanId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"settled\": \"<boolean>\",\n  \"reconciled\": \"<boolean>\",\n  \"settlementId\": \"<string>\",\n  \"invoiceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ff771cc0-da7c-453a-a090-448bfdac78fc",
+              "name": "Returned when the user does not have permission to access the resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "journal-fees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_id\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"amountTotal\": \"<double>\",\n  \"amountExcludingVAT\": \"<double>\",\n  \"amountVAT\": \"<double>\",\n  \"orderId\": \"<string>\",\n  \"paymentPlanId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"settled\": \"<boolean>\",\n  \"reconciled\": \"<boolean>\",\n  \"settlementId\": \"<string>\",\n  \"invoiceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "825b35c9-379b-461a-9511-7ab3d8ff757e",
+              "name": "Returned when the resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "journal-fees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "apikey",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"_id\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"amountTotal\": \"<double>\",\n  \"amountExcludingVAT\": \"<double>\",\n  \"amountVAT\": \"<double>\",\n  \"orderId\": \"<string>\",\n  \"paymentPlanId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"merchantId\": \"<string>\",\n  \"settled\": \"<boolean>\",\n  \"reconciled\": \"<boolean>\",\n  \"settlementId\": \"<string>\",\n  \"invoiceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "85605c91-6dfe-412a-ada2-01b1bdec7b4f",
+    "name": "Layup endpoints AbsaDebiCheckService JournalFeeService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).\n\n# Introduction\n\n## What is LayUp\n\nLayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:\n\n1. Order Creation\n2. Deposit Received (and holding Stock for your client)\n3. Order Completion.\n\nLayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.\n\nOnce an order is completed a notification will be sent to the merchant so that you can provide the client with their product.\n\n## How to use LayUp\n\nAs a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.\n",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Layup endpoints AbsaDebiCheckService OrderService API",
+    "version": "1.4.16"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OrderService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OrderService_GetMany",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orders",
+            "params": [
+              {
+                "name": "populate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "See the Enumerated Values below"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "select",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "populateObject.path",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "populateObject.select",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "populateObject.populate.path",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "populateObject.populate.select",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stateUpdatedAt",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cloneOriginalId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupPaymentPlan",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orders",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "clone",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_SendOrderRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/orders-send-request"
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_Attach",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orders/attach/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_GetByReferenceAndCellNumber",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orders/reference/:reference/cellNumber/:cellNumber",
+            "params": [
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cellNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orders/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "populate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/v1/orders/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collectMissed",
+                "value": "",
+                "type": "query",
+                "description": "now, next or ISO 8601 Date"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_Del",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/v1/orders/:_id",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_GetCancellationTerms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v1/orders/:_id/cancellation-terms",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OrderService_StatementRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v1/statement"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
