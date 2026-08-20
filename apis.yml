@@ -49,6 +49,17 @@ tags:
 - Fintech
 - South Africa
 - DebiCheck
+- E-Commerce
+- Merchants
+tags_raw:
+- Payments
+- Lay-By
+- Save Now Buy Later
+- BNPL
+- Instalments
+- Fintech
+- South Africa
+- DebiCheck
 - E-commerce
 - Merchants
 apis:
@@ -87,6 +98,8 @@ apis:
   humanURL: https://documentation.layup.co.za/
   baseURL: https://api.layup.co.za
   tags:
+  - AuthService
+  tags_raw:
   - authService
   properties:
   - type: OpenAPI
@@ -347,6 +360,8 @@ apis:
   humanURL: https://documentation.layup.co.za/
   baseURL: https://api.layup.co.za
   tags:
+  - Payment Service
+  tags_raw:
   - PaymentService
   properties:
   - type: OpenAPI
@@ -433,6 +448,8 @@ apis:
   humanURL: https://documentation.layup.co.za/
   baseURL: https://api.layup.co.za
   tags:
+  - Token Service
+  tags_raw:
   - TokenService
   properties:
   - type: OpenAPI
