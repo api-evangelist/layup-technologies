@@ -109,8 +109,7 @@ apis:
   description: The authService API from LayUp Technologies — 6 operation(s) for authservice.
   humanURL: https://documentation.layup.co.za/
   baseURL: https://api.layup.co.za
-  tags:
-  - AuthService
+  tags: []
   tags_raw:
   - authService
   properties:
@@ -460,7 +459,7 @@ apis:
   humanURL: https://documentation.layup.co.za/
   baseURL: https://api.layup.co.za
   tags:
-  - Token Service
+  - TokenService
   tags_raw:
   - TokenService
   properties:
