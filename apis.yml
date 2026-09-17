@@ -106,22 +106,6 @@ apis:
     url: https://documentation.layup.co.za/
   - type: APIReference
     url: https://api-documentation.layup.co.za/
-- aid: layup-technologies:layup-technologies-authservice-api
-  name: LayUp Technologies authService API
-  description: The authService API from LayUp Technologies — 6 operation(s) for authservice.
-  humanURL: https://documentation.layup.co.za/
-  baseURL: https://api.layup.co.za
-  tags:
-  - AuthService
-  tags_raw:
-  - authService
-  properties:
-  - type: OpenAPI
-    url: openapi/layup-technologies-authservice-api-openapi.yml
-  - type: Documentation
-    url: https://documentation.layup.co.za/
-  - type: APIReference
-    url: https://api-documentation.layup.co.za/
 - aid: layup-technologies:layup-technologies-bankservice-api
   name: LayUp Technologies BankService API
   description: The BankService API from LayUp Technologies — 2 operation(s) for bankservice.
@@ -368,22 +352,6 @@ apis:
     url: https://documentation.layup.co.za/
   - type: APIReference
     url: https://api-documentation.layup.co.za/
-- aid: layup-technologies:layup-technologies-paymentservice-api
-  name: LayUp Technologies PaymentService API
-  description: The PaymentService API from LayUp Technologies — 10 operation(s) for paymentservice.
-  humanURL: https://documentation.layup.co.za/
-  baseURL: https://api.layup.co.za
-  tags:
-  - Payment Service
-  tags_raw:
-  - PaymentService
-  properties:
-  - type: OpenAPI
-    url: openapi/layup-technologies-paymentservice-api-openapi.yml
-  - type: Documentation
-    url: https://documentation.layup.co.za/
-  - type: APIReference
-    url: https://api-documentation.layup.co.za/
 - aid: layup-technologies:layup-technologies-paymentservicev2-api
   name: LayUp Technologies PaymentServiceV2 API
   description: The PaymentServiceV2 API from LayUp Technologies — 2 operation(s) for paymentservicev2.
@@ -496,6 +464,34 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/layup-technologies-verifyservice-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-auth-service-api
+  name: LayUp Technologies Auth Service API
+  description: The Auth Service API from LayUp Technologies — 6 operation(s) for auth service.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - Auth Service
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-auth-service-api-openapi.yml
+  - type: Documentation
+    url: https://documentation.layup.co.za/
+  - type: APIReference
+    url: https://api-documentation.layup.co.za/
+- aid: layup-technologies:layup-technologies-payment-service-api
+  name: LayUp Technologies Payment Service API
+  description: The Payment Service API from LayUp Technologies — 10 operation(s) for payment service.
+  humanURL: https://documentation.layup.co.za/
+  baseURL: https://api.layup.co.za
+  tags:
+  - Payment Service
+  properties:
+  - type: OpenAPI
+    url: openapi/layup-technologies-payment-service-api-openapi.yml
   - type: Documentation
     url: https://documentation.layup.co.za/
   - type: APIReference
