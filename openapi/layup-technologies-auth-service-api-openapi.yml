@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Layup endpoints User Service API
+  title: Layup endpoints Auth Service API
   version: 1.4.16
   description: Welcome to The Layup Swagger page.
 servers:
@@ -12,43 +12,30 @@ security:
   - read
   - write
 tags:
-- name: UserService
+- name: Auth Service
 paths:
-  /v1/users:
+  /v1/auth/apikey:
     get:
-      operationId: UserService_GetMany
+      summary: 'Warning: Calling this endpoint will replace any existing apikeys on your account'
+      operationId: authService_GenerateApiKey
       responses:
         '200':
           description: A successful response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/modelUserResponseMany'
+                $ref: '#/components/schemas/modelApiKeyResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
           description: Returned when the user does not have permission to access the resource.
         '404':
           description: Returned when the resource does not exist.
-      parameters:
-      - name: limit
-        in: query
-        required: false
-        schema:
-          type: integer
-          format: int32
-      - name: orderId
-        in: query
-        required: false
-        schema:
-          type: string
       tags:
-      - UserService
-      summary: User service get many
-      x-summary-source: derived
+      - Auth Service
+  /v1/auth/login:
     post:
-      summary: Description
-      operationId: UserService_Create
+      operationId: authService_Login
       responses:
         '200':
           description: A successful response.
@@ -62,59 +49,19 @@ paths:
           description: Returned when the user does not have permission to access the resource.
         '404':
           description: Returned when the resource does not exist.
-      parameters:
-      - name: _id
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: avs
-        in: query
-        required: false
-        schema:
-          type: string
-      - name: isRealtimeVerification
-        in: query
-        required: false
-        schema:
-          type: boolean
       tags:
-      - UserService
+      - Auth Service
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/modelUserRequest'
+              $ref: '#/components/schemas/modelLoginRequest'
         required: true
-  /v1/users/{_id}:
-    get:
-      operationId: UserService_Get
-      responses:
-        '200':
-          description: A successful response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/modelUserResponse'
-        '204':
-          description: Successfully processed the request, no content.
-        '403':
-          description: Returned when the user does not have permission to access the resource.
-        '404':
-          description: Returned when the resource does not exist.
-      parameters:
-      - name: _id
-        in: path
-        required: true
-        schema:
-          type: string
-      tags:
-      - UserService
-      summary: User service get
+      summary: Auth service login
       x-summary-source: derived
-    delete:
-      summary: Description
-      operationId: UserService_Del
+  /v1/auth/register:
+    post:
+      operationId: authService_Register
       responses:
         '200':
           description: A successful response.
@@ -130,31 +77,8 @@ paths:
           description: Returned when the resource does not exist.
       parameters:
       - name: _id
-        in: path
-        required: true
-        schema:
-          type: string
-      tags:
-      - UserService
-    put:
-      operationId: UserService_Update
-      responses:
-        '200':
-          description: A successful response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/modelUserResponse'
-        '204':
-          description: Successfully processed the request, no content.
-        '403':
-          description: Returned when the user does not have permission to access the resource.
-        '404':
-          description: Returned when the resource does not exist.
-      parameters:
-      - name: _id
-        in: path
-        required: true
+        in: query
+        required: false
         schema:
           type: string
       - name: avs
@@ -168,14 +92,92 @@ paths:
         schema:
           type: boolean
       tags:
-      - UserService
+      - Auth Service
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/modelUserRequest'
         required: true
-      summary: User service update
+      summary: Auth service register
+      x-summary-source: derived
+  /v1/auth/terminal-key:
+    get:
+      operationId: authService_GenerateTerminalApiKey
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelTerminalApiKeyResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: string
+      tags:
+      - Auth Service
+      summary: Auth service generate terminal api key
+      x-summary-source: derived
+  /v1/request-password-reset:
+    post:
+      operationId: authService_ForgotPassword
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelForgotPasswordResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      tags:
+      - Auth Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelForgotPasswordRequest'
+        required: true
+      summary: Auth service forgot password
+      x-summary-source: derived
+  /v1/send-billing-settlements-change-request:
+    post:
+      operationId: authService_MerchantBillingChangesRequest
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelMerchantBillingSettlementResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      tags:
+      - Auth Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelMerchantBillingSettlementRequest'
+        required: true
+      summary: Auth service merchant billing changes request
       x-summary-source: derived
 components:
   schemas:
@@ -199,6 +201,21 @@ components:
           type: string
         postalCode:
           type: string
+    modelMerchantBillingSettlementRequest:
+      type: object
+      properties:
+        merchantName:
+          type: string
+        userName:
+          type: string
+        userEmail:
+          type: string
+        merchantId:
+          type: string
+        merchantContactNumber:
+          type: string
+        message:
+          type: string
     modelMerchants:
       type: object
       properties:
@@ -213,14 +230,46 @@ components:
           type: string
         physicalAddress:
           $ref: '#/components/schemas/modelBillingAddress'
-    modelUserResponseMany:
+    modelTerminalApiKeyResponse:
       type: object
       properties:
-        users:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelUserResponse'
+        terminalApiKey:
+          type: string
+    modelApiKeyResponse:
+      type: object
+      properties:
+        apikey:
+          type: string
+    modelForgotPasswordResponse:
+      type: object
+      properties:
+        status:
+          type: string
+    modelForgotPasswordRequest:
+      type: object
+      properties:
+        value:
+          type: string
+        channel:
+          type: string
+        redirectTo:
+          type: string
+        isRealtimeVerification:
+          type: boolean
+    modelLoginRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          required:
+          - 'true'
+        password:
+          type: string
+          format: password
+          required:
+          - 'true'
+        rememberMe:
+          type: boolean
     modelUserResponse:
       type: object
       properties:
@@ -395,6 +444,11 @@ components:
           type: array
           items:
             type: string
+    modelMerchantBillingSettlementResponse:
+      type: object
+      properties:
+        status:
+          type: string
   securitySchemes:
     apiKey:
       type: apiKey

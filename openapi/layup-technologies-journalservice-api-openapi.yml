@@ -1,47 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Layup endpoints AbsaDebiCheckService JournalService API
+  title: Layup endpoints Journal Service API
   version: 1.4.16
-  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
-
-
-    # Introduction
-
-
-    ## What is LayUp
-
-
-    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
-
-
-    1. Order Creation
-
-    2. Deposit Received (and holding Stock for your client)
-
-    3. Order Completion.
-
-
-    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
-
-
-    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
-
-
-    ## How to use LayUp
-
-
-    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
-
-    '
-host: localhost:3000
-schemes:
-- http
-- https
-- wss
-consumes:
-- application/json
-produces:
-- application/json
+  description: Welcome to The Layup Swagger page.
+servers:
+- url: http://localhost:3000
+- url: https://localhost:3000
+- url: wss://localhost:3000
 security:
 - apiKey:
   - read
@@ -55,8 +20,10 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelJournalResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelJournalResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -64,49 +31,54 @@ paths:
         '404':
           description: Returned when the resource does not exist.
       parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/modelJournalRequest'
       - name: _id
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - JournalService
-definitions:
-  modelJournalResponse:
-    type: object
-    properties:
-      _id:
-        type: string
-      orderId:
-        type: string
-      participantId:
-        type: string
-      note:
-        type: string
-      amount:
-        type: integer
-        format: int32
-      amountExcludingFee:
-        type: integer
-        format: int32
-  modelJournalRequest:
-    type: object
-    properties:
-      orderId:
-        type: string
-      participantId:
-        type: string
-      note:
-        type: string
-      amount:
-        type: integer
-        format: int32
-securityDefinitions:
-  apiKey:
-    type: apiKey
-    name: apikey
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelJournalRequest'
+        required: true
+      summary: Journal service create
+      x-summary-source: derived
+components:
+  schemas:
+    modelJournalRequest:
+      type: object
+      properties:
+        orderId:
+          type: string
+        participantId:
+          type: string
+        note:
+          type: string
+        amount:
+          type: integer
+          format: int32
+    modelJournalResponse:
+      type: object
+      properties:
+        _id:
+          type: string
+        orderId:
+          type: string
+        participantId:
+          type: string
+        note:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        amountExcludingFee:
+          type: integer
+          format: int32
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: apikey
+      in: header

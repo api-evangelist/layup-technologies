@@ -1,0 +1,762 @@
+openapi: 3.2.0
+info:
+  title: Layup endpoints Payment Service API
+  version: 1.4.16
+  description: Welcome to The Layup Swagger page.
+servers:
+- url: http://localhost:3000
+- url: https://localhost:3000
+- url: wss://localhost:3000
+security:
+- apiKey:
+  - read
+  - write
+tags:
+- name: Payment Service
+paths:
+  /v1/generate-refund:
+    get:
+      operationId: PaymentService_refund
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body.amount
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: body.refundReference
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.paymentId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.excludeFees
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: body.refundMethod
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.autoRefund
+        in: query
+        required: false
+        schema:
+          type: boolean
+      tags:
+      - Payment Service
+      summary: Payment service refund
+      x-summary-source: derived
+  /v1/manual-refund:
+    get:
+      operationId: PaymentService_manualRefund
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body.amount
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: body.refundReference
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.paymentId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.excludeFees
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: body.refundMethod
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.autoRefund
+        in: query
+        required: false
+        schema:
+          type: boolean
+      tags:
+      - Payment Service
+      summary: Payment service manual refund
+      x-summary-source: derived
+  /v1/offline-payments:
+    post:
+      operationId: PaymentService_CreateOffline
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: query
+        required: false
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelOfflinePaymentRequest'
+        required: true
+      summary: Payment service create offline
+      x-summary-source: derived
+  /v1/offline-payments/{_id}:
+    delete:
+      operationId: PaymentService_DeleteOffline
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      summary: Payment service delete offline
+      x-summary-source: derived
+  /v1/payments:
+    get:
+      operationId: PaymentService_GetMany
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponseMany'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: skip
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: paid
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: orderId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: paymentPlanId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: userId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+          default: '2000-03-20'
+      - name: toDate
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+          default: '2030-03-20'
+      - name: method
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: type
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: fromDatePayments
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: toDatePayments
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: settled
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: sort
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: failed
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: provider
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: destinationId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: destinationType
+        in: query
+        required: false
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      summary: Payment service get many
+      x-summary-source: derived
+    delete:
+      operationId: PaymentService_Delete
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: query
+        required: false
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      summary: Payment service delete
+      x-summary-source: derived
+    post:
+      operationId: PaymentService_Create
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentRedirectResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: secret
+        in: query
+        required: false
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelPaymentRequest'
+        required: true
+      summary: Payment service create
+      x-summary-source: derived
+  /v1/payments/{_id}:
+    get:
+      operationId: PaymentService_Get
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: verify
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: force
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: msisdn
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: token
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: isEmbeddedCheckout
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: registrationId
+        in: query
+        required: false
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      summary: Payment service get
+      x-summary-source: derived
+    put:
+      operationId: PaymentService_UpdateById
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: secret
+        in: query
+        required: false
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelPaymentRequest'
+        required: true
+      summary: Payment service update by id
+      x-summary-source: derived
+  /v1/realtime-refund:
+    get:
+      operationId: PaymentService_realtimeRefund
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: body.amount
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: body.refundReference
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.paymentId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.excludeFees
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: body.refundMethod
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: body.autoRefund
+        in: query
+        required: false
+        schema:
+          type: boolean
+      tags:
+      - Payment Service
+      summary: Payment service realtime refund
+      x-summary-source: derived
+  /v1/refund-payments/{_id}:
+    get:
+      operationId: PaymentService_RefundPaymentMailer
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      parameters:
+      - name: _id
+        in: path
+        required: true
+        schema:
+          type: string
+      tags:
+      - Payment Service
+      summary: Payment service refund payment mailer
+      x-summary-source: derived
+  /v1/transfer-payments:
+    post:
+      operationId: PaymentService_TransferPayment
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      tags:
+      - Payment Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelTransferPaymentRequest'
+        required: true
+      summary: Payment service transfer payment
+      x-summary-source: derived
+  /v1/undo-transfer-payments:
+    post:
+      operationId: PaymentService_UndoTransfer
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelPaymentResponse'
+        '204':
+          description: Successfully processed the request, no content.
+        '403':
+          description: Returned when the user does not have permission to access the resource.
+        '404':
+          description: Returned when the resource does not exist.
+      tags:
+      - Payment Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelTransferPaymentRequest'
+        required: true
+      summary: Payment service undo transfer
+      x-summary-source: derived
+components:
+  schemas:
+    modelPaymentRequest:
+      type: object
+      properties:
+        paymentPlanId:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        notifyUrl:
+          type: string
+        useSavedCard:
+          type: boolean
+        eft:
+          type: boolean
+        checkout:
+          type: boolean
+        save:
+          type: boolean
+          title: save card used in checkout
+        suspenseId:
+          type: string
+        connectorData:
+          $ref: '#/components/schemas/modelConnectorData'
+        paid:
+          type: boolean
+        failed:
+          type: boolean
+        payAt:
+          type: boolean
+        paymentMethod:
+          type: string
+        paymentProviderSettlementId:
+          type: string
+        destinationType:
+          type: string
+        destinationId:
+          type: string
+        isEmbeddedCheckout:
+          type: boolean
+    modelPaymentResponse:
+      type: object
+      properties:
+        _id:
+          type: string
+        paymentPlanId:
+          type: string
+        due:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        paid:
+          type: boolean
+        userId:
+          type: string
+        locked:
+          type: boolean
+        pending:
+          type: boolean
+        timestamp:
+          type: number
+          format: double
+        paymentMethod:
+          type: string
+        paymentType:
+          type: string
+        note:
+          type: string
+        reference:
+          type: string
+        orderStatus:
+          type: string
+        amountExcludingFee:
+          type: integer
+          format: int32
+        fee:
+          type: integer
+          format: int32
+        failed:
+          type: boolean
+        verifyError:
+          type: string
+        refundedAmount:
+          type: integer
+          format: int32
+        refundPaymentId:
+          type: string
+        connectorData:
+          $ref: '#/components/schemas/modelConnectorData'
+        destinationId:
+          type: string
+        destinationType:
+          type: string
+    modelPaymentRedirectResponse:
+      type: object
+      properties:
+        url:
+          type: string
+        parameters:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelNameAndValue'
+        method:
+          type: string
+        _id:
+          type: string
+        checkoutId:
+          type: string
+    modelNameAndValue:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    modelConnectorData:
+      type: object
+      properties:
+        paymentProvider:
+          type: string
+        paymentMethod:
+          type: string
+      description: Connector data bypasses protobuf conversion to allow any fields.
+    modelTransferPaymentRequest:
+      type: object
+      properties:
+        _id:
+          type: string
+        _destinationPaymentPlanId:
+          type: string
+        amount:
+          type: integer
+          format: int32
+    modelOfflinePaymentRequest:
+      type: object
+      example:
+        amount: 13333
+        note: Processed by employeeX
+        paymentPlanId: 123f7f1496bd78001d6852f3
+        reference: Cash in hand
+        verifiedAt: '2022-01-27T14:00:00.000Z'
+      properties:
+        amount:
+          type: integer
+          format: int32
+        paymentPlanId:
+          type: string
+        reference:
+          type: string
+        note:
+          type: string
+        verifiedAt:
+          type: string
+        paymentType:
+          type: string
+        excludeFees:
+          type: boolean
+        settled:
+          type: boolean
+    modelPaymentResponseMany:
+      type: object
+      properties:
+        payments:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelPaymentResponse'
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: apikey
+      in: header

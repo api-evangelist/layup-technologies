@@ -1,47 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Layup endpoints AbsaDebiCheckService SettlementService API
+  title: Layup endpoints Settlement Service API
   version: 1.4.16
-  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
-
-
-    # Introduction
-
-
-    ## What is LayUp
-
-
-    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
-
-
-    1. Order Creation
-
-    2. Deposit Received (and holding Stock for your client)
-
-    3. Order Completion.
-
-
-    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
-
-
-    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
-
-
-    ## How to use LayUp
-
-
-    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
-
-    '
-host: localhost:3000
-schemes:
-- http
-- https
-- wss
-consumes:
-- application/json
-produces:
-- application/json
+  description: Welcome to The Layup Swagger page.
+servers:
+- url: http://localhost:3000
+- url: https://localhost:3000
+- url: wss://localhost:3000
 security:
 - apiKey:
   - read
@@ -55,8 +20,10 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelSettlementResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelSettlementResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -64,29 +31,36 @@ paths:
         '404':
           description: Returned when the resource does not exist.
       parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/modelSettlementRequest'
       - name: _id
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: taskToken
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - SettlementService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelSettlementRequest'
+        required: true
+      summary: Settlement service create
+      x-summary-source: derived
   /v2/settlements-report:
     get:
       operationId: SettlementService_GetReport
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelSettlementReportResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelSettlementReportResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -97,31 +71,39 @@ paths:
       - name: limit
         in: query
         required: false
-        type: integer
-        format: int32
+        schema:
+          type: integer
+          format: int32
       - name: skip
         in: query
         required: false
-        type: integer
-        format: int32
+        schema:
+          type: integer
+          format: int32
       - name: fromDate
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: toDate
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: search
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: sort
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - SettlementService
+      summary: Settlement service get report
+      x-summary-source: derived
   /v3/settlement-reports/{merchantId}/{settlementReferenceWithExtension}:
     get:
       summary: Redirect to pre-signed URL
@@ -129,18 +111,23 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelSettlementDownloadResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelSettlementDownloadResponse'
         '204':
           description: Successfully processed the request, no content.
         '302':
           description: Redirect to the pre-signed S3 URL
-          schema: {}
           headers:
             Location:
               description: The pre-signed S3 URL
-              type: string
-              format: uri
+              schema:
+                type: string
+                format: uri
+          content:
+            application/json:
+              schema: {}
         '403':
           description: Returned when the user does not have permission to access the resource.
         '404':
@@ -149,116 +136,119 @@ paths:
       - name: merchantId
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       - name: settlementReferenceWithExtension
         description: reference.zip
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       tags:
       - SettlementService
-definitions:
-  modelSettlementRequest:
-    type: object
-    properties:
-      merchantId:
-        type: string
-      to:
-        type: string
-      from:
-        type: string
-      batchType:
-        type: string
-      automatic:
-        type: boolean
-      negative:
-        type: boolean
-      preview:
-        type: boolean
-  modelSettlementResponse:
-    type: object
-    properties:
-      _id:
-        type: string
-      amount:
-        type: number
-        format: double
-      fee:
-        type: number
-        format: double
-      batch:
-        type: string
-      merchantId:
-        type: string
-      merchantAccountId:
-        type: string
-      reference:
-        type: string
-      dateSettled:
-        type: string
-      reconciled:
-        type: boolean
-      settled:
-        type: boolean
-      paymentIds:
-        type: array
-        items:
+components:
+  schemas:
+    modelSettlementDownloadResponse:
+      type: object
+      properties:
+        url:
           type: string
-      journalFees:
-        type: array
-        items:
+          title: The location that the user will be redirected to
+    modelSettlementResponse:
+      type: object
+      properties:
+        _id:
           type: string
-      batchType:
-        type: string
-      absaEftFile:
-        type: string
-      bankTransactionId:
-        type: string
-      createdAt:
-        type: string
-      updatedAt:
-        type: string
-      draft:
-        type: boolean
-  modelSettlementReportResponse:
-    type: object
-    properties:
-      settlements:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/modelSettlementReport'
-  modelSettlementReport:
-    type: object
-    properties:
-      id:
-        type: string
-      amount:
-        type: number
-        format: double
-      batch:
-        type: number
-        format: double
-      batchType:
-        type: string
-      merchantId:
-        type: string
-      status:
-        type: string
-      reference:
-        type: string
-      settledAt:
-        type: string
-      reconciled:
-        type: boolean
-  modelSettlementDownloadResponse:
-    type: object
-    properties:
-      url:
-        type: string
-        title: The location that the user will be redirected to
-securityDefinitions:
-  apiKey:
-    type: apiKey
-    name: apikey
-    in: header
+        amount:
+          type: number
+          format: double
+        fee:
+          type: number
+          format: double
+        batch:
+          type: string
+        merchantId:
+          type: string
+        merchantAccountId:
+          type: string
+        reference:
+          type: string
+        dateSettled:
+          type: string
+        reconciled:
+          type: boolean
+        settled:
+          type: boolean
+        paymentIds:
+          type: array
+          items:
+            type: string
+        journalFees:
+          type: array
+          items:
+            type: string
+        batchType:
+          type: string
+        absaEftFile:
+          type: string
+        bankTransactionId:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        draft:
+          type: boolean
+    modelSettlementRequest:
+      type: object
+      properties:
+        merchantId:
+          type: string
+        to:
+          type: string
+        from:
+          type: string
+        batchType:
+          type: string
+        automatic:
+          type: boolean
+        negative:
+          type: boolean
+        preview:
+          type: boolean
+    modelSettlementReportResponse:
+      type: object
+      properties:
+        settlements:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelSettlementReport'
+    modelSettlementReport:
+      type: object
+      properties:
+        id:
+          type: string
+        amount:
+          type: number
+          format: double
+        batch:
+          type: number
+          format: double
+        batchType:
+          type: string
+        merchantId:
+          type: string
+        status:
+          type: string
+        reference:
+          type: string
+        settledAt:
+          type: string
+        reconciled:
+          type: boolean
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: apikey
+      in: header

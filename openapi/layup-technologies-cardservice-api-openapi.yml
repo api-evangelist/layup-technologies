@@ -1,47 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Layup endpoints AbsaDebiCheckService CardService API
+  title: Layup endpoints Card Service API
   version: 1.4.16
-  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
-
-
-    # Introduction
-
-
-    ## What is LayUp
-
-
-    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
-
-
-    1. Order Creation
-
-    2. Deposit Received (and holding Stock for your client)
-
-    3. Order Completion.
-
-
-    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
-
-
-    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
-
-
-    ## How to use LayUp
-
-
-    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
-
-    '
-host: localhost:3000
-schemes:
-- http
-- https
-- wss
-consumes:
-- application/json
-produces:
-- application/json
+  description: Welcome to The Layup Swagger page.
+servers:
+- url: http://localhost:3000
+- url: https://localhost:3000
+- url: wss://localhost:3000
 security:
 - apiKey:
   - read
@@ -55,8 +20,10 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelCardResponseMany'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelCardResponseMany'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -67,17 +34,22 @@ paths:
       - name: limit
         in: query
         required: false
-        type: integer
-        format: int32
+        schema:
+          type: integer
+          format: int32
       tags:
       - CardService
+      summary: Card service get many
+      x-summary-source: derived
     post:
       operationId: CardService_Create
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelCardResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelCardResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -85,25 +57,31 @@ paths:
         '404':
           description: Returned when the resource does not exist.
       parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/modelCardRequest'
       - name: _id
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - CardService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelCardRequest'
+        required: true
+      summary: Card service create
+      x-summary-source: derived
   /v1/cards/{_id}:
     get:
       operationId: CardService_Get
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelCardResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelCardResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -114,17 +92,22 @@ paths:
       - name: _id
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       tags:
       - CardService
+      summary: Card service get
+      x-summary-source: derived
     delete:
       operationId: CardService_Remove
       responses:
         '200':
           description: A successful response.
-          schema:
-            type: object
-            properties: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -135,16 +118,21 @@ paths:
       - name: _id
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       tags:
       - CardService
+      summary: Card service remove
+      x-summary-source: derived
     put:
       operationId: CardService_Update
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelCardResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelCardResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -155,63 +143,68 @@ paths:
       - name: _id
         in: path
         required: true
-        type: string
-      - name: body
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/modelCardRequest'
+          type: string
       tags:
       - CardService
-definitions:
-  modelCardResponseMany:
-    type: object
-    properties:
-      clientCards:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/modelCardResponse'
-  modelCardRequest:
-    type: object
-    properties:
-      userId:
-        type: string
-      defaultCard:
-        type: boolean
-      redirectUrl:
-        type: string
-    title: card
-  modelCardResponse:
-    type: object
-    properties:
-      _id:
-        type: string
-      userId:
-        type: string
-      nameOnCard:
-        type: string
-      cardType:
-        type: string
-      cardDigits:
-        type: string
-      defaultCard:
-        type: boolean
-      expiryMonth:
-        type: string
-      expiryYear:
-        type: string
-      timestamp:
-        type: number
-        format: double
-      checkoutId:
-        type: string
-      resourcePath:
-        type: string
-      merchantId:
-        type: string
-securityDefinitions:
-  apiKey:
-    type: apiKey
-    name: apikey
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/modelCardRequest'
+        required: true
+      summary: Card service update
+      x-summary-source: derived
+components:
+  schemas:
+    modelCardResponse:
+      type: object
+      properties:
+        _id:
+          type: string
+        userId:
+          type: string
+        nameOnCard:
+          type: string
+        cardType:
+          type: string
+        cardDigits:
+          type: string
+        defaultCard:
+          type: boolean
+        expiryMonth:
+          type: string
+        expiryYear:
+          type: string
+        timestamp:
+          type: number
+          format: double
+        checkoutId:
+          type: string
+        resourcePath:
+          type: string
+        merchantId:
+          type: string
+    modelCardResponseMany:
+      type: object
+      properties:
+        clientCards:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelCardResponse'
+    modelCardRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+        defaultCard:
+          type: boolean
+        redirectUrl:
+          type: string
+      title: card
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: apikey
+      in: header

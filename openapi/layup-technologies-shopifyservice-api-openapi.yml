@@ -1,47 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Layup endpoints AbsaDebiCheckService ShopifyService API
+  title: Layup endpoints Shopify Service API
   version: 1.4.16
-  description: 'Welcome to The Layup Swagger page. This page allows developers to interactively explore the API. For more detailed documentation see [The Layup documentation page](https://documentation.layup.co.za/).
-
-
-    # Introduction
-
-
-    ## What is LayUp
-
-
-    LayUp is a lay-by payment solution. LayUp Schedules payments and ensures that your clients pay securely, effectively and on time. Depending on your parameters LayUp schedules a payment plan for your clients. Once a payment plan has been completed we notify you. There are 3 stories that are of importance to a merchant:
-
-
-    1. Order Creation
-
-    2. Deposit Received (and holding Stock for your client)
-
-    3. Order Completion.
-
-
-    LayUp allows you to take full control over the entire payment process if you wish to do so. We also provide a convenient front-end for users to use. The front-end should significantly reduce the time to integrate and get you started using LayUp as soon as possible.
-
-
-    Once an order is completed a notification will be sent to the merchant so that you can provide the client with their product.
-
-
-    ## How to use LayUp
-
-
-    As a merchant who wants to place an order through LayUp, you want to send the relevant information to the LayUp API to create the order. The API will return an order ID. Unless your integration is using a custom user interface, you want to send the user to the LayUp customer payment widget. The URL for this widget is <u>https://shopper.layup.co.za/order/{orderId}</u> for production and <u>https://sandbox.layup.co.za/order/{orderId}</u> for sandbox.
-
-    '
-host: localhost:3000
-schemes:
-- http
-- https
-- wss
-consumes:
-- application/json
-produces:
-- application/json
+  description: Welcome to The Layup Swagger page.
+servers:
+- url: http://localhost:3000
+- url: https://localhost:3000
+- url: wss://localhost:3000
 security:
 - apiKey:
   - read
@@ -55,8 +20,10 @@ paths:
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelShopifyCalculateShippingResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelShopifyCalculateShippingResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -67,53 +34,67 @@ paths:
       - name: customerData.firstName
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.lastName
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.email
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.phone
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.address
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.address2
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.city
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.province
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.postalCode
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: shopDomain
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - ShopifyService
+      summary: Shopify service calculate shipping
+      x-summary-source: derived
   /v1/integrations/shopify/discounts:
     get:
       operationId: ShopifyService_processDiscount
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelShopifyDiscountResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelShopifyDiscountResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -124,21 +105,27 @@ paths:
       - name: discountCode
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: shopDomain
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - ShopifyService
+      summary: Shopify service process discount
+      x-summary-source: derived
   /v1/integrations/shopify/link-order:
     post:
       operationId: ShopifyService_linkOrder
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelShopifyOrderResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelShopifyOrderResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -149,65 +136,82 @@ paths:
       - name: shopDomain
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.id
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.status
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.createdAt
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.name
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.customer.name
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.customer.email
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.customer.phone
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.customer.displayName
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.totalPriceSet
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.taxesIncluded
         in: query
         required: false
-        type: boolean
+        schema:
+          type: boolean
       - name: draftOrder.shippingLine.discountedPriceSet
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: draftOrder.totalTaxSet
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - ShopifyService
+      summary: Shopify service link order
+      x-summary-source: derived
   /v1/integrations/shopify/orders:
     post:
       operationId: ShopifyService_processOrder
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelShopifyOrderResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelShopifyOrderResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -218,110 +222,138 @@ paths:
       - name: shopDomain
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: amount
         in: query
         required: false
-        type: integer
-        format: int32
+        schema:
+          type: integer
+          format: int32
       - name: shippingData.amount
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: shippingData.handle
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: shippingData.title
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: discount.discountType
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: discount.discountValue
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: discount.discountAllocation
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: discount.discountSelection
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: discount.discountTitle
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: discount.entitledProductIds
         in: query
         required: false
-        type: array
-        items:
-          type: number
-          format: double
-        collectionFormat: multi
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+            format: double
       - name: discount.entitledVariantIds
         in: query
         required: false
-        type: array
-        items:
-          type: number
-          format: double
-        collectionFormat: multi
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+            format: double
       - name: locationData
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.firstName
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.lastName
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.email
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.phone
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.address
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.address2
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.city
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.province
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: customerData.postalCode
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - ShopifyService
+      summary: Shopify service process order
+      x-summary-source: derived
   /v1/integrations/shopify/shop-settings/{shopDomain}:
     post:
       operationId: ShopifyService_getShopSettings
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelShopifyGetShopSettingsResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelShopifyGetShopSettingsResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -332,17 +364,22 @@ paths:
       - name: shopDomain
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       tags:
       - ShopifyService
+      summary: Shopify service get shop settings
+      x-summary-source: derived
   /v1/integrations/shopify/shopify-order-notes:
     post:
       operationId: ShopifyService_getOrderNotes
       responses:
         '200':
           description: A successful response.
-          schema:
-            $ref: '#/definitions/modelShopifyOrderNotesResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/modelShopifyOrderNotesResponse'
         '204':
           description: Successfully processed the request, no content.
         '403':
@@ -353,201 +390,206 @@ paths:
       - name: shopDomain
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       - name: orderId
         in: query
         required: false
-        type: string
+        schema:
+          type: string
       tags:
       - ShopifyService
-definitions:
-  modelShopifyGetShopSettingsResponse:
-    type: object
-    properties:
-      enabledOnAll:
-        type: boolean
-      enabledOnProduct:
-        type: boolean
-      enabledOnCart:
-        type: boolean
-      enabledAccept:
-        type: boolean
-      acceptMsg:
-        type: string
-      acceptBtn:
-        type: string
-      terms:
-        type: string
-      products:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/modelShopifyProductSettings'
-      logoUrl:
-        type: string
-      learnMore:
-        type: string
-      merchantName:
-        type: string
-      deposit:
-        type: integer
-        format: int32
-      depositType:
-        type: string
-      minMonths:
-        type: integer
-        format: int32
-      maxMonths:
-        type: integer
-        format: int32
-      shopifyLocations:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/modelShopifyLocations'
-      enabledDiscount:
-        type: boolean
-      enabledOnPopupCart:
-        type: boolean
-      popupCartSelector:
-        type: string
-      popupCartQuantitySelector:
-        type: string
-      popupCartRemoveSelector:
-        type: string
-      buttonLayout:
-        type: string
-  modelShopifyOrderNote:
-    type: object
-    properties:
-      name:
-        type: string
-      value:
-        type: string
-  modelShopifyProductSettings:
-    type: object
-    properties:
-      productId:
-        type: string
-      eventDateString:
-        type: string
-      enabledOnLayup:
-        type: boolean
-      minMonths:
-        type: integer
-        format: int32
-      maxMonths:
-        type: integer
-        format: int32
-      deposit:
-        type: integer
-        format: int32
-      depositType:
-        type: string
-      previewTemplate:
-        type: string
-      learnMore:
-        type: string
-      layupType:
-        type: string
-  modelShopifyLocationAddress:
-    type: object
-    properties:
-      address1:
-        type: string
-      address2:
-        type: string
-      city:
-        type: string
-      phone:
-        type: string
-      province:
-        type: string
-      zip:
-        type: string
-  modelShopifyDiscountData:
-    type: object
-    properties:
-      discountType:
-        type: string
-      discountValue:
-        type: string
-      discountAllocation:
-        type: string
-      discountSelection:
-        type: string
-      discountTitle:
-        type: string
-      entitledProductIds:
-        type: array
-        items:
-          type: number
-          format: double
-      entitledVariantIds:
-        type: array
-        items:
-          type: number
-          format: double
-  modelShopifyOrderNotesResponse:
-    type: object
-    properties:
-      notes:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/modelShopifyOrderNote'
-      tags:
-        type: string
-  modelShopifyCalculateShippingResponse:
-    type: object
-    properties:
-      prices:
-        type: array
-        items:
-          type: object
-          $ref: '#/definitions/modelShopifyShippingRate'
-  modelShopifyOrderResponse:
-    type: object
-    properties:
-      status:
-        type: string
-      message:
-        type: string
-      data:
-        type: string
-      orderId:
-        type: string
-  modelShopifyDiscountResponse:
-    type: object
-    properties:
-      status:
-        type: string
-      message:
-        type: string
-      data:
-        $ref: '#/definitions/modelShopifyDiscountData'
-  modelShopifyShippingRate:
-    type: object
-    properties:
-      title:
-        type: string
-      amount:
-        type: string
-      handle:
-        type: string
-  modelShopifyLocations:
-    type: object
-    properties:
-      address:
-        $ref: '#/definitions/modelShopifyLocationAddress'
-      id:
-        type: string
-      legacyResourceId:
-        type: string
-      name:
-        type: string
-securityDefinitions:
-  apiKey:
-    type: apiKey
-    name: apikey
-    in: header
+      summary: Shopify service get order notes
+      x-summary-source: derived
+components:
+  schemas:
+    modelShopifyDiscountData:
+      type: object
+      properties:
+        discountType:
+          type: string
+        discountValue:
+          type: string
+        discountAllocation:
+          type: string
+        discountSelection:
+          type: string
+        discountTitle:
+          type: string
+        entitledProductIds:
+          type: array
+          items:
+            type: number
+            format: double
+        entitledVariantIds:
+          type: array
+          items:
+            type: number
+            format: double
+    modelShopifyCalculateShippingResponse:
+      type: object
+      properties:
+        prices:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelShopifyShippingRate'
+    modelShopifyLocationAddress:
+      type: object
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        phone:
+          type: string
+        province:
+          type: string
+        zip:
+          type: string
+    modelShopifyDiscountResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/modelShopifyDiscountData'
+    modelShopifyLocations:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/modelShopifyLocationAddress'
+        id:
+          type: string
+        legacyResourceId:
+          type: string
+        name:
+          type: string
+    modelShopifyShippingRate:
+      type: object
+      properties:
+        title:
+          type: string
+        amount:
+          type: string
+        handle:
+          type: string
+    modelShopifyGetShopSettingsResponse:
+      type: object
+      properties:
+        enabledOnAll:
+          type: boolean
+        enabledOnProduct:
+          type: boolean
+        enabledOnCart:
+          type: boolean
+        enabledAccept:
+          type: boolean
+        acceptMsg:
+          type: string
+        acceptBtn:
+          type: string
+        terms:
+          type: string
+        products:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelShopifyProductSettings'
+        logoUrl:
+          type: string
+        learnMore:
+          type: string
+        merchantName:
+          type: string
+        deposit:
+          type: integer
+          format: int32
+        depositType:
+          type: string
+        minMonths:
+          type: integer
+          format: int32
+        maxMonths:
+          type: integer
+          format: int32
+        shopifyLocations:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelShopifyLocations'
+        enabledDiscount:
+          type: boolean
+        enabledOnPopupCart:
+          type: boolean
+        popupCartSelector:
+          type: string
+        popupCartQuantitySelector:
+          type: string
+        popupCartRemoveSelector:
+          type: string
+        buttonLayout:
+          type: string
+    modelShopifyOrderNote:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    modelShopifyOrderNotesResponse:
+      type: object
+      properties:
+        notes:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelShopifyOrderNote'
+        tags:
+          type: string
+    modelShopifyProductSettings:
+      type: object
+      properties:
+        productId:
+          type: string
+        eventDateString:
+          type: string
+        enabledOnLayup:
+          type: boolean
+        minMonths:
+          type: integer
+          format: int32
+        maxMonths:
+          type: integer
+          format: int32
+        deposit:
+          type: integer
+          format: int32
+        depositType:
+          type: string
+        previewTemplate:
+          type: string
+        learnMore:
+          type: string
+        layupType:
+          type: string
+    modelShopifyOrderResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        data:
+          type: string
+        orderId:
+          type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: apikey
+      in: header
