@@ -146,78 +146,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelPayAtEchoTestResponse:
-      type: object
-      properties:
-        messageID:
-          type: string
-        transmissionDateTime:
-          type: string
-        securityData:
-          $ref: '#/components/schemas/modelPayAtSecurityData'
-        echoData:
-          type: string
-        responseCode:
-          type: string
-        responseText:
-          type: string
-    modelPayAtEchoTestRequest:
-      type: object
-      properties:
-        securityData:
-          $ref: '#/components/schemas/modelPayAtSecurityData'
-        messageID:
-          type: string
-        transmissionDateTime:
-          type: string
-        echoData:
-          type: string
-    modelPayAtAuthorizationRequest:
-      type: object
-      properties:
-        messageID:
-          type: string
-        transmissionDateTime:
-          type: string
-        securityData:
-          $ref: '#/components/schemas/modelPayAtSecurityData'
-        accountNumber:
-          type: string
-        amount:
-          type: integer
-          format: int32
-        networkTransactionID:
-          type: string
-        networkData:
-          $ref: '#/components/schemas/modelPayAtNetworkData'
-    modelPayAtCustomerData:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-    modelPayAtSecurityData:
-      type: object
-      properties:
-        login:
-          $ref: '#/components/schemas/modelPayAtLoginData'
-    modelPayAtEnquiryRequest:
-      type: object
-      properties:
-        messageID:
-          type: string
-        transmissionDateTime:
-          type: string
-        securityData:
-          $ref: '#/components/schemas/modelPayAtSecurityData'
-        accountNumber:
-          type: string
-        amount:
-          type: integer
-          format: int32
-        networkData:
-          $ref: '#/components/schemas/modelPayAtNetworkData'
     modelPayAtReverseAuthorizationResponse:
       type: object
       properties:
@@ -251,6 +179,17 @@ components:
           format: int32
         networkName:
           type: string
+    modelPayAtEchoTestRequest:
+      type: object
+      properties:
+        securityData:
+          $ref: '#/components/schemas/modelPayAtSecurityData'
+        messageID:
+          type: string
+        transmissionDateTime:
+          type: string
+        echoData:
+          type: string
     modelPayAtEnquiryResponse:
       type: object
       properties:
@@ -276,6 +215,136 @@ components:
         responseText:
           type: string
         responseCode:
+          type: string
+    modelPayAtReverseAuthorizationRequest:
+      type: object
+      properties:
+        messageID:
+          type: string
+        transmissionDateTime:
+          type: string
+        securityData:
+          $ref: '#/components/schemas/modelPayAtSecurityData'
+        accountNumber:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        networkTransactionID:
+          type: string
+        networkData:
+          $ref: '#/components/schemas/modelPayAtNetworkData'
+        issuerTransactionID:
+          type: string
+        repeatIndicator:
+          type: boolean
+    modelPayAtAuthorizationRequest:
+      type: object
+      properties:
+        messageID:
+          type: string
+        transmissionDateTime:
+          type: string
+        securityData:
+          $ref: '#/components/schemas/modelPayAtSecurityData'
+        accountNumber:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        networkTransactionID:
+          type: string
+        networkData:
+          $ref: '#/components/schemas/modelPayAtNetworkData'
+    modelPayAtCustomerData:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+    modelPayAtSecurityData:
+      type: object
+      properties:
+        login:
+          $ref: '#/components/schemas/modelPayAtLoginData'
+    modelPayAtEchoTestResponse:
+      type: object
+      properties:
+        messageID:
+          type: string
+        transmissionDateTime:
+          type: string
+        securityData:
+          $ref: '#/components/schemas/modelPayAtSecurityData'
+        echoData:
+          type: string
+        responseCode:
+          type: string
+        responseText:
+          type: string
+    modelPayAtAuthorizationResponse:
+      type: object
+      properties:
+        messageID:
+          type: string
+        transmissionDateTime:
+          type: string
+        securityData:
+          $ref: '#/components/schemas/modelPayAtSecurityData'
+        accountNumber:
+          type: string
+        networkData:
+          $ref: '#/components/schemas/modelPayAtNetworkData'
+        networkTransactionID:
+          type: string
+        responseCode:
+          type: string
+        responseText:
+          type: string
+        issuerTransactionID:
+          type: string
+        customerData:
+          $ref: '#/components/schemas/modelPayAtCustomerData'
+    modelPayAtEnquiryRequest:
+      type: object
+      properties:
+        messageID:
+          type: string
+        transmissionDateTime:
+          type: string
+        securityData:
+          $ref: '#/components/schemas/modelPayAtSecurityData'
+        accountNumber:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        networkData:
+          $ref: '#/components/schemas/modelPayAtNetworkData'
+    modelPayAtTransactionAdviceRequest:
+      type: object
+      properties:
+        messageID:
+          type: string
+        transmissionDateTime:
+          type: string
+        securityData:
+          $ref: '#/components/schemas/modelPayAtSecurityData'
+        accountNumber:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        tenderType:
+          type: string
+        repeatIndicator:
+          type: boolean
+        networkTransactionID:
+          type: string
+        networkData:
+          $ref: '#/components/schemas/modelPayAtNetworkData'
+        issuerTransactionID:
           type: string
     modelPayAtTransactionAdviceResponse:
       type: object
@@ -312,75 +381,6 @@ components:
           type: string
         password:
           type: string
-    modelPayAtReverseAuthorizationRequest:
-      type: object
-      properties:
-        messageID:
-          type: string
-        transmissionDateTime:
-          type: string
-        securityData:
-          $ref: '#/components/schemas/modelPayAtSecurityData'
-        accountNumber:
-          type: string
-        amount:
-          type: integer
-          format: int32
-        networkTransactionID:
-          type: string
-        networkData:
-          $ref: '#/components/schemas/modelPayAtNetworkData'
-        issuerTransactionID:
-          type: string
-        repeatIndicator:
-          type: boolean
-    modelPayAtTransactionAdviceRequest:
-      type: object
-      properties:
-        messageID:
-          type: string
-        transmissionDateTime:
-          type: string
-        securityData:
-          $ref: '#/components/schemas/modelPayAtSecurityData'
-        accountNumber:
-          type: string
-        amount:
-          type: integer
-          format: int32
-        tenderType:
-          type: string
-        repeatIndicator:
-          type: boolean
-        networkTransactionID:
-          type: string
-        networkData:
-          $ref: '#/components/schemas/modelPayAtNetworkData'
-        issuerTransactionID:
-          type: string
-    modelPayAtAuthorizationResponse:
-      type: object
-      properties:
-        messageID:
-          type: string
-        transmissionDateTime:
-          type: string
-        securityData:
-          $ref: '#/components/schemas/modelPayAtSecurityData'
-        accountNumber:
-          type: string
-        networkData:
-          $ref: '#/components/schemas/modelPayAtNetworkData'
-        networkTransactionID:
-          type: string
-        responseCode:
-          type: string
-        responseText:
-          type: string
-        issuerTransactionID:
-          type: string
-        customerData:
-          $ref: '#/components/schemas/modelPayAtCustomerData'
   securitySchemes:
     apiKey:
       type: apiKey

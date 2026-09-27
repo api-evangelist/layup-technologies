@@ -119,6 +119,27 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelTerminalCreateRequest:
+      type: object
+      properties:
+        provider:
+          type: string
+        serial:
+          type: string
+        model:
+          type: string
+        productId:
+          type: string
+        active:
+          type: boolean
+        billable:
+          type: boolean
+        merchantId:
+          type: string
+        location:
+          type: string
+        userId:
+          type: string
     modelTerminalResponse:
       type: object
       properties:
@@ -144,14 +165,6 @@ components:
           type: string
         updatedAt:
           type: string
-    modelTerminalsResponse:
-      type: object
-      properties:
-        terminals:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelTerminalResponse'
     modelTerminalServiceupdateBody:
       type: object
       properties:
@@ -167,27 +180,14 @@ components:
           type: string
         userId:
           type: string
-    modelTerminalCreateRequest:
+    modelTerminalsResponse:
       type: object
       properties:
-        provider:
-          type: string
-        serial:
-          type: string
-        model:
-          type: string
-        productId:
-          type: string
-        active:
-          type: boolean
-        billable:
-          type: boolean
-        merchantId:
-          type: string
-        location:
-          type: string
-        userId:
-          type: string
+        terminals:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelTerminalResponse'
   securitySchemes:
     apiKey:
       type: apiKey

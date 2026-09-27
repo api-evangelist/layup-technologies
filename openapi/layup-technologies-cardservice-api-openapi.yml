@@ -157,6 +157,16 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelCardRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+        defaultCard:
+          type: boolean
+        redirectUrl:
+          type: string
+      title: card
     modelCardResponse:
       type: object
       properties:
@@ -193,16 +203,6 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelCardResponse'
-    modelCardRequest:
-      type: object
-      properties:
-        userId:
-          type: string
-        defaultCard:
-          type: boolean
-        redirectUrl:
-          type: string
-      title: card
   securitySchemes:
     apiKey:
       type: apiKey

@@ -148,12 +148,37 @@ paths:
       - SettlementService
 components:
   schemas:
-    modelSettlementDownloadResponse:
+    modelSettlementReport:
       type: object
       properties:
-        url:
+        id:
           type: string
-          title: The location that the user will be redirected to
+        amount:
+          type: number
+          format: double
+        batch:
+          type: number
+          format: double
+        batchType:
+          type: string
+        merchantId:
+          type: string
+        status:
+          type: string
+        reference:
+          type: string
+        settledAt:
+          type: string
+        reconciled:
+          type: boolean
+    modelSettlementReportResponse:
+      type: object
+      properties:
+        settlements:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelSettlementReport'
     modelSettlementResponse:
       type: object
       properties:
@@ -199,6 +224,12 @@ components:
           type: string
         draft:
           type: boolean
+    modelSettlementDownloadResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          title: The location that the user will be redirected to
     modelSettlementRequest:
       type: object
       properties:
@@ -215,37 +246,6 @@ components:
         negative:
           type: boolean
         preview:
-          type: boolean
-    modelSettlementReportResponse:
-      type: object
-      properties:
-        settlements:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelSettlementReport'
-    modelSettlementReport:
-      type: object
-      properties:
-        id:
-          type: string
-        amount:
-          type: number
-          format: double
-        batch:
-          type: number
-          format: double
-        batchType:
-          type: string
-        merchantId:
-          type: string
-        status:
-          type: string
-        reference:
-          type: string
-        settledAt:
-          type: string
-        reconciled:
           type: boolean
   securitySchemes:
     apiKey:

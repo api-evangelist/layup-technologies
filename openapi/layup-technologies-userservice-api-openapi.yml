@@ -186,6 +186,48 @@ components:
           type: boolean
         value:
           type: string
+    modelBankInfo:
+      type: object
+      properties:
+        bankName:
+          $ref: '#/components/schemas/modelBankValidation'
+        account:
+          $ref: '#/components/schemas/modelBankValidation'
+        accountType:
+          $ref: '#/components/schemas/modelBankValidation'
+        branchCode:
+          $ref: '#/components/schemas/modelBankValidation'
+        idNumber:
+          $ref: '#/components/schemas/modelBankValidation'
+        verified:
+          type: boolean
+        clientName:
+          $ref: '#/components/schemas/modelBankValidation'
+        cellNumber:
+          $ref: '#/components/schemas/modelBankValidation'
+        initials:
+          $ref: '#/components/schemas/modelBankValidation'
+        email:
+          $ref: '#/components/schemas/modelBankValidation'
+        validationResponseErrors:
+          type: array
+          items:
+            type: string
+    modelUserResponseMany:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelUserResponse'
+    modelMerchants:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
     modelBillingAddress:
       type: object
       properties:
@@ -199,28 +241,6 @@ components:
           type: string
         postalCode:
           type: string
-    modelMerchants:
-      type: object
-      properties:
-        _id:
-          type: string
-        name:
-          type: string
-    modelMerchantOnboarding:
-      type: object
-      properties:
-        name:
-          type: string
-        physicalAddress:
-          $ref: '#/components/schemas/modelBillingAddress'
-    modelUserResponseMany:
-      type: object
-      properties:
-        users:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelUserResponse'
     modelUserResponse:
       type: object
       properties:
@@ -368,33 +388,13 @@ components:
             type: string
         isMerchantOwner:
           type: boolean
-    modelBankInfo:
+    modelMerchantOnboarding:
       type: object
       properties:
-        bankName:
-          $ref: '#/components/schemas/modelBankValidation'
-        account:
-          $ref: '#/components/schemas/modelBankValidation'
-        accountType:
-          $ref: '#/components/schemas/modelBankValidation'
-        branchCode:
-          $ref: '#/components/schemas/modelBankValidation'
-        idNumber:
-          $ref: '#/components/schemas/modelBankValidation'
-        verified:
-          type: boolean
-        clientName:
-          $ref: '#/components/schemas/modelBankValidation'
-        cellNumber:
-          $ref: '#/components/schemas/modelBankValidation'
-        initials:
-          $ref: '#/components/schemas/modelBankValidation'
-        email:
-          $ref: '#/components/schemas/modelBankValidation'
-        validationResponseErrors:
-          type: array
-          items:
-            type: string
+        name:
+          type: string
+        physicalAddress:
+          $ref: '#/components/schemas/modelBillingAddress'
   securitySchemes:
     apiKey:
       type: apiKey

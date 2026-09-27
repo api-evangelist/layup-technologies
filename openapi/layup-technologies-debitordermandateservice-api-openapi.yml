@@ -68,9 +68,11 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelDebitOrderMandateCreateRequest:
+    modelDebitOrderMandateResponse:
       type: object
       properties:
+        mandateId:
+          type: string
         merchantId:
           type: string
         reference:
@@ -91,11 +93,9 @@ components:
           type: string
         identificationNumber:
           type: string
-    modelDebitOrderMandateResponse:
+    modelDebitOrderMandateCreateRequest:
       type: object
       properties:
-        mandateId:
-          type: string
         merchantId:
           type: string
         reference:

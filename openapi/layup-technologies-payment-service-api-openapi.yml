@@ -587,44 +587,41 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelPaymentRequest:
+    modelTransferPaymentRequest:
       type: object
       properties:
-        paymentPlanId:
+        _id:
+          type: string
+        _destinationPaymentPlanId:
           type: string
         amount:
           type: integer
           format: int32
-        notifyUrl:
+    modelOfflinePaymentRequest:
+      type: object
+      example:
+        amount: 13333
+        note: Processed by employeeX
+        paymentPlanId: 123f7f1496bd78001d6852f3
+        reference: Cash in hand
+        verifiedAt: '2022-01-27T14:00:00.000Z'
+      properties:
+        amount:
+          type: integer
+          format: int32
+        paymentPlanId:
           type: string
-        useSavedCard:
-          type: boolean
-        eft:
-          type: boolean
-        checkout:
-          type: boolean
-        save:
-          type: boolean
-          title: save card used in checkout
-        suspenseId:
+        reference:
           type: string
-        connectorData:
-          $ref: '#/components/schemas/modelConnectorData'
-        paid:
+        note:
+          type: string
+        verifiedAt:
+          type: string
+        paymentType:
+          type: string
+        excludeFees:
           type: boolean
-        failed:
-          type: boolean
-        payAt:
-          type: boolean
-        paymentMethod:
-          type: string
-        paymentProviderSettlementId:
-          type: string
-        destinationType:
-          type: string
-        destinationId:
-          type: string
-        isEmbeddedCheckout:
+        settled:
           type: boolean
     modelPaymentResponse:
       type: object
@@ -680,6 +677,45 @@ components:
           type: string
         destinationType:
           type: string
+    modelPaymentRequest:
+      type: object
+      properties:
+        paymentPlanId:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        notifyUrl:
+          type: string
+        useSavedCard:
+          type: boolean
+        eft:
+          type: boolean
+        checkout:
+          type: boolean
+        save:
+          type: boolean
+          title: save card used in checkout
+        suspenseId:
+          type: string
+        connectorData:
+          $ref: '#/components/schemas/modelConnectorData'
+        paid:
+          type: boolean
+        failed:
+          type: boolean
+        payAt:
+          type: boolean
+        paymentMethod:
+          type: string
+        paymentProviderSettlementId:
+          type: string
+        destinationType:
+          type: string
+        destinationId:
+          type: string
+        isEmbeddedCheckout:
+          type: boolean
     modelPaymentRedirectResponse:
       type: object
       properties:
@@ -696,57 +732,6 @@ components:
           type: string
         checkoutId:
           type: string
-    modelNameAndValue:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-    modelConnectorData:
-      type: object
-      properties:
-        paymentProvider:
-          type: string
-        paymentMethod:
-          type: string
-      description: Connector data bypasses protobuf conversion to allow any fields.
-    modelTransferPaymentRequest:
-      type: object
-      properties:
-        _id:
-          type: string
-        _destinationPaymentPlanId:
-          type: string
-        amount:
-          type: integer
-          format: int32
-    modelOfflinePaymentRequest:
-      type: object
-      example:
-        amount: 13333
-        note: Processed by employeeX
-        paymentPlanId: 123f7f1496bd78001d6852f3
-        reference: Cash in hand
-        verifiedAt: '2022-01-27T14:00:00.000Z'
-      properties:
-        amount:
-          type: integer
-          format: int32
-        paymentPlanId:
-          type: string
-        reference:
-          type: string
-        note:
-          type: string
-        verifiedAt:
-          type: string
-        paymentType:
-          type: string
-        excludeFees:
-          type: boolean
-        settled:
-          type: boolean
     modelPaymentResponseMany:
       type: object
       properties:
@@ -755,6 +740,21 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelPaymentResponse'
+    modelConnectorData:
+      type: object
+      properties:
+        paymentProvider:
+          type: string
+        paymentMethod:
+          type: string
+      description: Connector data bypasses protobuf conversion to allow any fields.
+    modelNameAndValue:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
   securitySchemes:
     apiKey:
       type: apiKey

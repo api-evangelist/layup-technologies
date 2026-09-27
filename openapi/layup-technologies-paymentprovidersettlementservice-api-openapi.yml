@@ -109,14 +109,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelPaymentProviderSettlementsResponse:
-      type: object
-      properties:
-        settlements:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelPaymentProviderSettlementResponse'
     modelPaymentProviderSettlement:
       type: object
       properties:
@@ -148,6 +140,14 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelPaymentProviderSettlement'
+    modelPaymentProviderSettlementsResponse:
+      type: object
+      properties:
+        settlements:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelPaymentProviderSettlementResponse'
     modelPaymentProviderSettlementResponse:
       type: object
       properties:
