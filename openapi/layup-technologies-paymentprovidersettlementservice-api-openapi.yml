@@ -109,6 +109,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelPaymentProviderSettlementsRequest:
+      type: object
+      properties:
+        paymentProviderSettlements:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelPaymentProviderSettlement'
     modelPaymentProviderSettlement:
       type: object
       properties:
@@ -132,14 +140,6 @@ components:
         feeInCents:
           type: integer
           format: int32
-    modelPaymentProviderSettlementsRequest:
-      type: object
-      properties:
-        paymentProviderSettlements:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelPaymentProviderSettlement'
     modelPaymentProviderSettlementsResponse:
       type: object
       properties:

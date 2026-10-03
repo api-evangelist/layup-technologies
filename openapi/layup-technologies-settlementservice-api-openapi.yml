@@ -171,14 +171,6 @@ components:
           type: string
         reconciled:
           type: boolean
-    modelSettlementReportResponse:
-      type: object
-      properties:
-        settlements:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelSettlementReport'
     modelSettlementResponse:
       type: object
       properties:
@@ -224,12 +216,14 @@ components:
           type: string
         draft:
           type: boolean
-    modelSettlementDownloadResponse:
+    modelSettlementReportResponse:
       type: object
       properties:
-        url:
-          type: string
-          title: The location that the user will be redirected to
+        settlements:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelSettlementReport'
     modelSettlementRequest:
       type: object
       properties:
@@ -247,6 +241,12 @@ components:
           type: boolean
         preview:
           type: boolean
+    modelSettlementDownloadResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          title: The location that the user will be redirected to
   securitySchemes:
     apiKey:
       type: apiKey

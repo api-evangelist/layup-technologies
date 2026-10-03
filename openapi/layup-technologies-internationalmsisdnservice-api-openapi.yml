@@ -140,6 +140,13 @@ components:
           type: string
         updatedAt:
           type: string
+    modelInternationalMsisdnRequest:
+      type: object
+      properties:
+        msisdn:
+          type: string
+        countryCode:
+          type: string
     modelInternationalMsisdnResponseMany:
       type: object
       properties:
@@ -148,13 +155,6 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelInternationalMsisdnResponse'
-    modelInternationalMsisdnRequest:
-      type: object
-      properties:
-        msisdn:
-          type: string
-        countryCode:
-          type: string
   securitySchemes:
     apiKey:
       type: apiKey

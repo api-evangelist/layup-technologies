@@ -142,14 +142,6 @@ components:
           type: array
           items:
             type: string
-    modelBankTransactionCreateRequest:
-      type: object
-      properties:
-        bankTransactions:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelBankTransactionCreate'
     modelBankTransactionPaymentRequest:
       type: object
       properties:
@@ -160,6 +152,14 @@ components:
         amount:
           type: integer
           format: int32
+    modelBankTransactionCreateRequest:
+      type: object
+      properties:
+        bankTransactions:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelBankTransactionCreate'
     modelBankTransactionResponse:
       type: object
     modelBankTransactionCreate:

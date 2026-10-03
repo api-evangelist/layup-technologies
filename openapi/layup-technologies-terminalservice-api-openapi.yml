@@ -119,6 +119,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelTerminalsResponse:
+      type: object
+      properties:
+        terminals:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelTerminalResponse'
     modelTerminalCreateRequest:
       type: object
       properties:
@@ -180,14 +188,6 @@ components:
           type: string
         userId:
           type: string
-    modelTerminalsResponse:
-      type: object
-      properties:
-        terminals:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelTerminalResponse'
   securitySchemes:
     apiKey:
       type: apiKey

@@ -241,40 +241,67 @@ components:
           type: string
         dateSettled:
           type: string
-    modelReportExport:
+    modelPaymentRedirectResponse:
       type: object
       properties:
-        client:
+        url:
+          type: string
+        parameters:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelNameAndValue'
+        method:
+          type: string
+        _id:
+          type: string
+        checkoutId:
+          type: string
+    modelConnectorDataV2:
+      type: object
+      properties:
+        bankTransactionId:
+          type: string
+    modelPaymentReportResponse:
+      type: object
+      properties:
+        payments:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelReportPayment'
+        export:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelReportExport'
+    modelPaymentRequestV2:
+      type: object
+      properties:
+        destinationId:
           type: string
         amount:
-          type: number
-          format: double
-        createdAt:
+          type: integer
+          format: int32
+        redirectUrl:
           type: string
-        verifiedAt:
+        paymentMethod:
           type: string
-        due:
+        paymentProvider:
           type: string
-        fee:
-          type: number
-          format: double
-        orderName:
+        destinationType:
           type: string
-        orderReference:
+          title: paymentPlan | invoice
+        connectorData:
+          $ref: '#/components/schemas/modelConnectorDataV2'
+        save:
+          type: boolean
+    modelNameAndValue:
+      type: object
+      properties:
+        name:
           type: string
-        paymentStatus:
-          type: string
-        paymentType:
-          type: string
-        settlementBatch:
-          type: string
-        state:
-          type: string
-        updatedAt:
-          type: string
-        datePaid:
-          type: string
-        dateSettled:
+        value:
           type: string
     modelFeePerProduct:
       type: object
@@ -319,67 +346,40 @@ components:
           type: string
         paymentId:
           type: string
-    modelPaymentRequestV2:
+    modelReportExport:
       type: object
       properties:
-        destinationId:
+        client:
           type: string
         amount:
-          type: integer
-          format: int32
-        redirectUrl:
+          type: number
+          format: double
+        createdAt:
           type: string
-        paymentMethod:
+        verifiedAt:
           type: string
-        paymentProvider:
+        due:
           type: string
-        destinationType:
+        fee:
+          type: number
+          format: double
+        orderName:
           type: string
-          title: paymentPlan | invoice
-        connectorData:
-          $ref: '#/components/schemas/modelConnectorDataV2'
-        save:
-          type: boolean
-    modelPaymentRedirectResponse:
-      type: object
-      properties:
-        url:
+        orderReference:
           type: string
-        parameters:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelNameAndValue'
-        method:
+        paymentStatus:
           type: string
-        _id:
+        paymentType:
           type: string
-        checkoutId:
+        settlementBatch:
           type: string
-    modelConnectorDataV2:
-      type: object
-      properties:
-        bankTransactionId:
+        state:
           type: string
-    modelPaymentReportResponse:
-      type: object
-      properties:
-        payments:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelReportPayment'
-        export:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelReportExport'
-    modelNameAndValue:
-      type: object
-      properties:
-        name:
+        updatedAt:
           type: string
-        value:
+        datePaid:
+          type: string
+        dateSettled:
           type: string
   securitySchemes:
     apiKey:

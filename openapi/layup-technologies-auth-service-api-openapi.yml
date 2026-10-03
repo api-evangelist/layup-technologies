@@ -181,28 +181,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelMerchantBillingSettlementRequest:
-      type: object
-      properties:
-        merchantName:
-          type: string
-        userName:
-          type: string
-        userEmail:
-          type: string
-        merchantId:
-          type: string
-        merchantContactNumber:
-          type: string
-        message:
-          type: string
-    modelBankValidation:
-      type: object
-      properties:
-        verified:
-          type: boolean
-        value:
-          type: string
     modelBankInfo:
       type: object
       properties:
@@ -230,29 +208,86 @@ components:
           type: array
           items:
             type: string
-    modelMerchants:
+    modelForgotPasswordResponse:
       type: object
       properties:
-        _id:
+        status:
           type: string
+    modelUserRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        idNumber:
+          type: string
+        address:
+          type: string
+        postalCode:
+          type: string
+        city:
+          type: string
+        province:
+          type: string
+        country:
+          type: string
+        role:
+          type: string
+          enum:
+          - CLIENT
+          - MERCHANT
+          - ADMIN
+          default: CLIENT
+        password:
+          type: string
+        active:
+          type: boolean
         name:
           type: string
-    modelForgotPasswordRequest:
-      type: object
-      properties:
-        value:
+        dateOfBirth:
           type: string
-        channel:
+        cellNumber:
           type: string
+          pattern: ^\+27\d{9}$
         redirectTo:
           type: string
-        isRealtimeVerification:
+        apikey:
+          type: string
+        shouldWelcome:
           type: boolean
-    modelTerminalApiKeyResponse:
+        merchantCreatePlan:
+          type: boolean
+        merchantId:
+          type: string
+        merchantRole:
+          type: string
+        bankDetails:
+          $ref: '#/components/schemas/modelBankInfo'
+        merchantOnboarding:
+          $ref: '#/components/schemas/modelMerchantOnboarding'
+        bankValidationPendingReference:
+          type: string
+        passportState:
+          type: string
+        passportNumber:
+          type: string
+        profileImage:
+          type: string
+        merchantIds:
+          type: array
+          items:
+            type: string
+        isMerchantOwner:
+          type: boolean
+    modelMerchantOnboarding:
       type: object
       properties:
-        terminalApiKey:
+        name:
           type: string
+        physicalAddress:
+          $ref: '#/components/schemas/modelBillingAddress'
     modelBillingAddress:
       type: object
       properties:
@@ -266,15 +301,38 @@ components:
           type: string
         postalCode:
           type: string
+    modelApiKeyResponse:
+      type: object
+      properties:
+        apikey:
+          type: string
+    modelForgotPasswordRequest:
+      type: object
+      properties:
+        value:
+          type: string
+        channel:
+          type: string
+        redirectTo:
+          type: string
+        isRealtimeVerification:
+          type: boolean
     modelMerchantBillingSettlementResponse:
       type: object
       properties:
         status:
           type: string
-    modelForgotPasswordResponse:
+    modelTerminalApiKeyResponse:
       type: object
       properties:
-        status:
+        terminalApiKey:
+          type: string
+    modelMerchants:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
           type: string
     modelUserResponse:
       type: object
@@ -355,79 +413,6 @@ components:
           type: boolean
         twoFactorAuthenticationRequired:
           type: boolean
-    modelApiKeyResponse:
-      type: object
-      properties:
-        apikey:
-          type: string
-    modelUserRequest:
-      type: object
-      properties:
-        username:
-          type: string
-        email:
-          type: string
-          format: email
-        idNumber:
-          type: string
-        address:
-          type: string
-        postalCode:
-          type: string
-        city:
-          type: string
-        province:
-          type: string
-        country:
-          type: string
-        role:
-          type: string
-          enum:
-          - CLIENT
-          - MERCHANT
-          - ADMIN
-          default: CLIENT
-        password:
-          type: string
-        active:
-          type: boolean
-        name:
-          type: string
-        dateOfBirth:
-          type: string
-        cellNumber:
-          type: string
-          pattern: ^\+27\d{9}$
-        redirectTo:
-          type: string
-        apikey:
-          type: string
-        shouldWelcome:
-          type: boolean
-        merchantCreatePlan:
-          type: boolean
-        merchantId:
-          type: string
-        merchantRole:
-          type: string
-        bankDetails:
-          $ref: '#/components/schemas/modelBankInfo'
-        merchantOnboarding:
-          $ref: '#/components/schemas/modelMerchantOnboarding'
-        bankValidationPendingReference:
-          type: string
-        passportState:
-          type: string
-        passportNumber:
-          type: string
-        profileImage:
-          type: string
-        merchantIds:
-          type: array
-          items:
-            type: string
-        isMerchantOwner:
-          type: boolean
     modelLoginRequest:
       type: object
       properties:
@@ -442,13 +427,28 @@ components:
           - 'true'
         rememberMe:
           type: boolean
-    modelMerchantOnboarding:
+    modelBankValidation:
       type: object
       properties:
-        name:
+        verified:
+          type: boolean
+        value:
           type: string
-        physicalAddress:
-          $ref: '#/components/schemas/modelBillingAddress'
+    modelMerchantBillingSettlementRequest:
+      type: object
+      properties:
+        merchantName:
+          type: string
+        userName:
+          type: string
+        userEmail:
+          type: string
+        merchantId:
+          type: string
+        merchantContactNumber:
+          type: string
+        message:
+          type: string
   securitySchemes:
     apiKey:
       type: apiKey

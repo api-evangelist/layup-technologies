@@ -186,43 +186,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelCancellationTypeDefinition:
-      type: object
-      properties:
-        missed:
-          type: integer
-          format: int32
-        percentage:
-          type: integer
-          format: int32
-    modelImageUrl:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
-          type: string
-    modelCommunication:
-      type: object
-      properties:
-        channels:
-          type: array
-          items:
-            type: string
-        messages:
-          $ref: '#/components/schemas/modelCommunicationMessage'
-    modelNotification_Percentage:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        emails:
-          type: array
-          items:
-            type: string
-        value:
-          type: integer
-          format: int32
     modelBankDetails:
       type: object
       properties:
@@ -236,11 +199,24 @@ components:
           type: string
         verified:
           type: boolean
-    modelMerchantIdResponse:
+    modelCustomize:
       type: object
       properties:
-        _id:
-          type: string
+        logo:
+          $ref: '#/components/schemas/modelLogo'
+        imageUrl:
+          $ref: '#/components/schemas/modelImageUrl'
+        paymentWidget:
+          $ref: '#/components/schemas/modelPaymentWidgetLogo'
+    modelOrderExpiryReminder:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        daysBeforeExpiryInDays:
+          type: integer
+          format: int32
+      title: Communication
     modelCancellationType:
       type: object
       properties:
@@ -250,50 +226,74 @@ components:
           $ref: '#/components/schemas/modelCancellationTypeDefinition'
         finalPaymentMissed:
           type: boolean
-    modelshopDirectorySettings:
+    modelCancellationTypeDefinition:
       type: object
       properties:
-        enabled:
-          type: boolean
-        webAvailability:
-          type: string
-        webLogoImage:
-          type: string
-        webCategory:
-          type: array
-          items:
-            type: string
-        featured:
-          type: boolean
-    modelValueEnabledPair:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
+        missed:
           type: integer
           format: int32
-    modelCommunicationMessage:
-      type: object
-      properties:
-        orderExpiryReminder:
-          $ref: '#/components/schemas/modelOrderExpiryReminder'
-        orderActivated:
-          $ref: '#/components/schemas/modelMessageNotification'
-        cancellation:
-          $ref: '#/components/schemas/modelMessageNotification'
-        refund:
-          $ref: '#/components/schemas/modelMessageNotification'
-    modelCancellationTermRequest:
+        percentage:
+          type: integer
+          format: int32
+    modelMerchantVoucherSettings:
       type: object
       properties:
         active:
           type: boolean
-        definition:
+        minimumSavingGoalInCents:
+          type: integer
+          format: int32
+        maximumSavingGoalInCents:
+          type: integer
+          format: int32
+        rewardType:
+          type: string
+        rewardFlatAmountInCents:
+          type: integer
+          format: int32
+        rewardPercentage:
+          type: integer
+          format: int32
+        voucherProviders:
           type: array
           items:
             type: object
-            $ref: '#/components/schemas/modelCancellationDefinition'
+            $ref: '#/components/schemas/modelVoucherProvider'
+    modelFeature:
+      type: object
+      properties:
+        enableCustomWidgetLogo:
+          type: boolean
+        enableCustomEmailLogo:
+          type: boolean
+        enableDefaultPaymentPlanImage:
+          type: boolean
+        enableDebiCheck:
+          type: boolean
+        enableCreditCard:
+          type: boolean
+        enableInstantEFT:
+          type: boolean
+        enableAutoCancellation:
+          type: boolean
+        enableManualCancellation:
+          type: boolean
+        enableLayupFee:
+          type: boolean
+        enableAmendmentApi:
+          type: boolean
+        enablePayAt:
+          type: boolean
+        enableCapitecPay:
+          type: boolean
+        enableDashpay:
+          type: boolean
+        enableTerminalCard:
+          type: boolean
+        enableOfflinePayment:
+          type: boolean
+        enableEmbeddedCheckout:
+          type: boolean
     modelCancellationPolicy:
       type: object
       properties:
@@ -306,15 +306,165 @@ components:
           - Combination
         definition:
           $ref: '#/components/schemas/modelCancellationPolicyDefinition'
-    modelCustomize:
+    modelDefaultDepositType:
       type: object
       properties:
-        logo:
-          $ref: '#/components/schemas/modelLogo'
+        depositType:
+          type: string
+        enabled:
+          type: boolean
+        percentage:
+          type: integer
+          format: int32
+        flat:
+          type: integer
+          format: int32
+    modelMerchantIdResponse:
+      type: object
+      properties:
+        _id:
+          type: string
+    modelNotification:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        emails:
+          type: array
+          items:
+            type: string
+    modelMerchantRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        domain:
+          type: string
+        active:
+          type: boolean
+        flatFee:
+          type: integer
+          format: int32
+        percFee:
+          type: number
+          format: double
+        notifyUrl:
+          type: string
+        paymentNotifyUrl:
+          type: string
+        expire:
+          type: integer
+          format: int32
+        merchantTermsLink:
+          type: string
+        supportEmail:
+          type: string
+        supportMobile:
+          type: string
         imageUrl:
-          $ref: '#/components/schemas/modelImageUrl'
-        paymentWidget:
-          $ref: '#/components/schemas/modelPaymentWidgetLogo'
+          type: string
+        newOrder:
+          $ref: '#/components/schemas/modelNotification'
+        amendmentOrder:
+          $ref: '#/components/schemas/modelNotification'
+        cancelledOrder:
+          $ref: '#/components/schemas/modelNotification'
+        completedOrder:
+          $ref: '#/components/schemas/modelNotification'
+        successfulPayment:
+          $ref: '#/components/schemas/modelNotification'
+        failedPayment:
+          $ref: '#/components/schemas/modelNotification'
+        missedPayment:
+          $ref: '#/components/schemas/modelNotification'
+        autoSettlement:
+          type: boolean
+        settlementFrequency:
+          type: string
+        settlementType:
+          type: string
+        settlementDay:
+          type: integer
+          format: int32
+        bankDetails:
+          $ref: '#/components/schemas/modelBankDetails'
+        absorbsFee:
+          type: boolean
+        cancellationTerms:
+          $ref: '#/components/schemas/modelCancellationTermRequest'
+        weeklyPayments:
+          type: boolean
+        paymentPlans:
+          $ref: '#/components/schemas/modelPaymentPlanSettings'
+        expiredOrder:
+          $ref: '#/components/schemas/modelNotification'
+        completedOrder_75:
+          $ref: '#/components/schemas/modelNotification_Percentage'
+        customFeatures:
+          $ref: '#/components/schemas/modelCustomize'
+        features:
+          $ref: '#/components/schemas/modelFeature'
+        cancellationRequest:
+          $ref: '#/components/schemas/modelNotification'
+        billingAddress:
+          $ref: '#/components/schemas/modelBillingAddress'
+        vatNo:
+          type: string
+        registeredEntity:
+          type: string
+        settlements:
+          $ref: '#/components/schemas/modelNotification'
+        invoices:
+          $ref: '#/components/schemas/modelNotification'
+        onboardingState:
+          type: string
+        accountType:
+          type: string
+        contractDocumentId:
+          type: string
+        merchantBankingPercFee:
+          type: integer
+          format: int32
+        adminPercFee:
+          type: integer
+          format: int32
+        contractUrl:
+          type: string
+        contractUpdated:
+          type: boolean
+        bankDetailsValidation:
+          $ref: '#/components/schemas/modelBankInfo'
+        bankValidationPendingReference:
+          type: string
+        merchantContractSigned:
+          type: string
+        transfers:
+          $ref: '#/components/schemas/modelNotification'
+        refunds:
+          $ref: '#/components/schemas/modelNotification'
+        simulated:
+          type: boolean
+        suspendedOrder:
+          $ref: '#/components/schemas/modelNotification'
+        monthlyPayments:
+          type: boolean
+        displayOnWeb:
+          $ref: '#/components/schemas/modelshopDirectorySettings'
+        tradingName:
+          type: string
+        pricelistId:
+          type: string
+        communication:
+          $ref: '#/components/schemas/modelCommunication'
+        defaultBillingMethod:
+          type: string
+        enableTwoFactorAuthentication:
+          type: boolean
+        voucherSettings:
+          $ref: '#/components/schemas/modelMerchantVoucherSettings'
+        settlementBatchReferencePrefix:
+          type: string
+      title: -- Communication
     modelBankValidation:
       type: object
       properties:
@@ -322,6 +472,153 @@ components:
           type: boolean
         value:
           type: string
+    modelMerchantToSettleResponse:
+      type: object
+      properties:
+        merchants:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelMerchantIdResponse'
+    modelBankInfo:
+      type: object
+      properties:
+        bankName:
+          $ref: '#/components/schemas/modelBankValidation'
+        account:
+          $ref: '#/components/schemas/modelBankValidation'
+        accountType:
+          $ref: '#/components/schemas/modelBankValidation'
+        branchCode:
+          $ref: '#/components/schemas/modelBankValidation'
+        idNumber:
+          $ref: '#/components/schemas/modelBankValidation'
+        verified:
+          type: boolean
+        clientName:
+          $ref: '#/components/schemas/modelBankValidation'
+        cellNumber:
+          $ref: '#/components/schemas/modelBankValidation'
+        initials:
+          $ref: '#/components/schemas/modelBankValidation'
+        email:
+          $ref: '#/components/schemas/modelBankValidation'
+        validationResponseErrors:
+          type: array
+          items:
+            type: string
+    modelUser:
+      type: object
+      properties:
+        _id:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        idNumber:
+          type: string
+        address:
+          type: string
+        postalCode:
+          type: string
+        city:
+          type: string
+        province:
+          type: string
+        country:
+          type: string
+        role:
+          type: string
+          enum:
+          - CLIENT
+          - MERCHANT
+          - ADMIN
+          default: CLIENT
+        active:
+          type: boolean
+        merchantId:
+          type: string
+        cellNumber:
+          type: string
+        dateOfBirth:
+          type: string
+        name:
+          type: string
+        verified:
+          type: boolean
+        verifiedEmail:
+          type: boolean
+        verifiedMobile:
+          type: boolean
+        merchantRole:
+          type: string
+        merchantIds:
+          type: array
+          items:
+            type: string
+      description: This user is loaded in by the authentication middleware.
+    modelTerminalSettings:
+      type: object
+      properties:
+        requireOrderReference:
+          type: boolean
+        forceUniqueOrderReference:
+          type: boolean
+        requireDeposit:
+          type: boolean
+        editableDescription:
+          type: boolean
+    modelCancellationPolicyDefinition:
+      type: object
+      properties:
+        deposit:
+          type: boolean
+        percentage:
+          type: integer
+          format: int32
+        flatFee:
+          type: integer
+          format: int32
+        percentageShouldUseTotalPaid:
+          type: boolean
+    modelPaymentWidgetLogo:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
+          type: string
+    modelOrderExpiry:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
+          type: integer
+          format: int32
+    modelPaymentMethod:
+      type: object
+      properties:
+        creditOrDebitCard:
+          type: boolean
+        eft:
+          type: boolean
+        debiCheck:
+          type: boolean
+        payAt:
+          type: boolean
+        capitecPay:
+          type: boolean
+        dashpay:
+          type: boolean
+        terminalCard:
+          type: boolean
+        offline:
+          type: boolean
+        embeddedCheckout:
+          type: boolean
     modelMerchantResponse:
       type: object
       properties:
@@ -469,146 +766,112 @@ components:
           type: string
         terminalSettings:
           $ref: '#/components/schemas/modelTerminalSettings'
-    modelMerchantRequest:
+    modelImageUrl:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
+          type: string
+    modelMerchantResponseShops:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: string
+        shops:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelMerchantResponseGetShops'
+    modelValueEnabledPair:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
+          type: integer
+          format: int32
+    modelVoucherProvider:
       type: object
       properties:
         name:
           type: string
-        domain:
+        apiKey:
           type: string
-        active:
-          type: boolean
-        flatFee:
-          type: integer
-          format: int32
-        percFee:
-          type: number
-          format: double
-        notifyUrl:
+        apiUrl:
           type: string
-        paymentNotifyUrl:
-          type: string
-        expire:
-          type: integer
-          format: int32
-        merchantTermsLink:
-          type: string
-        supportEmail:
-          type: string
-        supportMobile:
-          type: string
-        imageUrl:
-          type: string
-        newOrder:
-          $ref: '#/components/schemas/modelNotification'
-        amendmentOrder:
-          $ref: '#/components/schemas/modelNotification'
-        cancelledOrder:
-          $ref: '#/components/schemas/modelNotification'
-        completedOrder:
-          $ref: '#/components/schemas/modelNotification'
-        successfulPayment:
-          $ref: '#/components/schemas/modelNotification'
-        failedPayment:
-          $ref: '#/components/schemas/modelNotification'
-        missedPayment:
-          $ref: '#/components/schemas/modelNotification'
-        autoSettlement:
-          type: boolean
-        settlementFrequency:
-          type: string
-        settlementType:
-          type: string
-        settlementDay:
-          type: integer
-          format: int32
-        bankDetails:
-          $ref: '#/components/schemas/modelBankDetails'
-        absorbsFee:
-          type: boolean
-        cancellationTerms:
-          $ref: '#/components/schemas/modelCancellationTermRequest'
-        weeklyPayments:
-          type: boolean
-        paymentPlans:
-          $ref: '#/components/schemas/modelPaymentPlanSettings'
-        expiredOrder:
-          $ref: '#/components/schemas/modelNotification'
-        completedOrder_75:
-          $ref: '#/components/schemas/modelNotification_Percentage'
-        customFeatures:
-          $ref: '#/components/schemas/modelCustomize'
-        features:
-          $ref: '#/components/schemas/modelFeature'
-        cancellationRequest:
-          $ref: '#/components/schemas/modelNotification'
-        billingAddress:
-          $ref: '#/components/schemas/modelBillingAddress'
-        vatNo:
-          type: string
-        registeredEntity:
-          type: string
-        settlements:
-          $ref: '#/components/schemas/modelNotification'
-        invoices:
-          $ref: '#/components/schemas/modelNotification'
-        onboardingState:
-          type: string
-        accountType:
-          type: string
-        contractDocumentId:
-          type: string
-        merchantBankingPercFee:
-          type: integer
-          format: int32
-        adminPercFee:
-          type: integer
-          format: int32
-        contractUrl:
-          type: string
-        contractUpdated:
-          type: boolean
-        bankDetailsValidation:
-          $ref: '#/components/schemas/modelBankInfo'
-        bankValidationPendingReference:
-          type: string
-        merchantContractSigned:
-          type: string
-        transfers:
-          $ref: '#/components/schemas/modelNotification'
-        refunds:
-          $ref: '#/components/schemas/modelNotification'
-        simulated:
-          type: boolean
-        suspendedOrder:
-          $ref: '#/components/schemas/modelNotification'
-        monthlyPayments:
-          type: boolean
-        displayOnWeb:
-          $ref: '#/components/schemas/modelshopDirectorySettings'
-        tradingName:
-          type: string
-        pricelistId:
-          type: string
-        communication:
-          $ref: '#/components/schemas/modelCommunication'
-        defaultBillingMethod:
-          type: string
-        enableTwoFactorAuthentication:
-          type: boolean
-        voucherSettings:
-          $ref: '#/components/schemas/modelMerchantVoucherSettings'
-        settlementBatchReferencePrefix:
-          type: string
-      title: -- Communication
-    modelMerchantAccountSettings:
+    modelCommunicationMessage:
       type: object
       properties:
-        numberOfUsers:
-          type: integer
-          format: int32
-        apiAccess:
+        orderExpiryReminder:
+          $ref: '#/components/schemas/modelOrderExpiryReminder'
+        orderActivated:
+          $ref: '#/components/schemas/modelMessageNotification'
+        cancellation:
+          $ref: '#/components/schemas/modelMessageNotification'
+        refund:
+          $ref: '#/components/schemas/modelMessageNotification'
+    modelCancellationTermRequest:
+      type: object
+      properties:
+        active:
           type: boolean
+        definition:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelCancellationDefinition'
+    modelMessageNotification:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+    modelshopDirectorySettings:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        webAvailability:
+          type: string
+        webLogoImage:
+          type: string
+        webCategory:
+          type: array
+          items:
+            type: string
+        featured:
+          type: boolean
+    modelMerchantResponseGetShops:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        domain:
+          type: string
+        displayOnWeb:
+          $ref: '#/components/schemas/modelshopDirectorySettings'
+        createdAt:
+          type: string
+    modelCommunication:
+      type: object
+      properties:
+        channels:
+          type: array
+          items:
+            type: string
+        messages:
+          $ref: '#/components/schemas/modelCommunicationMessage'
+    modelLogo:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
+          type: string
     modelCancellationDefinition:
       type: object
       properties:
@@ -625,171 +888,6 @@ components:
         gracePeriod:
           type: integer
           format: int32
-    modelMerchantVoucherSettings:
-      type: object
-      properties:
-        active:
-          type: boolean
-        minimumSavingGoalInCents:
-          type: integer
-          format: int32
-        maximumSavingGoalInCents:
-          type: integer
-          format: int32
-        rewardType:
-          type: string
-        rewardFlatAmountInCents:
-          type: integer
-          format: int32
-        rewardPercentage:
-          type: integer
-          format: int32
-        voucherProviders:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelVoucherProvider'
-    modelMerchantResponseShops:
-      type: object
-      properties:
-        categories:
-          type: array
-          items:
-            type: string
-        shops:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelMerchantResponseGetShops'
-    modelBankInfo:
-      type: object
-      properties:
-        bankName:
-          $ref: '#/components/schemas/modelBankValidation'
-        account:
-          $ref: '#/components/schemas/modelBankValidation'
-        accountType:
-          $ref: '#/components/schemas/modelBankValidation'
-        branchCode:
-          $ref: '#/components/schemas/modelBankValidation'
-        idNumber:
-          $ref: '#/components/schemas/modelBankValidation'
-        verified:
-          type: boolean
-        clientName:
-          $ref: '#/components/schemas/modelBankValidation'
-        cellNumber:
-          $ref: '#/components/schemas/modelBankValidation'
-        initials:
-          $ref: '#/components/schemas/modelBankValidation'
-        email:
-          $ref: '#/components/schemas/modelBankValidation'
-        validationResponseErrors:
-          type: array
-          items:
-            type: string
-    modelCancellationPolicyDefinition:
-      type: object
-      properties:
-        deposit:
-          type: boolean
-        percentage:
-          type: integer
-          format: int32
-        flatFee:
-          type: integer
-          format: int32
-        percentageShouldUseTotalPaid:
-          type: boolean
-    modelUser:
-      type: object
-      properties:
-        _id:
-          type: string
-        username:
-          type: string
-        email:
-          type: string
-          format: email
-        idNumber:
-          type: string
-        address:
-          type: string
-        postalCode:
-          type: string
-        city:
-          type: string
-        province:
-          type: string
-        country:
-          type: string
-        role:
-          type: string
-          enum:
-          - CLIENT
-          - MERCHANT
-          - ADMIN
-          default: CLIENT
-        active:
-          type: boolean
-        merchantId:
-          type: string
-        cellNumber:
-          type: string
-        dateOfBirth:
-          type: string
-        name:
-          type: string
-        verified:
-          type: boolean
-        verifiedEmail:
-          type: boolean
-        verifiedMobile:
-          type: boolean
-        merchantRole:
-          type: string
-        merchantIds:
-          type: array
-          items:
-            type: string
-      description: This user is loaded in by the authentication middleware.
-    modelPaymentWidgetLogo:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
-          type: string
-    modelPaymentMethod:
-      type: object
-      properties:
-        creditOrDebitCard:
-          type: boolean
-        eft:
-          type: boolean
-        debiCheck:
-          type: boolean
-        payAt:
-          type: boolean
-        capitecPay:
-          type: boolean
-        dashpay:
-          type: boolean
-        terminalCard:
-          type: boolean
-        offline:
-          type: boolean
-        embeddedCheckout:
-          type: boolean
-    modelOrderExpiryReminder:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        daysBeforeExpiryInDays:
-          type: integer
-          format: int32
-      title: Communication
     modelBillingAddress:
       type: object
       properties:
@@ -803,16 +901,7 @@ components:
           type: string
         postalCode:
           type: string
-    modelVoucherProvider:
-      type: object
-      properties:
-        name:
-          type: string
-        apiKey:
-          type: string
-        apiUrl:
-          type: string
-    modelNotification:
+    modelNotification_Percentage:
       type: object
       properties:
         enabled:
@@ -821,101 +910,17 @@ components:
           type: array
           items:
             type: string
-    modelMerchantToSettleResponse:
-      type: object
-      properties:
-        merchants:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelMerchantIdResponse'
-    modelDefaultDepositType:
-      type: object
-      properties:
-        depositType:
-          type: string
-        enabled:
-          type: boolean
-        percentage:
-          type: integer
-          format: int32
-        flat:
-          type: integer
-          format: int32
-    modelOrderExpiry:
-      type: object
-      properties:
-        enabled:
-          type: boolean
         value:
           type: integer
           format: int32
-    modelTerminalSettings:
+    modelMerchantAccountSettings:
       type: object
       properties:
-        requireOrderReference:
+        numberOfUsers:
+          type: integer
+          format: int32
+        apiAccess:
           type: boolean
-        forceUniqueOrderReference:
-          type: boolean
-        requireDeposit:
-          type: boolean
-        editableDescription:
-          type: boolean
-    modelFeature:
-      type: object
-      properties:
-        enableCustomWidgetLogo:
-          type: boolean
-        enableCustomEmailLogo:
-          type: boolean
-        enableDefaultPaymentPlanImage:
-          type: boolean
-        enableDebiCheck:
-          type: boolean
-        enableCreditCard:
-          type: boolean
-        enableInstantEFT:
-          type: boolean
-        enableAutoCancellation:
-          type: boolean
-        enableManualCancellation:
-          type: boolean
-        enableLayupFee:
-          type: boolean
-        enableAmendmentApi:
-          type: boolean
-        enablePayAt:
-          type: boolean
-        enableCapitecPay:
-          type: boolean
-        enableDashpay:
-          type: boolean
-        enableTerminalCard:
-          type: boolean
-        enableOfflinePayment:
-          type: boolean
-        enableEmbeddedCheckout:
-          type: boolean
-    modelMerchantResponseGetShops:
-      type: object
-      properties:
-        _id:
-          type: string
-        name:
-          type: string
-        domain:
-          type: string
-        displayOnWeb:
-          $ref: '#/components/schemas/modelshopDirectorySettings'
-        createdAt:
-          type: string
-    modelLogo:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
-          type: string
     modelPaymentPlanSettings:
       type: object
       properties:
@@ -940,11 +945,6 @@ components:
         monthlyPayments:
           type: boolean
         suspendOnCancel:
-          type: boolean
-    modelMessageNotification:
-      type: object
-      properties:
-        enabled:
           type: boolean
   securitySchemes:
     apiKey:

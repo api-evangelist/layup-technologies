@@ -48,18 +48,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelJournalRequest:
-      type: object
-      properties:
-        orderId:
-          type: string
-        participantId:
-          type: string
-        note:
-          type: string
-        amount:
-          type: integer
-          format: int32
     modelJournalResponse:
       type: object
       properties:
@@ -75,6 +63,18 @@ components:
           type: integer
           format: int32
         amountExcludingFee:
+          type: integer
+          format: int32
+    modelJournalRequest:
+      type: object
+      properties:
+        orderId:
+          type: string
+        participantId:
+          type: string
+        note:
+          type: string
+        amount:
           type: integer
           format: int32
   securitySchemes:

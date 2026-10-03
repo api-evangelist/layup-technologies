@@ -68,6 +68,15 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelRejectedReasons:
+      type: object
+      properties:
+        contractReference:
+          type: string
+        reason:
+          type: string
+    modelAbsaDebiCheckResponse:
+      type: object
     modelAbsaDebiCheckOutputTransaction:
       type: object
       properties:
@@ -90,13 +99,18 @@ components:
           type: string
         error:
           type: string
-    modelRejectedReasons:
+    modelAbsaDebiCheckOutputRequest:
       type: object
       properties:
-        contractReference:
+        transmissionDate:
           type: string
-        reason:
+        fileStoragePath:
           type: string
+        transactions:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelAbsaDebiCheckOutputTransaction'
     modelAbsaDebiCheckReplyRequest:
       type: object
       properties:
@@ -113,20 +127,6 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelRejectedReasons'
-    modelAbsaDebiCheckResponse:
-      type: object
-    modelAbsaDebiCheckOutputRequest:
-      type: object
-      properties:
-        transmissionDate:
-          type: string
-        fileStoragePath:
-          type: string
-        transactions:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelAbsaDebiCheckOutputTransaction'
   securitySchemes:
     apiKey:
       type: apiKey
