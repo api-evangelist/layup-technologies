@@ -157,6 +157,24 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelCardRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+        defaultCard:
+          type: boolean
+        redirectUrl:
+          type: string
+      title: card
+    modelCardResponseMany:
+      type: object
+      properties:
+        clientCards:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelCardResponse'
     modelCardResponse:
       type: object
       properties:
@@ -185,24 +203,6 @@ components:
           type: string
         merchantId:
           type: string
-    modelCardResponseMany:
-      type: object
-      properties:
-        clientCards:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelCardResponse'
-    modelCardRequest:
-      type: object
-      properties:
-        userId:
-          type: string
-        defaultCard:
-          type: boolean
-        redirectUrl:
-          type: string
-      title: card
   securitySchemes:
     apiKey:
       type: apiKey

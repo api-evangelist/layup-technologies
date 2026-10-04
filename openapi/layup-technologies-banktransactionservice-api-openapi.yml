@@ -135,6 +135,27 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelBankTransactionCreate:
+      type: object
+      properties:
+        date:
+          type: string
+        description:
+          type: string
+        reference:
+          type: string
+        amountInCents:
+          type: integer
+          format: int32
+        balanceInCents:
+          type: integer
+          format: int32
+        bank:
+          type: string
+        fileStorageReference:
+          type: string
+    modelBankTransactionResponse:
+      type: object
     modelBankTransactionUpdate:
       type: object
       properties:
@@ -160,27 +181,6 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelBankTransactionCreate'
-    modelBankTransactionResponse:
-      type: object
-    modelBankTransactionCreate:
-      type: object
-      properties:
-        date:
-          type: string
-        description:
-          type: string
-        reference:
-          type: string
-        amountInCents:
-          type: integer
-          format: int32
-        balanceInCents:
-          type: integer
-          format: int32
-        bank:
-          type: string
-        fileStorageReference:
-          type: string
   securitySchemes:
     apiKey:
       type: apiKey

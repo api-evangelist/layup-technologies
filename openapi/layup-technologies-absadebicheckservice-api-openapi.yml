@@ -68,6 +68,22 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelAbsaDebiCheckReplyRequest:
+      type: object
+      properties:
+        transmissionNumber:
+          type: string
+        transmissionDate:
+          type: string
+        transmissionStatus:
+          type: string
+        fileStoragePath:
+          type: string
+        rejectedReasons:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelRejectedReasons'
     modelRejectedReasons:
       type: object
       properties:
@@ -75,6 +91,18 @@ components:
           type: string
         reason:
           type: string
+    modelAbsaDebiCheckOutputRequest:
+      type: object
+      properties:
+        transmissionDate:
+          type: string
+        fileStoragePath:
+          type: string
+        transactions:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelAbsaDebiCheckOutputTransaction'
     modelAbsaDebiCheckResponse:
       type: object
     modelAbsaDebiCheckOutputTransaction:
@@ -99,34 +127,6 @@ components:
           type: string
         error:
           type: string
-    modelAbsaDebiCheckOutputRequest:
-      type: object
-      properties:
-        transmissionDate:
-          type: string
-        fileStoragePath:
-          type: string
-        transactions:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelAbsaDebiCheckOutputTransaction'
-    modelAbsaDebiCheckReplyRequest:
-      type: object
-      properties:
-        transmissionNumber:
-          type: string
-        transmissionDate:
-          type: string
-        transmissionStatus:
-          type: string
-        fileStoragePath:
-          type: string
-        rejectedReasons:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelRejectedReasons'
   securitySchemes:
     apiKey:
       type: apiKey

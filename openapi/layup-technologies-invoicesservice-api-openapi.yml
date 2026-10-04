@@ -243,10 +243,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelInvoicePdfResponse:
+    modelInvoiceUpdateRequest:
       type: object
       properties:
-        redirectUrl:
+        invoiceId:
+          type: string
+        accountingInvoiceId:
+          type: string
+        accountingInvoiceNumber:
           type: string
     modelDateTimeRange:
       type: object
@@ -255,90 +259,10 @@ components:
           type: string
         toDateTime:
           type: string
-    modelProduct:
+    modelInvoiceUpdatePdfRequest:
       type: object
       properties:
-        _id:
-          type: string
-        name:
-          type: string
-        displayName:
-          type: string
-        feeType:
-          type: string
-        method:
-          type: string
-        billingType:
-          type: string
-    modelInvoice:
-      type: object
-      properties:
-        _id:
-          type: string
-        merchantId:
-          type: string
-        exVatAmount:
-          type: integer
-          format: int32
-        vatAmount:
-          type: integer
-          format: int32
-        totalAmount:
-          type: integer
-          format: int32
-        settled:
-          type: boolean
-        reconciled:
-          type: boolean
-        bankTransactionId:
-          type: string
-        reference:
-          type: string
-        accountingInvoiceId:
-          type: string
-        accountingInvoiceNumber:
-          type: string
-        status:
-          type: string
-        createdAt:
-          type: string
-        billingMethod:
-          type: string
-    modelInvoiceResponse:
-      type: object
-    modelInvoiceGetManyResponse:
-      type: object
-      properties:
-        invoices:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelInvoice'
-    modelJournalFees:
-      type: object
-      properties:
-        id:
-          type: string
-        productName:
-          type: string
-        amountExcludingVAT:
-          type: number
-          format: double
-        amountVAT:
-          type: number
-          format: double
-        amountTotal:
-          type: number
-          format: double
-        merchantId:
-          type: string
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
-        settlementId:
-          type: string
-        paymentId:
+        accountingPdfLocation:
           type: string
     modelInvoiceFeesCreateRequest:
       type: object
@@ -347,16 +271,36 @@ components:
           type: array
           items:
             type: string
-    modelInvoiceUpdatePdfRequest:
-      type: object
-      properties:
-        accountingPdfLocation:
-          type: string
     modelGenerateReportResponse:
       type: object
       properties:
         report:
           $ref: '#/components/schemas/modelInvoiceReport'
+    modelFeesPerProduct:
+      type: object
+      properties:
+        quantity:
+          type: integer
+          format: int32
+        amountTotal:
+          type: number
+          format: double
+        amountExcludingVAT:
+          type: number
+          format: double
+        amountVAT:
+          type: number
+          format: double
+        product:
+          $ref: '#/components/schemas/modelProduct'
+    modelInvoiceGetManyResponse:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelInvoice'
     modelReport:
       type: object
       properties:
@@ -383,23 +327,21 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelJournalFees'
-    modelFeesPerProduct:
+    modelProduct:
       type: object
       properties:
-        quantity:
-          type: integer
-          format: int32
-        amountTotal:
-          type: number
-          format: double
-        amountExcludingVAT:
-          type: number
-          format: double
-        amountVAT:
-          type: number
-          format: double
-        product:
-          $ref: '#/components/schemas/modelProduct'
+        _id:
+          type: string
+        name:
+          type: string
+        displayName:
+          type: string
+        feeType:
+          type: string
+        method:
+          type: string
+        billingType:
+          type: string
     modelInvoiceReport:
       type: object
       properties:
@@ -441,14 +383,10 @@ components:
           $ref: '#/components/schemas/modelReport'
         billingMethod:
           type: string
-    modelInvoiceUpdateRequest:
+    modelInvoicePdfResponse:
       type: object
       properties:
-        invoiceId:
-          type: string
-        accountingInvoiceId:
-          type: string
-        accountingInvoiceNumber:
+        redirectUrl:
           type: string
     modelInvoicesResponse:
       type: object
@@ -457,6 +395,68 @@ components:
           type: array
           items:
             type: string
+    modelJournalFees:
+      type: object
+      properties:
+        id:
+          type: string
+        productName:
+          type: string
+        amountExcludingVAT:
+          type: number
+          format: double
+        amountVAT:
+          type: number
+          format: double
+        amountTotal:
+          type: number
+          format: double
+        merchantId:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        settlementId:
+          type: string
+        paymentId:
+          type: string
+    modelInvoice:
+      type: object
+      properties:
+        _id:
+          type: string
+        merchantId:
+          type: string
+        exVatAmount:
+          type: integer
+          format: int32
+        vatAmount:
+          type: integer
+          format: int32
+        totalAmount:
+          type: integer
+          format: int32
+        settled:
+          type: boolean
+        reconciled:
+          type: boolean
+        bankTransactionId:
+          type: string
+        reference:
+          type: string
+        accountingInvoiceId:
+          type: string
+        accountingInvoiceNumber:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        billingMethod:
+          type: string
+    modelInvoiceResponse:
+      type: object
   securitySchemes:
     apiKey:
       type: apiKey

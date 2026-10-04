@@ -403,41 +403,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelShopifyCalculateShippingResponse:
-      type: object
-      properties:
-        prices:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelShopifyShippingRate'
-    modelShopifyDiscountResponse:
-      type: object
-      properties:
-        status:
-          type: string
-        message:
-          type: string
-        data:
-          $ref: '#/components/schemas/modelShopifyDiscountData'
-    modelShopifyOrderNote:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-    modelShopifyLocations:
-      type: object
-      properties:
-        address:
-          $ref: '#/components/schemas/modelShopifyLocationAddress'
-        id:
-          type: string
-        legacyResourceId:
-          type: string
-        name:
-          type: string
     modelShopifyOrderNotesResponse:
       type: object
       properties:
@@ -447,75 +412,6 @@ components:
             type: object
             $ref: '#/components/schemas/modelShopifyOrderNote'
         tags:
-          type: string
-    modelShopifyDiscountData:
-      type: object
-      properties:
-        discountType:
-          type: string
-        discountValue:
-          type: string
-        discountAllocation:
-          type: string
-        discountSelection:
-          type: string
-        discountTitle:
-          type: string
-        entitledProductIds:
-          type: array
-          items:
-            type: number
-            format: double
-        entitledVariantIds:
-          type: array
-          items:
-            type: number
-            format: double
-    modelShopifyProductSettings:
-      type: object
-      properties:
-        productId:
-          type: string
-        eventDateString:
-          type: string
-        enabledOnLayup:
-          type: boolean
-        minMonths:
-          type: integer
-          format: int32
-        maxMonths:
-          type: integer
-          format: int32
-        deposit:
-          type: integer
-          format: int32
-        depositType:
-          type: string
-        previewTemplate:
-          type: string
-        learnMore:
-          type: string
-        layupType:
-          type: string
-    modelShopifyOrderResponse:
-      type: object
-      properties:
-        status:
-          type: string
-        message:
-          type: string
-        data:
-          type: string
-        orderId:
-          type: string
-    modelShopifyShippingRate:
-      type: object
-      properties:
-        title:
-          type: string
-        amount:
-          type: string
-        handle:
           type: string
     modelShopifyGetShopSettingsResponse:
       type: object
@@ -573,6 +469,15 @@ components:
           type: string
         buttonLayout:
           type: string
+    modelShopifyDiscountResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/modelShopifyDiscountData'
     modelShopifyLocationAddress:
       type: object
       properties:
@@ -587,6 +492,101 @@ components:
         province:
           type: string
         zip:
+          type: string
+    modelShopifyLocations:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/modelShopifyLocationAddress'
+        id:
+          type: string
+        legacyResourceId:
+          type: string
+        name:
+          type: string
+    modelShopifyDiscountData:
+      type: object
+      properties:
+        discountType:
+          type: string
+        discountValue:
+          type: string
+        discountAllocation:
+          type: string
+        discountSelection:
+          type: string
+        discountTitle:
+          type: string
+        entitledProductIds:
+          type: array
+          items:
+            type: number
+            format: double
+        entitledVariantIds:
+          type: array
+          items:
+            type: number
+            format: double
+    modelShopifyCalculateShippingResponse:
+      type: object
+      properties:
+        prices:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelShopifyShippingRate'
+    modelShopifyOrderResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        data:
+          type: string
+        orderId:
+          type: string
+    modelShopifyOrderNote:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    modelShopifyProductSettings:
+      type: object
+      properties:
+        productId:
+          type: string
+        eventDateString:
+          type: string
+        enabledOnLayup:
+          type: boolean
+        minMonths:
+          type: integer
+          format: int32
+        maxMonths:
+          type: integer
+          format: int32
+        deposit:
+          type: integer
+          format: int32
+        depositType:
+          type: string
+        previewTemplate:
+          type: string
+        learnMore:
+          type: string
+        layupType:
+          type: string
+    modelShopifyShippingRate:
+      type: object
+      properties:
+        title:
+          type: string
+        amount:
+          type: string
+        handle:
           type: string
   securitySchemes:
     apiKey:

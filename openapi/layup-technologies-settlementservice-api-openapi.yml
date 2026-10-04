@@ -171,6 +171,12 @@ components:
           type: string
         reconciled:
           type: boolean
+    modelSettlementDownloadResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          title: The location that the user will be redirected to
     modelSettlementResponse:
       type: object
       properties:
@@ -241,12 +247,6 @@ components:
           type: boolean
         preview:
           type: boolean
-    modelSettlementDownloadResponse:
-      type: object
-      properties:
-        url:
-          type: string
-          title: The location that the user will be redirected to
   securitySchemes:
     apiKey:
       type: apiKey

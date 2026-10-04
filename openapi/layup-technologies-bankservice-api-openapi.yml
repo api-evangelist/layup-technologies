@@ -139,11 +139,9 @@ components:
           type: string
         avsInstitutionCode:
           type: string
-    modelBankResponse:
+    modelBankUpdateRequest:
       type: object
       properties:
-        _id:
-          type: string
         name:
           type: string
         displayName:
@@ -154,9 +152,11 @@ components:
           type: string
         avsInstitutionCode:
           type: string
-    modelBankUpdateRequest:
+    modelBankResponse:
       type: object
       properties:
+        _id:
+          type: string
         name:
           type: string
         displayName:

@@ -181,6 +181,22 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelForgotPasswordRequest:
+      type: object
+      properties:
+        value:
+          type: string
+        channel:
+          type: string
+        redirectTo:
+          type: string
+        isRealtimeVerification:
+          type: boolean
+    modelForgotPasswordResponse:
+      type: object
+      properties:
+        status:
+          type: string
     modelBankInfo:
       type: object
       properties:
@@ -208,86 +224,6 @@ components:
           type: array
           items:
             type: string
-    modelForgotPasswordResponse:
-      type: object
-      properties:
-        status:
-          type: string
-    modelUserRequest:
-      type: object
-      properties:
-        username:
-          type: string
-        email:
-          type: string
-          format: email
-        idNumber:
-          type: string
-        address:
-          type: string
-        postalCode:
-          type: string
-        city:
-          type: string
-        province:
-          type: string
-        country:
-          type: string
-        role:
-          type: string
-          enum:
-          - CLIENT
-          - MERCHANT
-          - ADMIN
-          default: CLIENT
-        password:
-          type: string
-        active:
-          type: boolean
-        name:
-          type: string
-        dateOfBirth:
-          type: string
-        cellNumber:
-          type: string
-          pattern: ^\+27\d{9}$
-        redirectTo:
-          type: string
-        apikey:
-          type: string
-        shouldWelcome:
-          type: boolean
-        merchantCreatePlan:
-          type: boolean
-        merchantId:
-          type: string
-        merchantRole:
-          type: string
-        bankDetails:
-          $ref: '#/components/schemas/modelBankInfo'
-        merchantOnboarding:
-          $ref: '#/components/schemas/modelMerchantOnboarding'
-        bankValidationPendingReference:
-          type: string
-        passportState:
-          type: string
-        passportNumber:
-          type: string
-        profileImage:
-          type: string
-        merchantIds:
-          type: array
-          items:
-            type: string
-        isMerchantOwner:
-          type: boolean
-    modelMerchantOnboarding:
-      type: object
-      properties:
-        name:
-          type: string
-        physicalAddress:
-          $ref: '#/components/schemas/modelBillingAddress'
     modelBillingAddress:
       type: object
       properties:
@@ -301,38 +237,70 @@ components:
           type: string
         postalCode:
           type: string
-    modelApiKeyResponse:
+    modelLoginRequest:
       type: object
       properties:
-        apikey:
+        username:
           type: string
-    modelForgotPasswordRequest:
-      type: object
-      properties:
-        value:
+          required:
+          - 'true'
+        password:
           type: string
-        channel:
-          type: string
-        redirectTo:
-          type: string
-        isRealtimeVerification:
+          format: password
+          required:
+          - 'true'
+        rememberMe:
           type: boolean
-    modelMerchantBillingSettlementResponse:
-      type: object
-      properties:
-        status:
-          type: string
-    modelTerminalApiKeyResponse:
-      type: object
-      properties:
-        terminalApiKey:
-          type: string
     modelMerchants:
       type: object
       properties:
         _id:
           type: string
         name:
+          type: string
+    modelBankValidation:
+      type: object
+      properties:
+        verified:
+          type: boolean
+        value:
+          type: string
+    modelMerchantOnboarding:
+      type: object
+      properties:
+        name:
+          type: string
+        physicalAddress:
+          $ref: '#/components/schemas/modelBillingAddress'
+    modelApiKeyResponse:
+      type: object
+      properties:
+        apikey:
+          type: string
+    modelMerchantBillingSettlementRequest:
+      type: object
+      properties:
+        merchantName:
+          type: string
+        userName:
+          type: string
+        userEmail:
+          type: string
+        merchantId:
+          type: string
+        merchantContactNumber:
+          type: string
+        message:
+          type: string
+    modelTerminalApiKeyResponse:
+      type: object
+      properties:
+        terminalApiKey:
+          type: string
+    modelMerchantBillingSettlementResponse:
+      type: object
+      properties:
+        status:
           type: string
     modelUserResponse:
       type: object
@@ -413,42 +381,74 @@ components:
           type: boolean
         twoFactorAuthenticationRequired:
           type: boolean
-    modelLoginRequest:
+    modelUserRequest:
       type: object
       properties:
         username:
           type: string
-          required:
-          - 'true'
+        email:
+          type: string
+          format: email
+        idNumber:
+          type: string
+        address:
+          type: string
+        postalCode:
+          type: string
+        city:
+          type: string
+        province:
+          type: string
+        country:
+          type: string
+        role:
+          type: string
+          enum:
+          - CLIENT
+          - MERCHANT
+          - ADMIN
+          default: CLIENT
         password:
           type: string
-          format: password
-          required:
-          - 'true'
-        rememberMe:
+        active:
           type: boolean
-    modelBankValidation:
-      type: object
-      properties:
-        verified:
+        name:
+          type: string
+        dateOfBirth:
+          type: string
+        cellNumber:
+          type: string
+          pattern: ^\+27\d{9}$
+        redirectTo:
+          type: string
+        apikey:
+          type: string
+        shouldWelcome:
           type: boolean
-        value:
-          type: string
-    modelMerchantBillingSettlementRequest:
-      type: object
-      properties:
-        merchantName:
-          type: string
-        userName:
-          type: string
-        userEmail:
-          type: string
+        merchantCreatePlan:
+          type: boolean
         merchantId:
           type: string
-        merchantContactNumber:
+        merchantRole:
           type: string
-        message:
+        bankDetails:
+          $ref: '#/components/schemas/modelBankInfo'
+        merchantOnboarding:
+          $ref: '#/components/schemas/modelMerchantOnboarding'
+        bankValidationPendingReference:
           type: string
+        passportState:
+          type: string
+        passportNumber:
+          type: string
+        profileImage:
+          type: string
+        merchantIds:
+          type: array
+          items:
+            type: string
+        isMerchantOwner:
+          type: boolean
   securitySchemes:
     apiKey:
       type: apiKey

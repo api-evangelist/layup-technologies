@@ -36,6 +36,14 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelTerminalPaymentAppsGetManyResponse:
+      type: object
+      properties:
+        terminalPaymentApps:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelTerminalPaymentAppResponse'
     modelTerminalPaymentAppResponse:
       type: object
       properties:
@@ -49,14 +57,6 @@ components:
           type: string
         provider:
           type: string
-    modelTerminalPaymentAppsGetManyResponse:
-      type: object
-      properties:
-        terminalPaymentApps:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelTerminalPaymentAppResponse'
   securitySchemes:
     apiKey:
       type: apiKey

@@ -68,6 +68,20 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    modelAbsaEftResponse:
+      type: object
+    modelAbsaEftReplyRequest:
+      type: object
+      properties:
+        ldCode:
+          type: string
+        transmissionNumber:
+          type: integer
+          format: int32
+        transmissionStatus:
+          type: string
+        fileStoragePath:
+          type: string
     modelRejectedTransaction:
       type: object
       properties:
@@ -83,18 +97,6 @@ components:
           type: string
         rejectionReason:
           type: string
-    modelAbsaEftReplyRequest:
-      type: object
-      properties:
-        ldCode:
-          type: string
-        transmissionNumber:
-          type: integer
-          format: int32
-        transmissionStatus:
-          type: string
-        fileStoragePath:
-          type: string
     modelAbsaEftOutputRequest:
       type: object
       properties:
@@ -108,8 +110,6 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelRejectedTransaction'
-    modelAbsaEftResponse:
-      type: object
   securitySchemes:
     apiKey:
       type: apiKey
