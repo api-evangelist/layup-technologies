@@ -1,0 +1,12 @@
+{
+ "url": "https://api-documentation.layup.co.za/swagger.json",
+ "requested_url": "https://api-documentation.layup.co.za/swagger.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 276004,
+ "sha256": "a626e20b97e30ce82b049f05ee6acef80f086142a1452cc47e2c8e61445ba6a7",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
