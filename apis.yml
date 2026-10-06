@@ -53,7 +53,7 @@ accessModel:
 image: https://layup.co.za/assets/layup-banner-CQfDGx2y.webp
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 tags:
 - Payments
 - Lay-By
@@ -502,6 +502,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://layup.co.za/blog/
+  type: Blog
 - type: CapabilityMap
   url: capabilities/layup-technologies-capability-edges.yml
   name: LayUp Technologies Business Capability Map
