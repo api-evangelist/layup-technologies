@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/layup-technologies/integrations
+- https://n8n.io/integrations/layup-technologies/
+- https://composio.dev/toolkits/layup-technologies
+- https://monid.ai/tools/layup-technologies
+checked:
+- https://composio.dev/toolkits/layup-technologies
+- https://monid.ai/tools/layup-technologies
+- https://n8n.io/integrations/layup-technologies/
+- https://zapier.com/apps/layup-technologies/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
