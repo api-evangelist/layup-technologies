@@ -70,18 +70,6 @@ components:
   schemas:
     modelAbsaEftResponse:
       type: object
-    modelAbsaEftReplyRequest:
-      type: object
-      properties:
-        ldCode:
-          type: string
-        transmissionNumber:
-          type: integer
-          format: int32
-        transmissionStatus:
-          type: string
-        fileStoragePath:
-          type: string
     modelRejectedTransaction:
       type: object
       properties:
@@ -110,6 +98,18 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelRejectedTransaction'
+    modelAbsaEftReplyRequest:
+      type: object
+      properties:
+        ldCode:
+          type: string
+        transmissionNumber:
+          type: integer
+          format: int32
+        transmissionStatus:
+          type: string
+        fileStoragePath:
+          type: string
   securitySchemes:
     apiKey:
       type: apiKey

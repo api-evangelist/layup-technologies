@@ -189,20 +189,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelDebiCheckMediumEnum:
-      type: integer
-      format: int32
-      example: PhoneNumber
-      enum:
-      - 0
-      - 1
-      default: 0
-      x-enum-descriptions:
-      - Phone Number (in international format, e.g., +1 415 555 2671)
-      - Email address
-      x-enum-varnames:
-      - PhoneNumber
-      - EmailAddress
     modelDebiCheckMandateCustomerLegacy:
       type: object
       properties:
@@ -225,6 +211,89 @@ components:
             $ref: '#/components/schemas/modelDebiCheckMandateContactLegacy'
         simulated:
           type: boolean
+    modelDebiCheckAccountTypeEnum:
+      type: integer
+      format: int32
+      example: Current
+      enum:
+      - 0
+      - 1
+      - 2
+      default: 0
+      x-enum-varnames:
+      - Current
+      - Savings
+      - Transmission
+    modelDebiCheckMandateContact:
+      type: object
+      properties:
+        medium:
+          $ref: '#/components/schemas/modelDebiCheckMediumEnum'
+        value:
+          type: string
+    modelDebiCheckIdentificationTypeEnum:
+      type: integer
+      format: int32
+      example: IdentityDocument
+      enum:
+      - 0
+      - 1
+      - 2
+      default: 0
+      x-enum-varnames:
+      - IdentityDocument
+      - Passport
+      - TemporaryResidence
+    modelDebiCheckMandateResponseLegacy:
+      type: object
+      properties:
+        _id:
+          type: string
+        customer:
+          $ref: '#/components/schemas/modelDebiCheckMandateCustomerLegacy'
+        createdAt:
+          type: string
+        simulation:
+          type: boolean
+    modelDebiCheckCollectionRequest:
+      type: object
+      properties:
+        due:
+          type: string
+    modelDebiCheckMandateCustomer:
+      type: object
+      properties:
+        name:
+          type: string
+        identification:
+          type: string
+        identificationType:
+          type: string
+        accountType:
+          type: string
+        accountNumber:
+          type: string
+        branchCode:
+          type: string
+        contact:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelDebiCheckMandateContact'
+        simulated:
+          type: boolean
+    modelDebiCheckCollection:
+      type: object
+      properties:
+        raw:
+          type: string
+    modelDebiCheckContact:
+      type: object
+      properties:
+        medium:
+          $ref: '#/components/schemas/modelDebiCheckMediumEnum'
+        value:
+          type: string
     modelDebiCheckMandateListResponse:
       type: object
       properties:
@@ -234,11 +303,41 @@ components:
           type: array
           items:
             type: string
-    modelDebiCheckMandateContact:
+    modelDebiCheckCollectionResponse:
+      type: object
+      properties:
+        collections:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelDebiCheckCollection'
+    modelDebiCheckMandateContactLegacy:
       type: object
       properties:
         medium:
-          $ref: '#/components/schemas/modelDebiCheckMediumEnum'
+          type: integer
+          format: int32
+        value:
+          type: string
+    modelDebiCheckMediumEnum:
+      type: integer
+      format: int32
+      example: PhoneNumber
+      enum:
+      - 0
+      - 1
+      default: 0
+      x-enum-descriptions:
+      - Phone Number (in international format, e.g., +1 415 555 2671)
+      - Email address
+      x-enum-varnames:
+      - PhoneNumber
+      - EmailAddress
+    modelDebiCheckContactLegacy:
+      type: object
+      properties:
+        medium:
+          type: string
         value:
           type: string
     modelDebiCheckRequest:
@@ -267,32 +366,17 @@ components:
           type: string
         simulation:
           type: boolean
-    modelDebiCheckCollection:
+    modelDebiCheckMandateResponse:
       type: object
       properties:
-        raw:
+        _id:
           type: string
-    modelDebiCheckMandateContactLegacy:
-      type: object
-      properties:
-        medium:
-          type: integer
-          format: int32
-        value:
+        customer:
+          $ref: '#/components/schemas/modelDebiCheckMandateCustomer'
+        createdAt:
           type: string
-    modelDebiCheckIdentificationTypeEnum:
-      type: integer
-      format: int32
-      example: IdentityDocument
-      enum:
-      - 0
-      - 1
-      - 2
-      default: 0
-      x-enum-varnames:
-      - IdentityDocument
-      - Passport
-      - TemporaryResidence
+        simulation:
+          type: boolean
     modelDebiCheckRequestLegacy:
       type: object
       properties:
@@ -319,90 +403,6 @@ components:
           type: string
         simulation:
           type: boolean
-    modelDebiCheckContactLegacy:
-      type: object
-      properties:
-        medium:
-          type: string
-        value:
-          type: string
-    modelDebiCheckMandateResponseLegacy:
-      type: object
-      properties:
-        _id:
-          type: string
-        customer:
-          $ref: '#/components/schemas/modelDebiCheckMandateCustomerLegacy'
-        createdAt:
-          type: string
-        simulation:
-          type: boolean
-    modelDebiCheckMandateCustomer:
-      type: object
-      properties:
-        name:
-          type: string
-        identification:
-          type: string
-        identificationType:
-          type: string
-        accountType:
-          type: string
-        accountNumber:
-          type: string
-        branchCode:
-          type: string
-        contact:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelDebiCheckMandateContact'
-        simulated:
-          type: boolean
-    modelDebiCheckAccountTypeEnum:
-      type: integer
-      format: int32
-      example: Current
-      enum:
-      - 0
-      - 1
-      - 2
-      default: 0
-      x-enum-varnames:
-      - Current
-      - Savings
-      - Transmission
-    modelDebiCheckCollectionRequest:
-      type: object
-      properties:
-        due:
-          type: string
-    modelDebiCheckCollectionResponse:
-      type: object
-      properties:
-        collections:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelDebiCheckCollection'
-    modelDebiCheckMandateResponse:
-      type: object
-      properties:
-        _id:
-          type: string
-        customer:
-          $ref: '#/components/schemas/modelDebiCheckMandateCustomer'
-        createdAt:
-          type: string
-        simulation:
-          type: boolean
-    modelDebiCheckContact:
-      type: object
-      properties:
-        medium:
-          $ref: '#/components/schemas/modelDebiCheckMediumEnum'
-        value:
-          type: string
   securitySchemes:
     apiKey:
       type: apiKey

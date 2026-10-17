@@ -179,60 +179,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelBankInfo:
-      type: object
-      properties:
-        bankName:
-          $ref: '#/components/schemas/modelBankValidation'
-        account:
-          $ref: '#/components/schemas/modelBankValidation'
-        accountType:
-          $ref: '#/components/schemas/modelBankValidation'
-        branchCode:
-          $ref: '#/components/schemas/modelBankValidation'
-        idNumber:
-          $ref: '#/components/schemas/modelBankValidation'
-        verified:
-          type: boolean
-        clientName:
-          $ref: '#/components/schemas/modelBankValidation'
-        cellNumber:
-          $ref: '#/components/schemas/modelBankValidation'
-        initials:
-          $ref: '#/components/schemas/modelBankValidation'
-        email:
-          $ref: '#/components/schemas/modelBankValidation'
-        validationResponseErrors:
-          type: array
-          items:
-            type: string
-    modelBillingAddress:
-      type: object
-      properties:
-        country:
-          type: string
-        province:
-          type: string
-        streetAddress:
-          type: string
-        city:
-          type: string
-        postalCode:
-          type: string
-    modelMerchants:
-      type: object
-      properties:
-        _id:
-          type: string
-        name:
-          type: string
-    modelBankValidation:
-      type: object
-      properties:
-        verified:
-          type: boolean
-        value:
-          type: string
     modelMerchantOnboarding:
       type: object
       properties:
@@ -240,14 +186,74 @@ components:
           type: string
         physicalAddress:
           $ref: '#/components/schemas/modelBillingAddress'
-    modelUserResponseMany:
+    modelUserRequest:
       type: object
       properties:
-        users:
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        idNumber:
+          type: string
+        address:
+          type: string
+        postalCode:
+          type: string
+        city:
+          type: string
+        province:
+          type: string
+        country:
+          type: string
+        role:
+          type: string
+          enum:
+          - CLIENT
+          - MERCHANT
+          - ADMIN
+          default: CLIENT
+        password:
+          type: string
+        active:
+          type: boolean
+        name:
+          type: string
+        dateOfBirth:
+          type: string
+        cellNumber:
+          type: string
+          pattern: ^\+27\d{9}$
+        redirectTo:
+          type: string
+        apikey:
+          type: string
+        shouldWelcome:
+          type: boolean
+        merchantCreatePlan:
+          type: boolean
+        merchantId:
+          type: string
+        merchantRole:
+          type: string
+        bankDetails:
+          $ref: '#/components/schemas/modelBankInfo'
+        merchantOnboarding:
+          $ref: '#/components/schemas/modelMerchantOnboarding'
+        bankValidationPendingReference:
+          type: string
+        passportState:
+          type: string
+        passportNumber:
+          type: string
+        profileImage:
+          type: string
+        merchantIds:
           type: array
           items:
-            type: object
-            $ref: '#/components/schemas/modelUserResponse'
+            type: string
+        isMerchantOwner:
+          type: boolean
     modelUserResponse:
       type: object
       properties:
@@ -327,74 +333,68 @@ components:
           type: boolean
         twoFactorAuthenticationRequired:
           type: boolean
-    modelUserRequest:
+    modelMerchants:
       type: object
       properties:
-        username:
+        _id:
           type: string
-        email:
-          type: string
-          format: email
-        idNumber:
-          type: string
-        address:
-          type: string
-        postalCode:
-          type: string
-        city:
-          type: string
-        province:
-          type: string
-        country:
-          type: string
-        role:
-          type: string
-          enum:
-          - CLIENT
-          - MERCHANT
-          - ADMIN
-          default: CLIENT
-        password:
-          type: string
-        active:
-          type: boolean
         name:
           type: string
-        dateOfBirth:
-          type: string
+    modelBankInfo:
+      type: object
+      properties:
+        bankName:
+          $ref: '#/components/schemas/modelBankValidation'
+        account:
+          $ref: '#/components/schemas/modelBankValidation'
+        accountType:
+          $ref: '#/components/schemas/modelBankValidation'
+        branchCode:
+          $ref: '#/components/schemas/modelBankValidation'
+        idNumber:
+          $ref: '#/components/schemas/modelBankValidation'
+        verified:
+          type: boolean
+        clientName:
+          $ref: '#/components/schemas/modelBankValidation'
         cellNumber:
-          type: string
-          pattern: ^\+27\d{9}$
-        redirectTo:
-          type: string
-        apikey:
-          type: string
-        shouldWelcome:
-          type: boolean
-        merchantCreatePlan:
-          type: boolean
-        merchantId:
-          type: string
-        merchantRole:
-          type: string
-        bankDetails:
-          $ref: '#/components/schemas/modelBankInfo'
-        merchantOnboarding:
-          $ref: '#/components/schemas/modelMerchantOnboarding'
-        bankValidationPendingReference:
-          type: string
-        passportState:
-          type: string
-        passportNumber:
-          type: string
-        profileImage:
-          type: string
-        merchantIds:
+          $ref: '#/components/schemas/modelBankValidation'
+        initials:
+          $ref: '#/components/schemas/modelBankValidation'
+        email:
+          $ref: '#/components/schemas/modelBankValidation'
+        validationResponseErrors:
           type: array
           items:
             type: string
-        isMerchantOwner:
+    modelBillingAddress:
+      type: object
+      properties:
+        country:
+          type: string
+        province:
+          type: string
+        streetAddress:
+          type: string
+        city:
+          type: string
+        postalCode:
+          type: string
+    modelBankValidation:
+      type: object
+      properties:
+        verified:
           type: boolean
+        value:
+          type: string
+    modelUserResponseMany:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelUserResponse'
   securitySchemes:
     apiKey:
       type: apiKey

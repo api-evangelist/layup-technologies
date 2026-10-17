@@ -175,27 +175,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelPaymentRequestV2:
-      type: object
-      properties:
-        destinationId:
-          type: string
-        amount:
-          type: integer
-          format: int32
-        redirectUrl:
-          type: string
-        paymentMethod:
-          type: string
-        paymentProvider:
-          type: string
-        destinationType:
-          type: string
-          title: paymentPlan | invoice
-        connectorData:
-          $ref: '#/components/schemas/modelConnectorDataV2'
-        save:
-          type: boolean
     modelPaymentRedirectResponse:
       type: object
       properties:
@@ -212,6 +191,35 @@ components:
           type: string
         checkoutId:
           type: string
+    modelConnectorDataV2:
+      type: object
+      properties:
+        bankTransactionId:
+          type: string
+    modelNameAndValue:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+    modelFeePerProduct:
+      type: object
+      properties:
+        quantity:
+          type: number
+          format: double
+        amountTotal:
+          type: number
+          format: double
+        amountExcludingVAT:
+          type: number
+          format: double
+        amountVAT:
+          type: number
+          format: double
+        product:
+          $ref: '#/components/schemas/modelProduct'
     modelProduct:
       type: object
       properties:
@@ -227,24 +235,6 @@ components:
           type: string
         billingType:
           type: string
-    modelConnectorDataV2:
-      type: object
-      properties:
-        bankTransactionId:
-          type: string
-    modelPaymentReportResponse:
-      type: object
-      properties:
-        payments:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelReportPayment'
-        export:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelReportExport'
     modelReportExport:
       type: object
       properties:
@@ -306,13 +296,40 @@ components:
           type: string
         paymentId:
           type: string
-    modelNameAndValue:
+    modelPaymentRequestV2:
       type: object
       properties:
-        name:
+        destinationId:
           type: string
-        value:
+        amount:
+          type: integer
+          format: int32
+        redirectUrl:
           type: string
+        paymentMethod:
+          type: string
+        paymentProvider:
+          type: string
+        destinationType:
+          type: string
+          title: paymentPlan | invoice
+        connectorData:
+          $ref: '#/components/schemas/modelConnectorDataV2'
+        save:
+          type: boolean
+    modelPaymentReportResponse:
+      type: object
+      properties:
+        payments:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelReportPayment'
+        export:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelReportExport'
     modelReportPayment:
       type: object
       properties:
@@ -364,23 +381,6 @@ components:
           type: string
         dateSettled:
           type: string
-    modelFeePerProduct:
-      type: object
-      properties:
-        quantity:
-          type: number
-          format: double
-        amountTotal:
-          type: number
-          format: double
-        amountExcludingVAT:
-          type: number
-          format: double
-        amountVAT:
-          type: number
-          format: double
-        product:
-          $ref: '#/components/schemas/modelProduct'
   securitySchemes:
     apiKey:
       type: apiKey

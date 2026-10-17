@@ -148,35 +148,6 @@ paths:
       - SettlementService
 components:
   schemas:
-    modelSettlementReport:
-      type: object
-      properties:
-        id:
-          type: string
-        amount:
-          type: number
-          format: double
-        batch:
-          type: number
-          format: double
-        batchType:
-          type: string
-        merchantId:
-          type: string
-        status:
-          type: string
-        reference:
-          type: string
-        settledAt:
-          type: string
-        reconciled:
-          type: boolean
-    modelSettlementDownloadResponse:
-      type: object
-      properties:
-        url:
-          type: string
-          title: The location that the user will be redirected to
     modelSettlementResponse:
       type: object
       properties:
@@ -222,14 +193,6 @@ components:
           type: string
         draft:
           type: boolean
-    modelSettlementReportResponse:
-      type: object
-      properties:
-        settlements:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelSettlementReport'
     modelSettlementRequest:
       type: object
       properties:
@@ -247,6 +210,43 @@ components:
           type: boolean
         preview:
           type: boolean
+    modelSettlementReportResponse:
+      type: object
+      properties:
+        settlements:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelSettlementReport'
+    modelSettlementReport:
+      type: object
+      properties:
+        id:
+          type: string
+        amount:
+          type: number
+          format: double
+        batch:
+          type: number
+          format: double
+        batchType:
+          type: string
+        merchantId:
+          type: string
+        status:
+          type: string
+        reference:
+          type: string
+        settledAt:
+          type: string
+        reconciled:
+          type: boolean
+    modelSettlementDownloadResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          title: The location that the user will be redirected to
   securitySchemes:
     apiKey:
       type: apiKey

@@ -99,49 +99,159 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelProductCreateRequest:
+    modelPlanPayment:
       type: object
       properties:
         _id:
+          type: string
+        due:
           type: string
         amount:
           type: integer
           format: int32
-        link:
+        paid:
+          type: boolean
+        timestamp:
+          type: number
+          format: double
+        paymentMethod:
           type: string
-          format: uri
-        sku:
+        paymentType:
           type: string
-        name:
+        amountExcludingFee:
+          type: integer
+          format: int32
+        fee:
+          type: integer
+          format: int32
+        pending:
+          type: boolean
+        failed:
+          type: boolean
+        reconciliated:
+          type: boolean
+        refundedAmount:
+          type: integer
+          format: int32
+        refundPaymentId:
           type: string
-        description:
+        connectorData:
+          $ref: '#/components/schemas/modelPlanPaymentConnectorData'
+        verifiedAt:
           type: string
-        depositType:
+        dueAt:
           type: string
-    modelCancellationDefinition:
+    modelOrderAmendmentResponseMany:
       type: object
       properties:
-        type:
-          $ref: '#/components/schemas/modelCancellationType'
-        policy:
-          $ref: '#/components/schemas/modelCancellationPolicy'
-        start:
+        orderAmendments:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelOrderAmendmentResponse'
+    modelOrderAmendmentRequest:
+      type: object
+      example:
+        orderId: 123f7f1496bd78001d6852f3
+        amendmentType: PRODUCT:UPDATE
+        products: ProductCreateRequest
+      properties:
+        orderId:
+          type: string
+        amendmentType:
+          type: string
+        products:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelProductCreateRequest'
+        endDate:
+          type: string
+    modelValueEnabledPair:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
           type: integer
           format: int32
-        end:
-          type: integer
-          format: int32
-        gracePeriod:
-          type: integer
-          format: int32
-    modelSupplier:
+    modelPaymentPlanResponse:
       type: object
       properties:
         _id:
           type: string
-        name:
+        orderId:
           type: string
-        merchantId:
+        benefactorId:
+          type: string
+        completed:
+          type: boolean
+        quantity:
+          type: integer
+          format: int32
+        depositDue:
+          type: integer
+          format: int32
+        amountDue:
+          type: integer
+          format: int32
+        automaticBilling:
+          type: boolean
+        timestamp:
+          type: number
+          format: double
+        payments:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelPlanPayment'
+        benefactor:
+          $ref: '#/components/schemas/modelPaymentPlanBenefactor'
+        frequency:
+          type: string
+          enum:
+          - WEEKLY
+          - MONTHLY
+        offset:
+          type: integer
+          format: int32
+        depositDueExcludingFee:
+          type: integer
+          format: int32
+        amountDueExcludingFee:
+          type: integer
+          format: int32
+        order:
+          $ref: '#/components/schemas/modelOrderResponse'
+        debicheckStatus:
+          type: string
+        debicheckLastFailedReasons:
+          type: array
+          items:
+            type: string
+        debicheckMandateActiveId:
+          type: string
+        debicheckMandateIds:
+          type: array
+          items:
+            type: string
+        payAtReferenceNumber:
+          type: string
+        agreedToTerms:
+          type: boolean
+    modelPaymentWidgetLogo:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
+          type: string
+    modelLogo:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
           type: string
     modelPlanPaymentConnectorData:
       type: object
@@ -161,6 +271,205 @@ components:
           type: string
         paymentProviderResponses:
           $ref: '#/components/schemas/modelPaymentProviderResponses'
+    modelSupplier:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        merchantId:
+          type: string
+    modelCancellationTermRequest:
+      type: object
+      properties:
+        active:
+          type: boolean
+        definition:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelCancellationDefinition'
+    modelNote:
+      type: object
+      properties:
+        change:
+          type: string
+        date:
+          type: string
+        name:
+          type: string
+        reason:
+          type: string
+        details:
+          type: string
+        read:
+          type: boolean
+        userId:
+          type: string
+        type:
+          type: string
+        hide:
+          type: boolean
+        unread:
+          type: boolean
+    modelOrderAmendmentResponse:
+      type: object
+      properties:
+        _id:
+          type: string
+        userId:
+          type: string
+        orderId:
+          type: string
+        amendmentType:
+          type: string
+        products:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/modelProductResponse'
+        endDate:
+          type: string
+        from:
+          $ref: '#/components/schemas/modelOrderResponse'
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    modelCancellationType:
+      type: object
+      properties:
+        name:
+          type: string
+        definition:
+          $ref: '#/components/schemas/modelCancellationTypeDefinition'
+        finalPaymentMissed:
+          type: boolean
+    modelCancellationPolicy:
+      type: object
+      properties:
+        name:
+          type: string
+          enum:
+          - Deposit
+          - Percentage
+          - FlatFee
+          - Combination
+        definition:
+          $ref: '#/components/schemas/modelCancellationPolicyDefinition'
+    modelImageUrl:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        value:
+          type: string
+    modelProductResponse:
+      type: object
+      properties:
+        _id:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        link:
+          type: string
+          format: uri
+        sku:
+          type: string
+        name:
+          type: string
+        depositType:
+          type: string
+    modelProductCreateRequest:
+      type: object
+      properties:
+        _id:
+          type: string
+        amount:
+          type: integer
+          format: int32
+        link:
+          type: string
+          format: uri
+        sku:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        depositType:
+          type: string
+    modelCancellationTypeDefinition:
+      type: object
+      properties:
+        missed:
+          type: integer
+          format: int32
+        percentage:
+          type: integer
+          format: int32
+    modelPaymentPlanBenefactor:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+    modelCancellationDefinition:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/modelCancellationType'
+        policy:
+          $ref: '#/components/schemas/modelCancellationPolicy'
+        start:
+          type: integer
+          format: int32
+        end:
+          type: integer
+          format: int32
+        gracePeriod:
+          type: integer
+          format: int32
+    modelPaymentProviderResponses:
+      type: object
+    modelCustomize:
+      type: object
+      properties:
+        logo:
+          $ref: '#/components/schemas/modelLogo'
+        imageUrl:
+          $ref: '#/components/schemas/modelImageUrl'
+        paymentWidget:
+          $ref: '#/components/schemas/modelPaymentWidgetLogo'
+    modelCancellationPolicyDefinition:
+      type: object
+      properties:
+        deposit:
+          type: boolean
+        percentage:
+          type: integer
+          format: int32
+        flatFee:
+          type: integer
+          format: int32
+        percentageShouldUseTotalPaid:
+          type: boolean
+    modelGroupPayment:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        cloneLimit:
+          type: integer
+          format: int32
+        expiry:
+          type: integer
+          format: int32
     modelOrderResponse:
       type: object
       properties:
@@ -302,67 +611,6 @@ components:
           type: boolean
         voucherSettings:
           $ref: '#/components/schemas/modelVoucherSettings'
-    modelOrderAmendmentResponseMany:
-      type: object
-      properties:
-        orderAmendments:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelOrderAmendmentResponse'
-    modelCancellationPolicy:
-      type: object
-      properties:
-        name:
-          type: string
-          enum:
-          - Deposit
-          - Percentage
-          - FlatFee
-          - Combination
-        definition:
-          $ref: '#/components/schemas/modelCancellationPolicyDefinition'
-    modelLogo:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
-          type: string
-    modelProductResponse:
-      type: object
-      properties:
-        _id:
-          type: string
-        amount:
-          type: integer
-          format: int32
-        link:
-          type: string
-          format: uri
-        sku:
-          type: string
-        name:
-          type: string
-        depositType:
-          type: string
-    modelImageUrl:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
-          type: string
-    modelCancellationTermRequest:
-      type: object
-      properties:
-        active:
-          type: boolean
-        definition:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelCancellationDefinition'
     modelPaymentMethod:
       type: object
       properties:
@@ -384,178 +632,6 @@ components:
           type: boolean
         embeddedCheckout:
           type: boolean
-    modelOrderAmendmentRequest:
-      type: object
-      example:
-        orderId: 123f7f1496bd78001d6852f3
-        amendmentType: PRODUCT:UPDATE
-        products: ProductCreateRequest
-      properties:
-        orderId:
-          type: string
-        amendmentType:
-          type: string
-        products:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelProductCreateRequest'
-        endDate:
-          type: string
-    modelPaymentPlanResponse:
-      type: object
-      properties:
-        _id:
-          type: string
-        orderId:
-          type: string
-        benefactorId:
-          type: string
-        completed:
-          type: boolean
-        quantity:
-          type: integer
-          format: int32
-        depositDue:
-          type: integer
-          format: int32
-        amountDue:
-          type: integer
-          format: int32
-        automaticBilling:
-          type: boolean
-        timestamp:
-          type: number
-          format: double
-        payments:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelPlanPayment'
-        benefactor:
-          $ref: '#/components/schemas/modelPaymentPlanBenefactor'
-        frequency:
-          type: string
-          enum:
-          - WEEKLY
-          - MONTHLY
-        offset:
-          type: integer
-          format: int32
-        depositDueExcludingFee:
-          type: integer
-          format: int32
-        amountDueExcludingFee:
-          type: integer
-          format: int32
-        order:
-          $ref: '#/components/schemas/modelOrderResponse'
-        debicheckStatus:
-          type: string
-        debicheckLastFailedReasons:
-          type: array
-          items:
-            type: string
-        debicheckMandateActiveId:
-          type: string
-        debicheckMandateIds:
-          type: array
-          items:
-            type: string
-        payAtReferenceNumber:
-          type: string
-        agreedToTerms:
-          type: boolean
-    modelPlanPayment:
-      type: object
-      properties:
-        _id:
-          type: string
-        due:
-          type: string
-        amount:
-          type: integer
-          format: int32
-        paid:
-          type: boolean
-        timestamp:
-          type: number
-          format: double
-        paymentMethod:
-          type: string
-        paymentType:
-          type: string
-        amountExcludingFee:
-          type: integer
-          format: int32
-        fee:
-          type: integer
-          format: int32
-        pending:
-          type: boolean
-        failed:
-          type: boolean
-        reconciliated:
-          type: boolean
-        refundedAmount:
-          type: integer
-          format: int32
-        refundPaymentId:
-          type: string
-        connectorData:
-          $ref: '#/components/schemas/modelPlanPaymentConnectorData'
-        verifiedAt:
-          type: string
-        dueAt:
-          type: string
-    modelCancellationType:
-      type: object
-      properties:
-        name:
-          type: string
-        definition:
-          $ref: '#/components/schemas/modelCancellationTypeDefinition'
-        finalPaymentMissed:
-          type: boolean
-    modelValueEnabledPair:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
-          type: integer
-          format: int32
-    modelGroupPayment:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        cloneLimit:
-          type: integer
-          format: int32
-        expiry:
-          type: integer
-          format: int32
-    modelCancellationPolicyDefinition:
-      type: object
-      properties:
-        deposit:
-          type: boolean
-        percentage:
-          type: integer
-          format: int32
-        flatFee:
-          type: integer
-          format: int32
-        percentageShouldUseTotalPaid:
-          type: boolean
-    modelPaymentWidgetLogo:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-        value:
-          type: string
     modelVoucherSettings:
       type: object
       properties:
@@ -576,82 +652,6 @@ components:
           type: integer
           format: int32
         voucherProvider:
-          type: string
-    modelPaymentProviderResponses:
-      type: object
-    modelCancellationTypeDefinition:
-      type: object
-      properties:
-        missed:
-          type: integer
-          format: int32
-        percentage:
-          type: integer
-          format: int32
-    modelPaymentPlanBenefactor:
-      type: object
-      properties:
-        _id:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-    modelCustomize:
-      type: object
-      properties:
-        logo:
-          $ref: '#/components/schemas/modelLogo'
-        imageUrl:
-          $ref: '#/components/schemas/modelImageUrl'
-        paymentWidget:
-          $ref: '#/components/schemas/modelPaymentWidgetLogo'
-    modelNote:
-      type: object
-      properties:
-        change:
-          type: string
-        date:
-          type: string
-        name:
-          type: string
-        reason:
-          type: string
-        details:
-          type: string
-        read:
-          type: boolean
-        userId:
-          type: string
-        type:
-          type: string
-        hide:
-          type: boolean
-        unread:
-          type: boolean
-    modelOrderAmendmentResponse:
-      type: object
-      properties:
-        _id:
-          type: string
-        userId:
-          type: string
-        orderId:
-          type: string
-        amendmentType:
-          type: string
-        products:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/modelProductResponse'
-        endDate:
-          type: string
-        from:
-          $ref: '#/components/schemas/modelOrderResponse'
-        createdAt:
-          type: string
-        updatedAt:
           type: string
   securitySchemes:
     apiKey:

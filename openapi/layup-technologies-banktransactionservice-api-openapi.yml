@@ -154,8 +154,6 @@ components:
           type: string
         fileStorageReference:
           type: string
-    modelBankTransactionResponse:
-      type: object
     modelBankTransactionUpdate:
       type: object
       properties:
@@ -163,6 +161,8 @@ components:
           type: array
           items:
             type: string
+    modelBankTransactionResponse:
+      type: object
     modelBankTransactionPaymentRequest:
       type: object
       properties:

@@ -129,13 +129,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    modelInternationalMsisdnRequest:
-      type: object
-      properties:
-        msisdn:
-          type: string
-        countryCode:
-          type: string
     modelInternationalMsisdnResponse:
       type: object
       properties:
@@ -155,6 +148,13 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/modelInternationalMsisdnResponse'
+    modelInternationalMsisdnRequest:
+      type: object
+      properties:
+        msisdn:
+          type: string
+        countryCode:
+          type: string
   securitySchemes:
     apiKey:
       type: apiKey
